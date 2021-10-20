@@ -1,0 +1,1 @@
+pipe管道可以用来读取stream流
