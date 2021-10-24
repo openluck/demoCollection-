@@ -17,8 +17,9 @@ import { Provider } from 'react-redux'
 import History from './containers/History';
 import DateSelect from './containers/DateSelect'
 
-// pages
+// pages  组件名 必须大写
 import Xinhua from './pages/Xinhua'
+import ChinaNewFinance from './pages/chinaNewFinance'
 function App() {
   return (
     <Provider store={store}>
@@ -29,6 +30,7 @@ function App() {
         {/* <DateSelect />
         <History /> */}
         <Xinhua />
+        <ChinaNewFinance />
       </div>
     </Provider>
 

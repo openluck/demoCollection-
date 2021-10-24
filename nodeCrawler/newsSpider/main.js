@@ -12,8 +12,9 @@ const request = require('request')
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
+  port: '3308',
   password: '123456',
-  database: 'new_db'
+  database: 'spider_news'
 });
 
 connection.connect();
@@ -25,8 +26,8 @@ function getLocalMinutesTime() {
   return time.getMinutes() // 获取当前分钟数(0-59)
 }
 function getChinanewsData() {
-  for (let i = 0; i <= 1; i++) {
-    let url = `https://channel.chinanews.com/cns/cjs/sh.shtml?pager=${i}&pagenum=13&t=1_${getLocalMinutesTime()}`;
+  for (let i = 0; i <= 15; i++) {
+    let url = `https://channel.chinanews.com/cns/cjs/sh.shtml?pager=${i}&pagenum=20&t=4_${getLocalMinutesTime()}`;
     console.log('url', url+'----------------'+i);
     request(url, async (err, response, body) => {
       // 字符串转数组
@@ -35,7 +36,7 @@ function getChinanewsData() {
       let bodyMatch = await body.match(/\[(.+?)\]/g)
       console.log('bodyMatch', bodyMatch);
       // json字符串再转为数组对象
-      let bodyObj = JSON.parse(bodyMatch[0])
+      let bodyObj = JSON.parse(bodyMatch[0]) 
       bodyObj.map((item, index) => {
         chinaNewsArr.push(item)
       })
@@ -44,7 +45,7 @@ function getChinanewsData() {
 }
 const insertChinanewsDataToMysql = (item) => {
   console.log('item' + '---' + item.pubtime);
-  let addSql = 'INSERT INTO newsList(pubtime,channel,img_cns,id,title,content,url,source_url,galleryphoto,content_y) VALUES(?,?,?,?,?,?,?,?,?,?)';
+  let addSql = 'INSERT INTO chinanews_finance_index(pubtime,channel,img_cns,id,title,content,url,source_url,galleryphoto,content_y) VALUES(?,?,?,?,?,?,?,?,?,?)';
   let addSqlParams = [item.pubtime, item.channel, item.img_cns, item.id, item.title, item.content, item.url, item.source_url, item.galleryphoto, item.content_y]
   connection.query(addSql, addSqlParams, (err, result) => {
     if (err) {

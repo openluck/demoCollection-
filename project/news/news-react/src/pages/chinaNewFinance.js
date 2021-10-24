@@ -9,7 +9,7 @@
 import React, { Component } from "react";
 import axios from 'axios'
 
-class XinhuaPage extends Component {
+class chinaNewFinance extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,17 +23,17 @@ class XinhuaPage extends Component {
 
   // 获取新华网的数据
   getXinhuaNews() {
-    // let url = "http://www.news.cn/fortunepro/json/xh_fortuneproDepth.js"
-    // axios.get(url).then(res => {
-    //   console.log(res);
-    // })
+    let url = "/api/getChinaNewsFinance"
+    axios.get(url).then(res => {
+      console.log(res);
+    })
   }
 
   render() {
     return (
-      <div>新华</div>
+      <div>2222</div>
     )
   }
 }
 
-export default XinhuaPage
+export default chinaNewFinance
