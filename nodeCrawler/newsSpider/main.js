@@ -4,7 +4,7 @@
  * @Author: OpenLcuk
  * @Date: 2021-10-20 13:40:52
  * @LastEditors: OpenLcuk
- * @LastEditTime: 2021-10-21 11:42:20
+ * @LastEditTime: 2021-10-25 09:43:05
  */
 var mysql = require('mysql');
 const request = require('request')
@@ -12,7 +12,7 @@ const request = require('request')
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  port: '3308',
+  // port: '3308',
   password: '123456',
   database: 'spider_news'
 });
@@ -27,7 +27,7 @@ function getLocalMinutesTime() {
 }
 function getChinanewsData() {
   for (let i = 0; i <= 15; i++) {
-    let url = `https://channel.chinanews.com/cns/cjs/sh.shtml?pager=${i}&pagenum=20&t=4_${getLocalMinutesTime()}`;
+    let url = `https://channel.chinanews.com/cns/cjs/sh.shtml?pager=${i}&pagenum=20&t=1_${getLocalMinutesTime()}`;
     console.log('url', url+'----------------'+i);
     request(url, async (err, response, body) => {
       // 字符串转数组

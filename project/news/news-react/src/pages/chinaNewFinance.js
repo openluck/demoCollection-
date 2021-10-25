@@ -4,7 +4,7 @@
  * @Author: OpenLcuk
  * @Date: 2021-10-21 14:30:10
  * @LastEditors: OpenLcuk
- * @LastEditTime: 2021-10-21 14:45:26
+ * @LastEditTime: 2021-10-25 10:44:07
  */
 import React, { Component } from "react";
 import axios from 'axios'
@@ -26,12 +26,23 @@ class chinaNewFinance extends Component {
     let url = "/api/getChinaNewsFinance"
     axios.get(url).then(res => {
       console.log(res);
+      if (res.data.code === '200') {
+        console.log(111);
+        this.setState({
+          dataList: res.data.data
+        })
+      }
     })
   }
 
   render() {
+    const { dataList } = this.state
     return (
-      <div>2222</div>
+      <div> <ul>
+        {dataList.map(item => {
+          return <li> {item.content} </li>
+        })}
+      </ul> </div>
     )
   }
 }
