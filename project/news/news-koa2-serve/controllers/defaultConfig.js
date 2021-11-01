@@ -4,14 +4,14 @@
  * @Author: OpenLcuk
  * @Date: 2021-10-25 09:14:58
  * @LastEditors: OpenLcuk
- * @LastEditTime: 2021-10-25 09:44:52
+ * @LastEditTime: 2021-11-01 09:48:45
  */
 const config = {
   database: {
     database: 'spider_news',
     user: 'root',
     password: '123456',
-    port: '3308',
+    // port: '3308',
     host: 'localhost'
   }
 }

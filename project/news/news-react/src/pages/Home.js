@@ -4,7 +4,7 @@
  * @Author: OpenLcuk
  * @Date: 2021-10-25 11:34:49
  * @LastEditors: OpenLcuk
- * @LastEditTime: 2021-10-25 11:36:32
+ * @LastEditTime: 2021-11-01 09:47:21
  */
 import React, { Component } from "react";
 import '../static/css/Home.css'
@@ -31,6 +31,7 @@ class Home extends Component {
         },
       ]
     }
+    this.goNewsPage = this.goNewsPage.bind(this)
   }
 
   render() {
@@ -44,7 +45,7 @@ class Home extends Component {
             </li> */}
             {
               this.state.newsList.map(item => {
-                return <li key={item.id} onClick={this.goNewsList(item)}>
+                return <li key={item.id} onClick={() => this.goNewsPage(item)}>
                   <img className="image-logo"
                     src={item.imgSrc}
                     alt={item.name}></img>
@@ -59,9 +60,10 @@ class Home extends Component {
   }
 
   // 去新闻列表页 用箭头函数去写 
-  goNewsList(item) {
+  goNewsPage(item) {
     const { id } = item;
     console.log(id);
+    this.props.history.push('/ChinaNewFinance')
   }
 }
 

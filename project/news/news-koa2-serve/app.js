@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: OpenLcuk
+ * @Date: 2021-10-25 09:14:58
+ * @LastEditors: OpenLcuk
+ * @LastEditTime: 2021-11-01 11:39:36
+ */
 const Koa = require('koa')
 const app = new Koa()
 const views = require('koa-views')
@@ -33,7 +41,7 @@ app.use(async (ctx, next) => {
 })
 
 // routes
-app.use(index.routes(), index.allowedMethods())
+app.use(index.routes(), index.allowedMethods())   //作用：启动路由
 app.use(users.routes(), users.allowedMethods())
 
 // error-handling
