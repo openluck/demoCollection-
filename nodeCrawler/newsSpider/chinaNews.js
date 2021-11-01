@@ -27,7 +27,8 @@ function getLocalMinutesTime() {
 }
 function getChinanewsData() {
   for (let i = 0; i <= 15; i++) {
-    let url = `https://channel.chinanews.com/cns/cjs/sh.shtml?pager=${i}&pagenum=20&t=1_${getLocalMinutesTime()}`;
+    // https://channel.chinanews.com/cns/cjs/cj.shtml?pager=0&pagenum=20&t=15_56
+    let url = `https://channel.chinanews.com/cns/cjs/sh.shtml?pager=${i}&pagenum=20&t=15_${getLocalMinutesTime()}`;
     console.log('url', url+'----------------'+i);
     request(url, async (err, response, body) => {
       // 字符串转数组
@@ -44,7 +45,6 @@ function getChinanewsData() {
   }
 }
 const insertChinanewsDataToMysql = (item) => {
-  console.log('item' + '---' + item.pubtime);
   let addSql = 'INSERT INTO chinanews_finance_index(pubtime,channel,img_cns,id,title,content,url,source_url,galleryphoto,content_y) VALUES(?,?,?,?,?,?,?,?,?,?)';
   let addSqlParams = [item.pubtime, item.channel, item.img_cns, item.id, item.title, item.content, item.url, item.source_url, item.galleryphoto, item.content_y]
   connection.query(addSql, addSqlParams, (err, result) => {

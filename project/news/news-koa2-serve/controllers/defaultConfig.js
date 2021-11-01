@@ -11,7 +11,7 @@ const config = {
     database: 'spider_news',
     user: 'root',
     password: '123456',
-    // port: '3308',
+    port: '3308',
     host: 'localhost'
   }
 }

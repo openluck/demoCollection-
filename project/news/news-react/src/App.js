@@ -6,8 +6,9 @@
  * @LastEditors: OpenLcuk
  * @LastEditTime: 2021-10-25 15:37:21
  */
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import './static/css/reset.css'
 import { BrowserRouter, Route } from 'react-router-dom';
 
 // redux
@@ -15,11 +16,11 @@ import { store } from './redux/store'
 import { Provider } from 'react-redux'
 
 // hook
-import History from './containers/History';
-import DateSelect from './containers/DateSelect'
+// import History from './containers/History';
+// import DateSelect from './containers/DateSelect'
 
 // pages  组件名 必须大写
-import Xinhua from './pages/Xinhua'
+// import Xinhua from './pages/Xinhua'
 import ChinaNewFinance from './pages/chinaNewFinance'
 import Home from './pages/Home'
 function App() {
