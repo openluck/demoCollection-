@@ -1,0 +1,25 @@
+/*
+ * @Author: JC.Liu 
+ * @Date: 2019-05-04 13:48:19 
+ * @Last Modified by: JC.Liu
+ * @Last Modified time: 2019-05-04 13:59:11
+ * 关于老师 播放页的样式
+ */
+
+// 听评课 教研评课 评论 点击大图展示
+.JC-jyComment-modal {
+  width: 700px !important;
+
+
+  .ant-modal-body {
+    padding: 0 !important;
+  }
+
+  .ant-modal-close {
+    top: -25px !important;
+    right: -25px !important;
+    border-radius: 50% !important;
+    background: #b10f0f !important;
+    color: #fff
+  }
+}

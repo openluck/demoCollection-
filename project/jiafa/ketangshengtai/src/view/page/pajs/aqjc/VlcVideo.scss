@@ -1,0 +1,26 @@
+.mzc-vlcVideo {
+  position: relative;
+  .mzc-vlcVideoSl {
+    position: absolute;
+    right: 0;
+    bottom: -47px;
+    z-index: 100;
+    .mzc-sl {
+      width: 110px;
+      .ant-select-selector {
+        background-color: transparent;
+      }
+      .ant-select-selection-item {
+        color: #fff;
+      }
+      .mzc-arrow {
+        position: relative;
+        top: 9px;
+        border: 6px solid #fff;
+        border-bottom: 6px solid transparent;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+      }
+    }
+  }
+}

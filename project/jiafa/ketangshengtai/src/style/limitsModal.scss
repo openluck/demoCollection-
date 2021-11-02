@@ -1,0 +1,104 @@
+.mj-lm-content {
+  padding: 20px 60px 0;
+  height: 390px;
+
+  .mj-lm-placeCon {
+    display: inline-block;
+    width: 220px;
+    height: 100%;
+    border: 1px solid #e6e9eb;
+    vertical-align: top;
+  }
+
+  .mj-lm-iconCon {
+    display: inline-block;
+    padding-top: 190px;
+    width: 40px;
+    height: 100%;
+    vertical-align: top;
+    text-align: center;
+
+    svg {
+      width: 22px;
+      height: 22px;
+      fill: #d4d7d9;
+    }
+  }
+
+  .mj-lm-seleCon {
+    display: inline-block;
+    width: 220px;
+    height: 100%;
+    border: 1px solid #e6e9eb;
+    vertical-align: top;
+
+    .mj-lm-placesSele {
+      padding: 0 12px;
+
+      .mj-lm-place {
+        display: flex;
+        padding: 0 4px;
+        height: 42px;
+        line-height: 42px;
+        border-bottom: 1px dashed #e6e9eb;
+
+
+
+        .mj-lm-placeName {
+          flex: 4;
+          color: #494a4d;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .mj-lm-placeIcon {
+          flex: 1;
+          text-align: right;
+
+          svg {
+            width: 16px;
+            height: 16px;
+            fill: #aaaeb3;
+            vertical-align: middle;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .mj-lm-textCon {
+    display: flex;
+    padding: 0 10px;
+    height: 42px;
+    line-height: 42px;
+    border-bottom: 1px dashed #e6e9eb;
+
+    div {
+      flex: 1;
+      font-size: 14px;
+      color: #919499;
+
+      &:last-child {
+        color: #24b38c;
+        text-align: right;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .mj-lm-places {
+    padding: 6px 0;
+    width: 100%;
+    height: 326px;
+
+    .ant-tree-title {
+      display: inline-block !important;
+      overflow: hidden !important;
+      white-space: nowrap !important;
+      text-overflow: ellipsis !important;
+      width: 100px !important;
+    }
+  }
+}

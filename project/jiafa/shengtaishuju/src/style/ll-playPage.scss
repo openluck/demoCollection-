@@ -1,0 +1,48 @@
+.ll-playPage {
+    height: 100%;
+    width: 100%;
+    padding: 0 20px 20px 20px;
+    overflow: auto;
+    .ll-pp-title {
+        height: 18px;
+        line-height: 18px;
+        margin: 14px 0;
+        font-size: 16px;
+        font-weight: 600;
+        div {
+            height: 18px;
+            width: 4px;
+            background: #1f2128;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 10px;
+        }
+    }
+}
+
+.ll-toTop {
+    position: fixed;
+    bottom: 42px;
+    right: 30px;
+    width: 64px;
+    height: 72px;
+    background: #59a6ee;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1000;
+    .icon {
+        font-size: 26px;
+        margin: 10px 0 8px 0;
+    }
+    div {
+        font-size: 12px;
+    }
+}
+
+.lxx-show-btn {
+    margin-top: 12px;
+    background-color: #59A6EE;
+    float: right;
+}

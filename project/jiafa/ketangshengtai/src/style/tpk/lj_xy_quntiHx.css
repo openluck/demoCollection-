@@ -1,0 +1,57 @@
+.lj_base_div{
+    padding: 20px;
+    background: #ffffff;
+    overflow:hidden;
+}
+.lj_base_info{
+    height: 70px;
+    width: 100%;
+}
+.lj_date_tab{
+    height: 65px;
+    float: right;
+    padding: 20px 0;
+}
+.lj_table{
+    margin-top: 65px;
+}
+.lj_table>div{
+    height: 363px;
+    float: left;
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+    border: 1px solid #f5f6f7;
+    border-radius: 10px;
+}
+.lj_table>div:nth-of-type(odd){
+    margin-right: 20px;
+}
+ /* .lj_scroll_tabel::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+    background-color: #0099ff;
+}
+.lj_scroll_tabel::-webkit-scrollbar-track{
+    background-color: #0099ff;
+}
+.lj_scroll_tabel::-webkit-scrollbar-thumb{
+    border-radius: 0;
+    background-color: #f00;
+    box-shadow: inset 0 0 5px #f00;
+}
+.lj_scroll_tabel::-webkit-scrollbar-button{
+    height: 0;
+    background-color: #0099ff;
+}  */
+.lj_qt_select{
+    margin-top: 10px;
+}
+.lj_qt_select .ant-select{
+    width: 180px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.lj_qt_select .ant-select-selection--single,.lj_qt_select .ant-select-selection__rendered{
+    height: 40px;
+    line-height: 40px;
+}

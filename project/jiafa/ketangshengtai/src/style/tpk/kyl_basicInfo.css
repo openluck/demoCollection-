@@ -1,0 +1,109 @@
+.kyl-xdj-container {
+    background: #fff;
+    padding: 20px 110px 24px 20px;
+    margin-bottom: 20px
+}
+
+.lxx-g-noCho {
+    padding-top: 15%;
+    height: 88%;
+    width: 100%;
+    background: #fff;
+    text-align: center;
+}
+
+.lxx-g-noCho p {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.lxx-dt-g-sel {
+    padding: 50px 110px 0 20px;
+    background: #fff;
+}
+
+.lxx-dt-g-sel .ant-select-selection--single {
+    height: 40px
+}
+
+.lxx-dt-g-sel .ant-select-selection__rendered {
+    line-height: 40px;
+}
+
+
+/* .kyl-xdj-container .ant-select{
+  margin-bottom: 20px;
+} */
+
+
+/* .kyl-xdj-container .ant-select-selection--single {
+    height: 40px;
+}
+
+.kyl-xdj-container .ant-select-selection__rendered {
+    line-height: 40px;
+} */
+
+.kyl-xdj-jcInfo {
+    background: #eff3f5;
+    height: 82px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.kyl-xdj-jcInfo>div {
+    margin: 20px 0px;
+    line-height: 2;
+    text-align: center;
+    min-width: 55px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.kyl-xdj-kcjd .ant-progress-line {
+    width: 54%;
+}
+
+.kyl-xdj-kcjd1 .ant-progress-bg {
+    border-top-left-radius: 12px !important;
+    border-bottom-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+}
+
+.kyl-xdj-kcjd2 .ant-progress-bg {
+    border-top-left-radius: 12px !important;
+    border-bottom-left-radius: 12px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.kyl-xdj-kcjd .ant-progress-inner {
+    background: #dce5ea;
+}
+
+.kyl-xdj-kcjd .ant-progress-bg {
+    background: linear-gradient(to right, #7aa2fe 0%, #78a0ff 100%) !important;
+}
+
+.kyl-infoT {
+    font-size: 16px;
+    color: #45494d
+}
+
+.kyl-infoC {
+    /* display: inline-block; */
+    font-size: 20px;
+    font-weight: 900;
+    /* width:50px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap; */
+}
+
+.kyl-infoC1 {
+    font-size: 19px;
+}

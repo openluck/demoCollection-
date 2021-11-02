@@ -1,0 +1,38 @@
+.kyl-tp-progress{
+  .ant-progress-text{
+    top:89%;
+  }
+  .ant-progress-circle{
+    top:89%;
+  }
+}
+
+.kyl-tabBtn{
+  position: absolute;
+  right: 20px;
+  top: 0;
+  >div{
+    display: inline-block;
+    line-height: 1.5;
+    padding: 2px 8px;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+  .kyl-tabSel{
+    color:#1890ff;
+    border-bottom: 2px solid #1890ff;
+  }
+}
+.kyl-jxfx-cont{
+  height: 280px;
+  display: flex;
+  >div{
+    height: 100%;
+  }
+  >div:first-child{
+    width: 33%;
+  }
+  >div:last-child{
+    width: 67%;
+  }
+}

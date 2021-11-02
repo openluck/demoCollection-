@@ -1,0 +1,219 @@
+/*
+ * @Author: xiangting 
+ * @Date: 2019-07-24 10:52:17 
+ * @Last Modified by: xiangting
+ * @Last Modified time: 2019-09-16 17:27:28
+ * AI学生考勤报表
+ */
+
+.xt-aixskq {
+    background: #fff;
+    height: 100%
+}
+
+//搜索栏样式
+.xt-aixskq-search {
+    padding: 20px;
+    border-bottom: 1px solid #d9e5ea;
+}
+
+.xt-selectName {
+    display: inline-block;
+    text-align: right;
+    width: 80px;
+}
+
+.xt-aixskq-search>div {
+    margin-right: 20px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.xt-aixskq-search>div.xt-aixskq-chooseTime {
+    margin-bottom: 0
+}
+
+.xt-aixskq-chooseTime .ant-calendar-picker {
+    width: 140px;
+    margin: 0 5px
+}
+
+.xt-aixskq-search .xt-aixskq-chooseTime .xt-aixskq-startTime {
+    margin-left: 0
+}
+
+.xt-aixskq-search .xt-aixskq-chooseTime .ant-calendar-picker:first-child {
+    margin-left: 0
+}
+
+.xt-aixskq-search .xt-aixskq-buttom {
+    border: 1px solid #999999;
+    // padding:5px 0;
+    height: 32px;
+    line-height: 32px;
+    width: 68px;
+    float: right;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.xt-aixskq-search .xt-aixskq-buttom.ant-btn:focus,
+.xt-aixskq-search .xt-aixskq-buttom.ant-btn:hover {
+    border-color: #40a9ff
+}
+
+.xt-aixskq-search .ant-select {
+    width: 170px;
+}
+
+.xt-aixskq-teacher .ant-input-affix-wrapper {
+    width: 120px;
+}
+
+.xt-aixskq-teacher .ant-input-affix-wrapper .ant-input-prefix,
+.xt-aixskq-teacher .ant-input-affix-wrapper .ant-input-suffix {
+    color: rgba(0, 0, 0, 0.25)
+}
+
+.xt-aixskq-teacher .ant-input-affix-wrapper .ant-input-prefix:hover,
+.xt-aixskq-teacher .ant-input-affix-wrapper .ant-input-suffix:hover {
+    color: rgba(0, 0, 0, 0.45)
+}
+
+.xt-aixskq-rate .ant-input-number {
+    width: 80px;
+    margin: 0 5px;
+}
+
+.xt-aixskq-rate .ant-input-number:last-child {
+    margin-right: 0
+}
+
+.xt-aixskq-rate .ant-input-number:first-child {
+    margin-left: 0
+}
+
+.xt-aixskq-search .xt-aixskq-rate {
+    margin-right: 10px
+}
+
+.xt-aixskq-content {
+    height: calc(100% - 140px);
+}
+
+.xt-aixskq-content .scrollbar-container {
+    padding: 20px;
+}
+
+.xt-aixskq-exportReport {
+    float: right;
+    color: #3498db;
+    font-size: 16px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+}
+
+//学生考勤表格样式
+.xt-aixskq-table .ant-table table {
+    table-layout: fixed;
+}
+
+.xt-aixskq-table .ant-table-thead>tr>th,
+.xt-aixskq-table .ant-table-tbody>tr>td>div,
+.xt-aixskq-table .ant-table-tbody>tr>td,
+.xt-aixskq-modal .xt-aixskq-noAttStu {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 5px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center
+}
+
+.xt-aixskq-table .ant-table-tbody>tr:nth-child(2n) {
+    background: #f5f8fa
+}
+
+.xt-aixskq-table .ant-table-tbody>tr {
+    cursor: pointer;
+}
+
+.xt-aixskq-table .ant-table-thead>tr>th {
+    background: #e9edf2;
+    font-weight: 900
+}
+
+//查看未出勤人员名单模态框样式
+.xt-aixskq-modal .ant-modal-content,
+.xt-aixskq-modal .ant-modal-header {
+    background: #eff3f5
+}
+
+.xt-aixskq-modal .xt-aixskq-noAttStu {
+    float: left;
+    margin: 5px;
+    padding: 5px 10px;
+    background: #fff;
+    border-radius: 15px;
+    width: 80px;
+    text-align: center;
+}
+
+.xt-aixskq-modal .ant-modal-body {
+    height: 300px;
+    overflow: hidden;
+}
+
+.xt-aixskq-modal-content {
+    height: 100%;
+    overflow: auto;
+    width: 100%;
+}
+
+.xt-aixskq-nodata {
+    position: relative;
+    top: calc(50% - 89px);
+    left: calc(50% - 75px);
+    text-align: center;
+    width: 150px;
+}
+
+.xt-aixskq-nodata div {
+    margin-top: 10px
+}
+
+.xt-aixskq-nodata img {
+    width: 150px;
+}
+
+// 表格页数信息样式
+.xt-pagination .ant-pagination-item,
+.xt-pagination .ant-pagination-item-link {
+    background: #e7ebee;
+    border: none;
+}
+
+.xt-pagination .ant-pagination-item-link,
+.xt-pagination .ant-pagination-item a {
+    color: #b0b6bc
+}
+
+.xt-pagination .ant-pagination-item-active:focus,
+.xt-pagination .ant-pagination-item-active:hover,
+.xt-pagination .ant-pagination-item-active {
+    background: #3498db;
+}
+
+.xt-pagination .ant-pagination-item-active a {
+    color: #fff
+}
+
+.xt-pagination .ant-pagination-total-text {
+    position: absolute;
+    left: 0;
+}

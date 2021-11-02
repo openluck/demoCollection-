@@ -1,0 +1,60 @@
+/*
+ * @Author: lxx 
+ * @Date: 2019-08-07 15:03:29 
+ * @Last Modified by: lxx
+ * @Last Modified time: 2019-08-09 18:08:29
+ */
+
+@function grid-width($baseSize, $scale) {
+    @return $baseSize * $scale;
+}
+
+// 纯px变更
+@mixin sizeChange($name, $baseSize) {
+    @media screen and (max-width: 2047px) {
+        #{$name}: grid-width($baseSize, 1);
+    }
+    @media screen and (min-width: 2048px) and (max-width: 2399px) {
+        #{$name}: grid-width($baseSize, 1.2);
+    }
+    @media screen and (min-width: 2400px) and (max-width: 2899px) {
+        #{$name}: grid-width($baseSize, 1.4);
+    }
+    @media screen and (min-width: 2900px) and (max-width: 3099px) {
+        #{$name}: grid-width($baseSize, 1.5);
+    }
+    @media screen and (min-width: 3100px) and (max-width: 3799px) {
+        #{$name}: grid-width($baseSize, 1.6);
+    }
+    @media screen and (min-width: 3800px) {
+        #{$name}: grid-width($baseSize, 2);
+    }
+}
+
+
+/* calc变更
+ * name 属性名
+ * parSize 常规基础值
+ * baseSize 常规基础值
+ */
+
+@mixin calcChange($name, $parSize, $baseSize) {
+    @media screen and (max-width: 2047px) {
+        #{$name}: calc(#{$parSize} - #{grid-width($baseSize, 1)});
+    }
+    @media screen and (min-width: 2048px) and (max-width: 2399px) {
+        #{$name}: calc(#{$parSize} - #{grid-width($baseSize, 1.2)});
+    }
+    @media screen and (min-width: 2400px) and (max-width: 2899px) {
+        #{$name}: calc(#{$parSize} - #{grid-width($baseSize, 1.4)});
+    }
+    @media screen and (min-width: 2900px) and (max-width: 3099px) {
+        #{$name}: calc(#{$parSize} - #{grid-width($baseSize, 1.5)});
+    }
+    @media screen and (min-width: 3100px) and (max-width: 3799px) {
+        #{$name}: calc(#{$parSize} - #{grid-width($baseSize, 1.6)});
+    }
+    @media screen and (min-width: 3800px) {
+        #{$name}: calc(#{$parSize} - #{grid-width($baseSize, 2)});
+    }
+}

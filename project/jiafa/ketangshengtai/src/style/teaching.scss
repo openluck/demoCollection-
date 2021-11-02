@@ -1,0 +1,71 @@
+.teaching{
+  // height: 24px;
+  display: flex;
+  align-items: center;
+  color: #BDBEBF;
+  // background-color: #2a2c33;
+  // flex-wrap: wrap;
+  justify-content: space-between;
+  span{
+    display: block;
+    width: 50%;
+  }
+  .teaching-content{
+    height: 24px;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    .teaching-p{
+      height: 12px;
+      width: 10px;
+      position: relative;
+      p{
+        position: absolute;
+        width: 2px;
+        bottom: 0;
+        height: 12px;
+        background-color: #BDBEBF;
+        margin-bottom: 0;
+      }
+      p:nth-of-type(1){
+        left: 0;
+        animation: p1 .6s linear infinite;
+      }
+      p:nth-of-type(2){
+        left: 4px;
+        animation: p2 1s linear infinite;
+      }
+      p:nth-of-type(3){
+        left: 8px;
+        animation: p3 .8s linear infinite;
+      }
+      @keyframes p1 {
+        0% { height: 0px;}
+       10% { height: 6px;}
+       50% { height: 12px;}
+       70% { height: 6px;}
+      100% { height: 0px;}
+      }
+      @keyframes p2 {
+        0% { height: 0px;}
+       10% { height: 6px;}
+       50% { height: 12px;}
+       70% { height: 6px;}
+      100% { height: 0px;}
+      }
+      @keyframes p3 {
+        0% { height: 0px;}
+       10% { height: 6px;}
+       50% { height: 12px;}
+       70% { height: 6px;}
+      100% { height: 0px;}
+      }
+    }
+    .teaching-word{
+      width: 42px;
+      margin-left: 8px;
+    }
+  }
+  
+}

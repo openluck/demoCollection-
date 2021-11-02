@@ -1,0 +1,11 @@
+.kyl-ssb-box{
+  border: 20px 0;
+  padding: 32px 112px 30px 11px;
+  background: #fff;
+  border-bottom: 20px solid #eff3f5;
+}
+.kyl-ssb-title{
+  font-size: 17px;
+  font-weight: 900;
+  color: #373652;
+}

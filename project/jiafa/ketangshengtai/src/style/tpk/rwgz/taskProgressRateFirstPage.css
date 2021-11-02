@@ -1,0 +1,103 @@
+.taskPR-firstFloor {
+  position: absolute;
+  width: 97.5%;
+  top: 20px;
+}
+
+.taskPR-firstFloor {
+  line-height: -1px;
+  overflow: hidden;
+}
+
+.taskPR-firstFloor-BTN {
+  float: right;
+  margin-left: 10px;
+}
+
+.one-right {
+  width: 45%;
+  /* background-color: blueviolet; */
+  height: 200px;
+  float: right;
+  position: relative;
+}
+
+.one-middle {
+  width: 20%;
+  /* background-color: blueviolet; */
+  height: 200px;
+  float: right;
+  position: relative;
+}
+
+.one-left {
+  /* background-color: aqua; */
+}
+
+.smallItem {
+  position: absolute;
+  top: 100px;
+  right: 300px;
+  /* background-color: #fff; */
+}
+.smallItem .icon,
+.smallItem2 .icon {
+  cursor: default !important;
+}
+
+.smallItem2 {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  /* background-color:#f40; */
+}
+
+.right-picture {
+  position: absolute;
+  top: 40px;
+}
+.right-picture canvas:hover {
+  cursor: default;
+}
+
+.middleText {
+  margin: 20px;
+}
+
+.re-title {
+  width: 4px;
+  height: 18px;
+  background-color: #595959;
+  margin-right: 12px;
+  display: inline-block;
+}
+
+.re-name {
+  display: inline-block;
+}
+/* .sec-countainer {
+    border-bottom: 1px solid #cccccc;
+} */
+
+.p-text {
+  padding-top: 15px;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.tableContainer .dark-row {
+  /* background-color: rgb(245, 248, 250); */
+}
+
+.tableContainer .ant-table-thead tr {
+  background-color: #f7f9fa;
+}
+.tableContainer .mj-overViewDetail .mj-oo-icon {
+  cursor: pointer;
+}
+.tableContainer .mj-overViewDetail .mj-oo-icon svg {
+  fill: #a6a6a6;
+}
+.tableContainer .mj-overViewDetail .mj-oo-icon svg:hover {
+  fill: #47c6a4;
+}

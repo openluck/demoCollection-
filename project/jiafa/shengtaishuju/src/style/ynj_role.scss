@@ -1,0 +1,46 @@
+/*
+ * @Author: ynj 
+ * @Date: 2021-01-14 15:34:55 
+ * @Last Modified by: lxx
+ * @Last Modified time: 2021-01-27 15:24:36
+ * 角色权限 
+ */
+
+.head {
+    padding: 20px;
+    margin: 1.5em;
+    background-color: #fff;
+}
+
+.ynj_menu {
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.ynj_subMenu {
+    margin-left: 2.5em;
+    padding-top: 20px;
+    .ant-checkbox+span {
+        font-weight: bold;
+    }
+}
+
+.ynj_button {
+    margin: 1.5em;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px
+}
+
+.lxx-s-g-child {
+    padding-top: 20px;
+    padding-left: 30px;
+    .ant-checkbox-group-item {
+        margin-right: 20px;
+    }
+    .ant-checkbox+span {
+        color: #595959;
+        font-weight: normal;
+    }
+}

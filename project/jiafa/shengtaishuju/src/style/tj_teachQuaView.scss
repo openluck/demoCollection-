@@ -1,0 +1,858 @@
+@import "./sizeChange.scss";
+.tj-view-wrap {
+    width: 100%;
+    height: 100%;
+    @include sizeChange("padding-left", 30px);
+    @include sizeChange("padding-right", 20px);
+    // padding: 0 20px 0 30px;
+    .qua-left {
+        width: 70.5%;
+        height: 100%;
+        z-index: 999;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        .sign {
+            width: 40%;
+            height: 53%;
+            min-height: 380px;
+            min-width: 380px;
+            left: -4.6%;
+            // @include sizeChange("width", 386px);
+            // @include sizeChange("height", 386px);
+            // @include sizeChange("left", -50px);
+            @include sizeChange("top", -48px);
+            // left: -16px;
+            position: relative;
+            background: url('./../media/picture/cls_bg3.png') 100% 100% no-repeat;
+            background-size: 100% 100%;
+            // top: -23px;
+        }
+        .sign-bg {
+            background: url('./../media/picture/cls_bg.png') 100% 100% no-repeat;
+            background-size: 100% 100%;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .sign-light {
+            background: url('./../media/picture/lignt.png') 100% 100% no-repeat;
+            background-size: 100% 100%;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: rotate1 linear 3s;
+        }
+        @keyframes rotate1 {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes rotate2 {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+        .sign-point {
+            background: url('./../media/picture/cls_bg1.png') 100% 100% no-repeat;
+            background-size: 100% 100%;
+            width: 100%;
+            height: 100%;
+            animation: rotate2 linear infinite 3s;
+        }
+        .sign-room {
+            background: url('./../media/picture/classroom.png') 100% 100% no-repeat;
+            background-size: 100% 100%;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .total-wrap {
+            background: url('./../media/picture/top_all.png') 100% 100% no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            height: 16%;
+            left: 84.5%;
+            top: 21%;
+            width: 51%;
+            min-width: 203px;
+            .data {
+                display: inline-block;
+                color: #fff;
+                vertical-align: middle;
+                margin-left: 20%;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                @include sizeChange("font-size",
+                14px);
+                width: 17%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                span:first-child {
+                    @include sizeChange("font-size",
+                    20px);
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                span {
+                    display: block;
+                }
+            }
+            .select {
+                display: inline-block;
+                vertical-align: middle;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 34%;
+                @include sizeChange("font-size",
+                14px);
+                .ant-select-selection {
+                    background: transparent;
+                    border: none;
+                    color: #d5f0ff;
+                    outline: none;
+                    @include sizeChange("font-size",
+                    14px);
+                }
+                .ant-select {
+                    outline: none;
+                    @include sizeChange("width",
+                    120px);
+                    @include sizeChange("font-size",
+                    14px);
+                }
+                .ant-select-selection__rendered {
+                    @include sizeChange("margin-left",
+                    11px);
+                }
+                .ant-select-focused .ant-select-selection,
+                .ant-select-selection:focus,
+                .ant-select-selection:active {
+                    box-shadow: none;
+                }
+                .anticon.anticon-down {
+                    svg {
+                        display: none;
+                    }
+                    background: url('./../media/picture/ai_sel.png')100% 100% no-repeat;
+                    background-size: 100% 100%;
+                    // height: 5px;
+                    // width: 8px;
+                    // margin-top: 5px;
+                    @include sizeChange("height",
+                    5px);
+                    @include sizeChange("width",
+                    8px);
+                    @include sizeChange("margin-top",
+                    5px);
+                }
+                // @include sizeChange("margin-top", 10px);
+                // @include sizeChange(" margin-left", 10px);
+            }
+        }
+        .data-wrap {
+            position: absolute;
+            left: 96%;
+            top: 48%;
+            height: 12.2%;
+            @include sizeChange("width",
+            350px);
+            // @include sizeChange("left", 365px);
+            white-space: nowrap;
+            .block-bg.active {
+                background: url('./../media/picture/total_selectd.png') 100% 100% no-repeat;
+                background-size: 100% 100%;
+            }
+            .block-bg {
+                cursor: pointer;
+                width: 44%;
+                height: 100%;
+                color: #fff;
+                background: url('./../media/picture/total_normal.png') 100% 100% no-repeat;
+                background-size: 100% 100%;
+                // width: 128px;
+                // height: 52px;
+                display: inline-block;
+                white-space: nowrap;
+                position: relative;
+                // @include sizeChange("width", 117px);
+                // @include sizeChange("height", 52px);
+                @include sizeChange("margin-left",
+                20px);
+            }
+            .block-inner {
+                position: absolute;
+                left: 15%;
+                top: 50%;
+                @include sizeChange("font-size",
+                12px);
+                transform: translate(0%, -50%);
+                white-space: nowrap;
+                span {
+                    color: #9fd2e3;
+                }
+                .data {
+                    @include sizeChange("font-size",
+                    18px);
+                    color: #fff;
+                }
+                div {
+                    @include sizeChange("font-size",
+                    12px);
+                }
+            }
+        }
+        .data-select {
+            position: absolute;
+            left: 37%;
+            @include sizeChange("bottom",
+            6.5%);
+            @include sizeChange("font-size",
+            14px);
+        }
+        .stuClass-wrap {
+            position: relative;
+            color: #fff;
+            height: 54%;
+            width: 74%;
+            // top: -81px;
+            left: 1%;
+            @include sizeChange("top",
+            -90px);
+            background: url('./../media/picture/qua_stuBg.png')100% 100% no-repeat;
+            background-size: 100% 100%;
+            .stuClass-cnt {
+                width: 100%;
+                height: 57%;
+                top: 43%;
+                position: absolute;
+                cursor: pointer;
+            }
+            .tea-block {
+                position: relative;
+                display: inline-block;
+                padding: 4% 0 1% 4%;
+                padding-left: 7%;
+                width: 33%;
+                vertical-align: top;
+                height: 100%;
+                color: #89b6c6;
+            }
+            .tea-block:nth-child(3) {
+                padding-left: 4%;
+            }
+            .tea-block:nth-child(3) .tea-cnt {
+                padding: 10% 0;
+            }
+            .tea-title {
+                display: inline-block;
+                height: 15%;
+                @include sizeChange("font-size",
+                14px);
+                color: #89b6c6;
+            }
+            .tea-cnt {
+                height: 85%;
+                width: 100%;
+                position: relative;
+                @include sizeChange("font-size",
+                14px);
+            }
+            .cnt-item:nth-child(even) {
+                margin-right: 3%;
+            }
+            .cnt-item {
+                background: url('./../media/picture/qua_totalBg1.png') 100% 100% no-repeat;
+                width: 43%;
+                height: 38%;
+                min-height: 41px;
+                display: inline-block;
+                position: relative;
+                background-size: 100% 100%;
+                padding-left: 7%;
+                margin-right: 3%;
+                margin-bottom: 2%;
+            }
+            .center {
+                line-height: 1.2;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .echarts-for-react {
+                height: 100% !important;
+            }
+            .data {
+                @include sizeChange("font-size",
+                18px);
+            }
+            .data.max {
+                color: #00fefb;
+            }
+        }
+        .teaAnalysis-wrap {
+            position: absolute;
+            width: 162.5%;
+            height: 60%;
+            left: 85%;
+            top: 63%;
+            z-index: 50;
+            cursor: pointer;
+            // @include sizeChange("top", 248px);
+            // @include sizeChange("left", 325px);
+            background: url('./../media/picture/qua_teaBg.png')100% 100% no-repeat;
+            background-size: 100% 100%;
+            .tea-block {
+                position: relative;
+                display: inline-block;
+                margin-left: 10%;
+                padding: 4% 0 2% 4%;
+                padding-left: 7%;
+                width: 40%;
+                vertical-align: top;
+                height: 100%;
+                color: #89b6c6;
+            }
+            .tea-block:nth-child(3) {
+                padding-left: 4%;
+            }
+            .tea-block:nth-child(3) .tea-cnt {
+                padding: 10% 0;
+            }
+            .tea-title {
+                display: inline-block;
+                height: 15%;
+                @include sizeChange("font-size",
+                14px);
+                color: #89b6c6;
+            }
+            .tea-cnt {
+                height: 85%;
+                width: 100%;
+                position: relative;
+                @include sizeChange("font-size",
+                12px);
+            }
+            .cnt-item:nth-child(even) {
+                margin-right: 3%;
+            }
+            .cnt-item {
+                background: url('./../media/picture/qua_totalBg1.png') 100% 100% no-repeat;
+                width: 43%;
+                height: 30%;
+                display: inline-block;
+                position: relative;
+                background-size: 100% 100%;
+                padding-left: 7%;
+                margin-right: 8%;
+                margin-bottom: 6%;
+                @include sizeChange("font-size",
+                14px);
+            }
+            .center {
+                line-height: 1.2;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .echarts-for-react {
+                height: 100% !important;
+            }
+            .data {
+                @include sizeChange("font-size",
+                18px);
+            }
+            .data.max {
+                color: #00fefb;
+            }
+        }
+        .title1,
+        .title2,
+        .title3 {
+            color: #fff;
+        }
+        .title1 {
+            right: 9.5%;
+            position: absolute;
+            top: 47%;
+            width: 1%;
+            line-height: 1.1;
+            @include sizeChange("font-size",
+            13px);
+        }
+        .title2 {
+            right: 7%;
+            position: absolute;
+            top: 63%;
+            width: 6%;
+            line-height: 1.1;
+            height: 15%;
+            @include sizeChange("font-size",
+            16px);
+            span:nth-child(2) {
+                position: absolute;
+                right: 95%;
+                top: 35%;
+            }
+            span:nth-child(3) {
+                position: absolute;
+                right: 140%;
+                top: 65%;
+            }
+            span:nth-child(4) {
+                position: absolute;
+                right: 200%;
+                top: 95%;
+            }
+        }
+        .title3 {
+            right: 38%;
+            position: absolute;
+            top: 89%;
+            width: 25%;
+            text-align: center;
+            line-height: 1.1;
+            @include sizeChange("font-size",
+            16px);
+        }
+    }
+    .qua-right {
+        width: 29.5%;
+        display: inline-block;
+        vertical-align: top;
+        height: 100%;
+        padding-top: 2.2%;
+        .total-data {
+            color: #a9ddee;
+            height: 7.5%;
+            margin-top: 3%;
+            min-height: 56px;
+            .item:nth-child(2) {
+                margin-right: 0;
+                .left {
+                    width: 30%;
+                    left: 1%;
+                }
+            }
+            .item {
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 18%;
+                @include sizeChange("font-size",
+                12px);
+                position: relative;
+                height: 100%;
+                width: 41%;
+                cursor: pointer;
+                background: url('./../media/picture/num_bg.png')100% 100% no-repeat;
+                background-size: 100% 100%;
+            }
+            .left {
+                width: 15%;
+                text-align: center;
+                position: absolute;
+                left: 8%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .right {
+                width: 48%;
+                text-align: center;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                line-height: 1.2;
+                text-align: left;
+                transform: translateY(-50%);
+            }
+            .data {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                width: 90%;
+                display: inline-block;
+                color: #17fdfa;
+                @include sizeChange("font-size",
+                24px);
+            }
+        }
+        .right-title {
+            width: 100%;
+            color: #d5f0ff;
+            @include sizeChange("height",
+            39px);
+            position: relative;
+            @include sizeChange("padding-left",
+            3%);
+            // @include sizeChange("height", 4%);
+            @include sizeChange("font-size",
+            21px);
+            background: url('./../media/picture/day_bg.png') 100% 100% no-repeat;
+            background-size: 100% 100%;
+            span {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        .block-wrap {
+            width: 100%;
+            height: 38%;
+            margin-top: 4.6%;
+            background: url('./../media/picture/res_roomBg.png') 100% 100% no-repeat;
+            background-size: 100% 100%;
+        }
+        .block-tit {
+            display: inline-block;
+            width: 7.5%;
+            color: #d5f0ff;
+            position: relative;
+            height: 100%;
+            span.tit {
+                @include sizeChange("font-size",
+                14px);
+                border-top: 5px solid #00ecef;
+                width: 46%;
+                display: inline-block;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                line-height: 1.2;
+                text-align: center;
+                padding-top: 16%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .block-cnt {
+            padding-left: 2%;
+            display: inline-block;
+            width: 92.5%;
+            height: 100%;
+            color: #89b6c6;
+            cursor: pointer;
+            vertical-align: top;
+            position: relative;
+            @include sizeChange("font-size",
+            12px);
+            .item {
+                height: 65%;
+                width: 45%;
+                display: inline-block;
+                vertical-align: top;
+                padding: 2% 0 0 3%;
+            }
+            .item2 {
+                height: 65%;
+                display: inline-block;
+                vertical-align: top;
+                width: 55%;
+                padding: 2% 0 0 3%;
+            }
+            .item3 {
+                height: 35%;
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+                padding: 2% 0 2% 3%;
+            }
+            .item2 .item-cnt {
+                height: 85%;
+                position: relative;
+            }
+            .item-tit {
+                width: 100%;
+                height: 23%;
+                @include sizeChange("font-size",
+                14px);
+            }
+            .item-cnt {
+                height: 75%;
+                width: 100%;
+                position: relative;
+                .echarts-for-react {
+                    height: 100% !important;
+                }
+            }
+            .cnt-item:nth-child(even) {
+                margin-right: 3%;
+            }
+            .cnt-item {
+                background: url('./../media/picture/qua_totalBg1.png') 100% 100% no-repeat;
+                width: 22%;
+                height: 65%;
+                min-height: 43px;
+                display: inline-block;
+                position: relative;
+                background-size: 100% 100%;
+                padding-left: 5%;
+                margin-right: 3%;
+                margin-top: 3%;
+            }
+            .center {
+                line-height: 1.2;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .echarts-for-react {
+                height: 100% !important;
+            }
+            .data {
+                @include sizeChange("font-size",
+                18px);
+            }
+            .data.max {
+                color: #00fefb;
+            }
+            .item-oth {
+                height: 10%;
+                text-align: center;
+            }
+        }
+        .block {
+            color: #d5f0ff;
+            width: 33%;
+            display: inline-block;
+            vertical-align: top;
+            height: 100%;
+            padding: 2% 0 3% 5%;
+            .block-tit {
+                height: 10%;
+                width: 100%;
+                padding-left: 5%;
+                border-left: 5px solid #00ecef;
+                @include sizeChange("font-size",
+                14px);
+            }
+            .block-cnt {
+                height: 52%;
+                width: 100%;
+                margin: 2% 0;
+            }
+            .block-other {
+                height: 10%;
+                text-align: center;
+                @include sizeChange("font-size",
+                12px);
+            }
+            .block-data {
+                height: 20%;
+                padding-left: 25%;
+                white-space: nowrap;
+                @include sizeChange("font-size",
+                12px);
+            }
+            .block-data .data {
+                color: #00ecef;
+                @include sizeChange("font-size",
+                20px);
+            }
+        }
+    }
+}
+
+@media (max-width: 3840px) {
+    .tj-view {
+        .ant-select-dropdown-menu-item {
+            line-height: 44px;
+        }
+        .ant-select-dropdown-menu {
+            max-height: 300px;
+        }
+    }
+}
+
+@media (max-width: 2048px) {
+    .tj-view-wrap .qua-left .stuClass-wrap .tea-block:nth-child(3) .tea-cnt {
+        padding: 6% 0;
+    }
+    .tj-view {
+        .ant-select-dropdown-menu-item {
+            line-height: 28px;
+        }
+        .ant-select-dropdown-menu {
+            max-height: 300px;
+        }
+    }
+    .tj-view-wrap .order-left .sign {
+        width: 560px;
+        height: 560px;
+    }
+}
+
+@media (max-width: 1920px) {
+    .tj-view-wrap .qua-left .sign {
+        // width: 527px;
+        height: 525px;
+    }
+    .tj-view-wrap .qua-left .stuClass-wrap {
+        height: 50%;
+    }
+}
+
+@media (max-width: 1919px) {
+    .tj-view-wrap .qua-left .sign {
+        width: 450px;
+        height: 450px;
+    }
+    .tj-view-wrap .qua-left .stuClass-wrap {
+        width: 74%;
+    }
+}
+
+@media (max-width: 1660px) {
+    .tj-view-wrap .qua-left .total-wrap {
+        width: 52%;
+        height: 16%;
+        left: 83%;
+        top: 21%;
+    }
+    .tj-view-wrap .qua-left .sign {
+        width: 419px;
+        height: 419px;
+    }
+    .tj-view-wrap .qua-left .data-wrap {
+        width: 330px;
+        height: 60px;
+    }
+    .tj-view-wrap .qua-right .total-data .item {
+        width: 40%;
+    }
+    .tj-view-wrap .qua-right .block-cnt .item-tit {
+        font-size: 12px;
+    }
+    .tj-view-wrap .qua-left .teaAnalysis-wrap .tea-title {
+        font-size: 12px;
+    }
+    .tj-view-wrap .qua-left .stuClass-wrap .tea-title {
+        font-size: 12px;
+    }
+    .tj-view-wrap .qua-left .stuClass-wrap .tea-block {
+        padding: 2% 0 1% 4%;
+    }
+}
+
+@media (max-width: 1555px) {
+    .tj-view-wrap .qua-left .total-wrap {
+        width: 52%;
+        height: 16%;
+        left: 83%;
+        top: 21%;
+    }
+    .tj-view-wrap .qua-left .sign {
+        width: 396px;
+        height: 396px;
+    }
+    .tj-view-wrap .qua-left .data-wrap {
+        width: 330px;
+        height: 60px;
+    }
+    .tj-view-wrap .qua-right .total-data .item {
+        width: 40%;
+    }
+    .tj-view-wrap .qua-right .block-cnt .item-tit {
+        font-size: 12px;
+    }
+    .tj-view-wrap .qua-left .teaAnalysis-wrap .tea-title {
+        font-size: 12px;
+    }
+    .tj-view-wrap .qua-left .stuClass-wrap .tea-title {
+        font-size: 12px;
+    }
+    .tj-view-wrap .qua-left .stuClass-wrap .tea-block {
+        padding: 2% 0 1% 4%;
+    }
+}
+
+@media (max-width: 1475px) {
+    .tj-view-wrap .qua-left .sign {
+        width: 389px;
+        height: 389px;
+    }
+}
+
+@media (max-width: 1450px) {
+    .tj-view-wrap .qua-left .sign {
+        width: 375px;
+        height: 375px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .tj-view-wrap .qua-left .sign {
+        width: 380px;
+        height: 380px !important;
+    }
+}
+
+@media (max-width: 1366px) {
+    .tj-view-wrap .qua-left .title2 {
+        font-size: 14px;
+    }
+    .tj-view-wrap .qua-left .title3 {
+        font-size: 14px;
+    }
+    .tj-view-wrap .qua-left .teaAnalysis-wrap {
+        width: 141.5%;
+    }
+    .tj-view-wrap .qua-left .stuClass-wrap {
+        width: 72%;
+        left: 2%;
+    }
+    .tj-view-wrap .qua-right .total-data .item {
+        width: 48%;
+        margin-right: 4%;
+    }
+    .tj-view-wrap .qua-right .block-wrap {
+        height: 37%;
+        top: -74px;
+    }
+    .tj-view-wrap .qua-left .data-wrap {
+        height: 14.2%;
+    }
+    .tj-view-wrap .qua-left .total-wrap {
+        left: 83%;
+    }
+    .tj-view-wrap .qua-right .total-data .left {
+        width: 16%;
+    }
+    .tj-view-wrap .qua-left .stuClass-wrap .tea-block {
+        padding: 2% 0 2% 4%;
+    }
+    .tj-view-wrap .qua-right .right-title {
+        font-size: 16px;
+    }
+    .tj-view-wrap .qua-left .stuClass-wrap .data {
+        font-size: 14px;
+    }
+    .tj-view-wrap .qua-left .teaAnalysis-wrap .data {
+        font-size: 14px;
+    }
+    .tj-view-wrap .qua-left .data-wrap .block-inner .data {
+        font-size: 14px;
+    }
+    .tj-view-wrap .qua-right .block-cnt .data {
+        font-size: 14px;
+    }
+    .tj-view-wrap .qua-right .total-data .data {
+        font-size: 20px;
+    }
+    .tj-view-wrap .qua-left .sign {
+        width: 380px;
+        height: 380px !important;
+    }
+}

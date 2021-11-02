@@ -1,0 +1,312 @@
+.zxq-dataContent{
+    margin: 0px 20px;
+    background: #fff;
+    min-height: calc(100% - 20px);
+    position: relative;
+}
+.zxq-dataContent::-webkit-scrollbar {
+    display: none;
+}
+
+.zxq-pagelocation{
+    height: 65px;
+    color: rgb(173, 175, 176);
+    background: #EBF1F5;
+    padding: 20px 0px 0px 0px;
+} 
+.zxq-pagelocation span:nth-child(3){
+    color: #333333;
+    cursor: pointer;
+}
+.zxq-maincotent{
+    position: relative;
+    z-index: 99;
+    // margin:0px 20px 20px 20px;
+    margin-bottom: 20px;
+    background: #ffffff;
+    height: calc(100% - 45px);
+    // min-height: 100%;
+    // overflow-y: auto !important;
+  
+}
+.zxq-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+    // display: inline-block;
+    // width: 200px;
+    .zxq-schBuild{
+        width: 200px;
+      
+        // .ant-select-selection__placeholder{
+        //     display: inline-block !important;
+        // }
+    }
+}
+.zxq-header{
+    width: 100%;
+    height: 75px;
+    background: #fbfcfd;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.zxq-curTime{
+    float: right;
+    margin: 18px 0px 20px 0px;
+    padding-right: 16px;
+    position: relative;
+
+   
+}
+ .zxq-data{
+    border: #d8d8d8 1px solid;
+    border-radius: 3px;
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+    height: 34px;
+   
+}
+ .zxq-data .zxq-time{
+    width: 72px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center; 
+    display: inline-block;
+    border-right: 1px solid #d8d8d8;
+   
+}
+.zxq-data .zxq-time:last-child{
+    border-right: none;
+}
+.zxq-curTime  .zxq-antdate{
+    position: absolute;
+    top: 50px;
+    right: 16px;
+    z-index: 9999;
+}
+.zxq-data-select {
+    // float: right;
+    position: absolute;
+    right:200px;
+    .in{
+        display: inline-block;
+    }
+}
+
+/* .zxq-curTime .zxq-data span:nth-child(1){
+    background:#3498db;
+    color: #fff;
+} */
+// .zxq-data span:first-child{
+//     background:#3498db;
+//     color: #fff; 
+//  }  
+.zxq-curTime .zxq-data .zxq-selTime{
+    background:#3498db;
+    color: #fff ;
+
+}
+.zxq-curTime .zxq-data span{
+    border-right: #d8d8d8 1px solid;
+    display: inline-block;
+}
+.zxq-curTime .zxq-data span:hover{
+    // background:#3498db;
+    color: #3498db;
+}
+.zxq-curTime .zxq-data .zxq-selTime:hover{
+    color: #fff !important;
+}
+.zxq-curTime .zxq-data span:last-child{
+    border: none;
+}
+.zxq-mainCont{
+    clear: both;
+    border-top: 1px solid #d9e5ea;
+    padding: 18px 0px 20px 22px;
+}
+.zxq-orgName{
+    font-size: 20px;
+    margin-bottom: 22px;
+
+}
+.zxq-info{
+    margin-bottom: 20px;
+}
+.zxq-rectbox{
+    width: 170px;
+    height: 80px;
+    display: inline-block;
+    color: #647281;
+    text-align: center;
+    border: 1px solid #eff2f5;
+    box-shadow: 0 0 10px #f0f3f6;
+    border-radius: 12px;
+    /* font-size: 18px; */
+    margin-right: 10px;
+    
+}
+.zxq-rectsvg{
+    text-align: left;
+}
+.zxq-rectbox div:nth-child(1){
+    padding-top: 13px;
+    line-height: 22px
+}
+.zxq-rectbox .rectbox-number{
+    font-size: 20px;
+    margin-left: 8px;
+}
+.zxq-rectbox .rectbox-svg{
+    text-align: center;
+    margin-left: 2px;
+    display: inline-block;
+    font-size: 24px;
+    // margin-right: 4px;
+    width: 40px;
+}
+.claRoomRate{
+    padding-right: 33px;
+}
+.mulRatio{
+    padding-right: 18px;
+}
+
+.zxq-tabDownload{
+    text-align: right;
+    // flex: 2;
+    margin-right: 18px;
+    color: #3498db;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+.zxq-tabDownload svg{
+    font-size: 20px;
+    margin-right: 5px;
+}
+.zxq-colleSel .lxx-g-si{
+    display: inline-block;
+
+}
+.zxq-tableTips{
+    color: #b7b5bf;
+    margin-top: 16px;
+    padding-bottom: 20px;
+}
+.ws-monthPicker{
+    left: -174.344px !important;
+    top: 46px !important;
+    z-index: 1052;
+}
+.zxq-tableContent{
+  
+    clear:both;
+    .zxq-antTable{
+        margin-bottom: 10px;
+        height: calc(100% - 230px);
+        // cursor: pointer;
+        .ant-table{
+            // color:#3498db;
+        }
+        .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td {
+            color: #111010;
+        }
+
+        .ant-table-thead > tr > th:not(:first-child), .ant-table-tbody > tr > td:not(:first-child)
+        {
+          text-align: center;
+      }
+    }
+}
+// .zxq-tableContent .zxq-antTable
+
+/* 周 */
+.zxq-week{
+    width: 300px;
+    height: 340px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 9999;
+    border-radius: 5px;
+    border: 1px solid  #ededed;
+    background: #fff;
+   
+    
+}
+.zxq-weeknumber::-webkit-scrollbar{
+    display: none;
+}
+.zxq-week-title{
+    border-bottom: 1px solid #ededed;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 18px;
+}
+
+.zxq-weeknumber{
+    width: 100%;
+    /* padding: 40px 35px; */
+    height: calc(100% - 60px);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 13px 0 10px 20px;
+    overflow: auto;
+    .tj-week-disable{
+        border: 1px solid transparent;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.25);
+    background: #ffffff;
+    cursor: not-allowed;
+    }
+    .tj-week-disable:hover{
+        color: rgba(0, 0, 0, 0.25);
+    }
+}
+.zxq-selweeknumber{
+    border: 1px solid #2e98fd;
+    border-radius: 5px;
+    color: #1189fd;
+}
+.zxq-weeknumber span{
+    display: inline-block;
+    width: 63px;
+    height:30px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.zxq-weeknumber span:hover{
+    color: #1189fd;
+}
+
+
+.teachersum{
+    vertical-align: bottom;
+}
+.teachersum  .teacher-number{
+    padding-top: 26px !important;
+}
+//返回
+.backBtn{
+    cursor: pointer;
+    span{
+        font-size: 20px;
+    }
+    svg{
+        font-size: 29px;
+        margin-right: 5px; 
+    }
+    
+}
+.zxq-antTable .kyl-kt-pageInfo{
+    margin-left: 0px !important;
+}

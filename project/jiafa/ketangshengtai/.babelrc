@@ -1,0 +1,79 @@
+/*
+ * @Author: junjie.lean
+ * @Date: 2020-03-18 10:16:06
+ * @Last Modified by: MinJ
+ * @Last Modified time: 2020-07-23 15:02:14
+ */
+
+/*
+ * 仅配合jest的必要设置,本身webpack打包的babel配置使用babel-loader实现.
+ */
+{
+  "presets": [
+    //此配置如果修改，可能需要同步修改happyPack插件的配置,以优化打包构建效率
+    ["@babel/react"],
+    [
+      "@babel/env",
+      {
+        // spec: false, //是否启用更为规范的转换
+        // debug: false,
+        // useBuiltIns: "entry", //入口文件出注入polyfill
+        "useBuiltIns": "usage", //按需加入polyfill
+        "targets": {
+          "chrome": "58",
+          "ie": "11"
+        },
+        "corejs": "3"
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties",
+    ["@babel/plugin-syntax-class-properties", { "loose": true }],
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "libraryDirectory": "es",
+        // style: "css"
+        "style": true
+      },
+      "antd"
+    ],
+    [
+      "import",
+      {
+        "libraryName": "lodash",
+        "libraryDirectory": "",
+        "camel2DashComponentName": false
+      },
+      "lodash"
+    ],
+    [
+      "module-resolver",
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": "3"
+      }
+    ],
+    [
+      "@babel/plugin-transform-modules-commonjs",
+      {
+        "allowTopLevelThis": true
+      }
+    ],
+    
+  ]
+}

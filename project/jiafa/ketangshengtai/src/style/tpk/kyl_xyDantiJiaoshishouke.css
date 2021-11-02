@@ -1,0 +1,36 @@
+.kyl-xdjsk-container{
+  height: 260px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #f5f6f7;
+  border: 1px solid #f5f6f7;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.kyl-xdjsk-left{
+  width: 60%;
+  margin: 20px;
+  border: 1px dashed #e1e1e1;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.kyl-xdjsk-right{
+  width: 37%;
+}
+.kyl-xdjsk-ktlx,.kyl-xdjsk-jxsj{
+  color: #818c90;
+  background-color: #f5f8f9;
+  width: 4%;
+  text-align: center;
+  padding: 65px 0;
+  
+}
+.kyl-xdjsk-ktlx{
+  border-right: 1px dashed #e1e1e1;
+}
+.kyl-xdjsk-jxsj{
+  border-left: 1px dashed #e1e1e1;
+}
+.kyl-xdjsk-pie{
+  width: 48%;
+}

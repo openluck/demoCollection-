@@ -1,0 +1,242 @@
+.gwj-evaTaskDetail {
+  background-color: #fff;
+  height: 96px;
+  // margin-top: 10px;
+  .gwj-evaTaskDetail-title {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 16px;
+    // color: #333333;
+    font-size: 18px;
+    // font-weight: 700;
+    position: relative;
+    .gwj-evaTaskDetail-btn {
+      position: absolute;
+      top: 14px;
+      right: 30px;
+    }
+  }
+  .gwj-evaTaskDetail-content {
+    padding: 16px;
+    ul {
+      display: flex;
+      margin-bottom: 0;
+      list-style: none;
+      li {
+        flex: 1;
+        span {
+          &:nth-child(1) {
+            color: #40b394;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+.gwj-evaTaskDetail-list {
+  height: calc(100% - 112px);
+  background-color: #fff;
+  margin-top: 16px;
+}
+.gwj-evaTaskDetail-title {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 16px;
+  // border-bottom: 1px solid #ededed;
+  position: relative;
+  .gwj-titleName {
+    // height: 18px;
+    // padding-left: 10px;
+    // border-left: 5px solid #595959;
+    // color: #595959;
+    font-size: 18px;
+    // font-weight: 700;
+  }
+  .gwj-evaTaskDetail-btn {
+    position: absolute;
+    top: 4px;
+    right: 20px;
+    background-color: #30bf99;
+    border-color: #30bf99;
+    border-radius: 4px;
+  }
+}
+.gwj-evaTaskDetail-table {
+  height: calc(100% - 40px);
+  padding: 6px 16px 20px;
+
+  .gwj-evaTaskDetail-table-fixedHeight {
+    // height: calc(100% - 100px);
+    height: 100%;
+    .gwj-ul {
+      margin-bottom: 0;
+      height: 40px;
+      line-height: 40px;
+      background-color: #f7f9fa;
+      border: 1px solid #e6ebe9;
+      li {
+        padding: 0px 10px;
+        display: inline-block;
+        vertical-align: top;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        border-left: 1px solid #e6ebe9;
+        &:nth-child(1) {
+          width: 6%;
+          border-left: none;
+        }
+        &:nth-child(2) {
+          width: 12%;
+          position: relative;
+        }
+        &:nth-child(3) {
+          width: 18%;
+        }
+        &:nth-child(4) {
+          width: 18%;
+        }
+        &:nth-child(5) {
+          width: 8%;
+        }
+        &:nth-child(6) {
+          width: 8%;
+        }
+        &:nth-child(7) {
+          width: 10%;
+          text-align: center;
+        }
+        &:nth-child(8) {
+          width: 10%;
+          text-align: center;
+        }
+        &:nth-child(9) {
+          width: 10%;
+          text-align: center;
+        }
+      }
+    }
+    .gwj-ul-c {
+      border-top: none;
+      border-bottom: 1px solid #e1ebef;
+      background-color: #fff;
+      // &:nth-child(even) {
+      //   background-color: #fff;
+      // }
+      // &:nth-child(odd) {
+      //   background-color: #f5f8fa;
+      // }
+      .mj-td-iconCon {
+        color: #595959;
+        cursor: pointer;
+      }
+      .mj-td-iconCon:hover {
+        color: #40b394;
+        svg {
+          fill: #40b394;
+        }
+      }
+      .mj-icon {
+        margin-right: 4px;
+        width: 20px;
+        height: 20px;
+        fill: #a6a6a6;
+        vertical-align: sub;
+      }
+    }
+    .gwj-ul-c:hover {
+      background-color: #e6f7ff;
+    }
+  }
+}
+.gwj-fontColor-green {
+  color: #32c261;
+}
+.gwj-fontColor-red {
+  color: #ff4c4c;
+}
+.gwj-pagination {
+  height: 55px !important;
+  padding: 15px 0 0 0 !important;
+  .ant-pagination {
+    height: 40px;
+    margin-top: 0;
+    text-align: right;
+    li {
+      height: 40px;
+      line-height: 40px;
+      border-radius: 0;
+      border: 0;
+      &:nth-child(1) {
+        float: left;
+      }
+      &:not(.ant-pagination-total-text) {
+        width: 40px;
+        background-color: #e7ebee;
+        a {
+          color: #9fa7ac;
+        }
+      }
+    }
+    .ant-pagination-item-link {
+      border-radius: 0;
+      border: 0;
+    }
+    .ant-pagination-prev .ant-pagination-item-link,
+    .ant-pagination-next .ant-pagination-item-link {
+      background-color: #e7ebee;
+      color: #9fa7ac;
+    }
+    .ant-pagination-item-active.ant-pagination-item {
+      background-color: #59a6ee !important;
+      a {
+        color: #fff !important;
+      }
+    }
+  }
+}
+.gwj-noData {
+  height: 300px;
+  text-align: center;
+  img {
+    width: 150px;
+    height: 150px;
+    margin-top: 65px;
+    margin-bottom: 10px;
+  }
+  p {
+    color: #595959;
+  }
+}
+.gwj-sort {
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 70px;
+  p {
+    width: 25px;
+    margin-bottom: 0;
+    .icon {
+      height: 10px;
+      width: 10px;
+      color: #a3a3a3;
+    }
+    &:nth-child(1) {
+      transform: rotate(-90deg);
+      .icon {
+        margin-left: 5px;
+      }
+    }
+    &:nth-child(2) {
+      transform: rotate(90deg);
+      margin-top: -15px;
+      .icon {
+        margin-right: -15px;
+      }
+    }
+  }
+}
+.gwj-iconColor {
+  color: #59a6ee !important;
+}

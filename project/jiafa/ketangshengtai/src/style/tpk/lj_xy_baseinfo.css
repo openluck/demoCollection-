@@ -1,0 +1,133 @@
+.li_baseinfo_div>div {
+    width: calc(33.3% - 13px);
+    float: left;
+    background: #eff3f5;
+    height: 70px;
+    border-radius: 10px;
+}
+
+.li_baseinfo_div>div:nth-child(1),
+.li_baseinfo_div>div:nth-child(2) {
+    margin-right: 20px;
+}
+
+.li_base_common>div,
+.li_base_subject>div {
+    float: left;
+}
+
+.li_base_common>div:nth-child(1) {
+    width: 35%;
+    text-align: center
+}
+
+.li_base_common_icon {
+    float: left;
+    width: 40%;
+    height: 51px;
+    text-align: right;
+}
+
+.li_base_common_b {
+    float: left;
+    width: 60%;
+}
+
+.li_base_common_b>p:nth-child(1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.li_base_common_b>p:nth-child(2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.li_base_common p,
+.li_base_subject p {
+    margin-bottom: 0
+}
+
+
+/* .li_base_num{
+    margin-top: 10px;
+} */
+
+.li_base_common p span,
+.li_base_subject p span {
+    font-weight: 600;
+    color: #000000;
+    font-size: 20px;
+}
+
+.li_base_common>div:nth-of-type(1) {
+    margin-top: 10px;
+    border-right: 1px solid #cccccc
+}
+
+.li_base_common>div:nth-child(2) {
+    height: 70px;
+    width: 65%;
+}
+
+.li_base_common>div:nth-child(2)>div {
+    float: left;
+    width: 50%;
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+}
+
+.li_base_common p:nth-child(1) {
+    height: 30px;
+}
+
+.li_baseinfo_div .li_base_teacher {
+    background: url('./../../icon/teacherBg.png') no-repeat center center
+}
+
+.li_base_teacher>div {
+    float: left;
+    width: 35%;
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+}
+
+.li_base_teacher span {
+    font-weight: 600;
+    color: #000000;
+    font-size: 20px;
+}
+
+.li_baseinfo_div .li_base_coll {
+    background: url('./../../icon/colBg.png') no-repeat center center
+}
+
+.li_baseinfo_div .li_base_subject {
+    background: url('./../../icon/subBg.png') no-repeat center center
+}
+
+.li_base_subject>div,
+.li_base_coll>div {
+    float: left;
+    width: 35%;
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+}
+
+.li_base_subject span,
+.li_base_coll span {
+    font-weight: 600;
+    color: #000000;
+    font-size: 20px;
+}
+
+.text_hidden {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

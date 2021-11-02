@@ -1,0 +1,175 @@
+.ws-setPage {
+    // height: 100%;
+    padding: 20px;
+
+    .ws-setPage-box {
+        // padding: 20px 40px;
+        // background: #fff;
+        margin-bottom: 20px;
+        // height: calc(100% - 55px);
+        padding-right: 0;
+
+        .ws-setPage-hint {
+            border-bottom: 1px #ededed solid;
+            // padding-bottom: 20px;
+            // margin-bottom: 25px;
+            // color: #262626;
+            padding-bottom: 15px;
+            margin-bottom: 17px;
+            color: #262626;
+            font-size: 16px;
+            // margin-top: 29px;
+        }
+
+        .ws-setPage-remark {
+            color: #b3b3b3;
+            margin-left: 100px;
+        }
+
+        .tj-warn-block {
+            margin-left: 20px;
+        }
+
+        .ws-setPage-prewarning {
+            .ws-setPage-single {
+                margin-bottom: 20px;
+
+                >span {
+                    display: inline-block;
+                    width: 205px;
+                    vertical-align: middle;
+                    text-align: center;
+                    margin-right: 10px;
+                }
+
+                .ant-input-number {
+                    width: 140px;
+                }
+            }
+
+            .tj-setPage-switch {
+                display: inline-block;
+
+                >span:first-child {
+                    width: 84px;
+                    text-align: right;
+                    display: inline-block;
+                }
+
+                ;
+            }
+
+            .tj-setPage-switch {
+                >span:last-child {
+                    margin-left: 10px;
+                }
+            }
+
+            margin-bottom:20px;
+            background: #fff;
+            padding: 20px;
+        }
+
+        .ws-setPage-fun {
+            margin-bottom: 20px;
+            background: #fff;
+            padding: 20px;
+            .ws-setPage-single {
+                margin-bottom: 20px;
+
+                >span {
+                    display: inline-block;
+                    width: 205px;
+                    vertical-align: middle;
+                    text-align: center;
+                    margin-right: 10px;
+                }
+
+                .ant-input-number {
+                    width: 140px;
+                }
+            }
+
+            .tj-setPage-switch {
+                display: inline-block;
+                margin-left: 20px;
+
+                >span:first-child {
+                    width: 112px;
+                    text-align: right;
+                    display: inline-block;
+                }
+
+                ;
+            }
+
+            .tj-setPage-switch {
+                .tit-text {
+                    margin-left: 10px;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+
+                .auto-text {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+            }
+
+            .ws-setPage-singleRadio {
+                margin-bottom: 20px;
+
+                >span {
+                    &:nth-child(1) {
+                        display: inline-block;
+                        width: 85px;
+                        vertical-align: middle;
+                        margin-right: 20px;
+                    }
+                }
+
+                .ant-radio-wrapper {
+                    margin-right: 20px;
+                }
+            }
+        }
+
+    }
+
+    .ws-setPage-save {
+        text-align: left;
+    }
+
+}
+
+.ws-save-btn {
+    cursor: pointer;
+    width: 90px;
+    height: 34px;
+    background: #59a6ee;
+    color: #fff;
+    border-radius: 3px;
+
+    svg {
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+
+    span {
+        color: #fff;
+        font-size: 14px;
+        vertical-align: middle;
+    }
+}
+
+.ws-spin {
+    height: 100%;
+
+    .ant-spin-container {
+        height: 100%;
+    }
+}

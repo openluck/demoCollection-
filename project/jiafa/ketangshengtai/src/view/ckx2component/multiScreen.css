@@ -1,0 +1,9 @@
+.mzc-multiVideoBox{
+  background-color: #000;
+  display: flex;
+}
+.mzc-multiVideoBoxRight{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

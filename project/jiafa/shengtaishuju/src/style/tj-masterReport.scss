@@ -1,0 +1,160 @@
+.tj-report-box{
+    border: 1px solid #efefef;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #efefef;
+    .box-tit{
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        text-align: center;
+        border-bottom: 1px solid #efefef
+    }
+    .box-content{
+        padding: 20px;
+    }
+}
+.tj-report-header{
+    margin-bottom: 20px;
+    .report-hd-tit{
+        text-align: center;
+        color:#59b1ee;
+        font-size: 26px;
+        font-weight: bold;
+        margin-top: 15px;
+        svg{
+            font-size: 46px;
+        }
+        img.right-bt{
+            transform: rotateY(180deg)
+        }
+        span{
+            margin: 0 40px;
+        }
+    }
+    .report-hd-time{
+        margin-top: 8px;
+    }
+    .report-hd-tool{
+        color:#59b1ee;
+        text-align: right;
+        font-size: 14px;
+       
+        span{
+            margin-left: 8px;
+            cursor: pointer;
+        }
+        img{
+            margin-right: 5px;
+        }
+    }
+    .report-hd-time{
+        text-align: center;
+    }
+}
+.monInfo{
+    p{
+        font-weight: bold;
+    }
+    .monInfo-total{
+        div{
+            display: inline-block;
+            margin-right: 20px;
+        }
+        span{
+            font-size: 20px;
+            margin-right: 5px;
+        }
+        margin-bottom: 10px;
+    }
+    .monInfo-table{
+        margin-top: 10px;
+    }
+}
+.allInfo{
+    p{
+        font-weight: bold;
+        margin: 15px 0;
+    }
+   
+    .allInfo-table{
+        margin-top: 10px;
+    }
+    .ant-table-wrapper.allInfoT{
+        .ant-table-thead > tr:not(:last-child) > th[colspan]{
+            border-bottom: 1px solid #ededed;
+        }
+        .ant-table-thead > tr > th[colspan]{
+            border-bottom: 1px solid #ededed;
+        }
+        .ant-table-thead > tr:first-child>th:nth-child(even){
+            background: #f1f1f1;
+        }
+        .ant-table-thead > tr:first-child>th:nth-child(odd){
+            background: #fafafa;
+        }
+        .ant-table-thead > tr:nth-child(2)>th:nth-child(4){
+            background: #f1f1f1;
+        }
+        .ant-table-thead > tr:nth-child(2)>th:nth-child(5){
+            background: #f1f1f1;
+        }
+        .ant-table-thead > tr:nth-child(2)>th:nth-child(6){
+            background: #f1f1f1;
+        }
+        .ant-table-thead > tr:nth-child(2)>th:nth-child(9){
+            background: #f1f1f1;
+        }
+        .ant-table-thead > tr:nth-child(2)>th:nth-child(10){
+            background: #f1f1f1;
+        }
+        .ant-table-thead > tr > th, .ant-table-tbody > tr > td{
+            padding: 10px 16px;
+        }
+    }
+}
+.colInfo,.courseInfo{
+    p{
+        font-weight: bold;
+        margin: 15px 0;
+    }
+}
+.detailInfo{
+    .detailInfo-table{
+        .ant-table-tbody > tr > td{
+            .tj-td.error{
+                color: #ff4d4f;
+            }
+            .tj-td.normal{
+                // color:#00b845;
+            }
+            .tj-td img{
+                width:75px!important;
+            }
+        }
+    }
+}
+.tj-report-noData{
+    width: 100%;
+    height: calc(100% - 66px);
+    position: relative;
+    .noData{
+        position: absolute;
+        left: 50%;
+        top:45%;
+        transform: translate(-50%,-50%)
+    }
+    p{
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top:56%;
+        transform: translate(-50%,-50%)
+    }
+    .ant-spin-spinning{
+        position: absolute;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%,-50%)
+    }
+}

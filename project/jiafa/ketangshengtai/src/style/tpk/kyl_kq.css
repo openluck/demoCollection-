@@ -1,0 +1,60 @@
+.kyl-kq-container{
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #f5f6f7;
+  border: 1px solid #f5f6f7;
+  height: 267px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.kyl-kq-container1{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.kyl-kq-wordInfo{
+  padding: 5px 5% 5px 5px;
+  margin: 50px 0;
+  border-right: 1px solid #e1e1e1;
+}
+.kyl-kq-wordInfo p{
+  margin-bottom: 5px;
+  width: 100px
+}
+.kyl-kq-pie{
+  width: 30%;
+  min-width: 340px;
+  position: relative;
+}
+.kyl-kq-teaErr{
+  /* position: absolute; */
+  color: #aaaab1;
+  text-align: center;
+  margin-top: 16px;
+  /* width: 115px;
+  left: calc(50% - 58px);
+  top: 16px */
+}
+.kyl-kq-line{
+  width: 100%;
+  min-width: 320px;
+  /* margin-left: 30px; */
+  position: relative;
+}
+.kyl-kq-line1{
+  width: 80%;
+  min-width: 720px;
+}
+.kyl-kq-tab{
+  position: absolute;
+  top: -45px;
+  left: 45%;
+}
+.kyl-kq-tab span{
+  padding : 5px 3px;
+  cursor: pointer;
+}
+.activeTab{
+  color: #67b3ff;
+  font-weight: 900;
+  border-bottom: 3px solid #67b3ff;
+}

@@ -1,0 +1,207 @@
+.fyl-table {
+    background-color: #eff3f5;
+    height: 100%;
+    width: 100%;
+}
+
+.fyl-table-one {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+}
+
+%grid {
+    display: inline-block;
+    min-width: 45px;
+    text-align: right;
+}
+
+.fyl-table-two {
+    padding: 20px 20px 0 20px;
+    /* 考勤状态，*/
+    .fyl-state {
+        // margin-left: 2%;
+        margin-top: 1%;
+        @extend %grid;
+    }
+    /*状态类型  */
+    .fyl-type {
+        // margin-left: 2%;
+        /* margin-top: 2%; */
+        @extend %grid;
+    }
+    /* 时间文字设置 */
+    .fyl-time {
+        // margin-left: 2%;
+        /* margin-top: 2%; */
+        @extend %grid;
+    }
+    /* 教学机构，科目，授课教师， */
+    .fyl-school {
+        // margin-left: 2%;
+        @extend %grid;
+    }
+    .fyl-classtype {
+        // margin-left: 2%;
+        @extend %grid;
+    }
+    &>.ant-select,
+    &>.fyl-input {
+        margin-right: 2%;
+        margin-bottom: 20px;
+    }
+    &>div {
+        margin-bottom: 20px;
+        margin-right: 2%;
+        float: left;
+    }
+}
+
+
+/* 授课教输入框 */
+
+.fyl-input {
+    width: 120px;
+    height: 32px;
+}
+
+
+/*教师输入框 X 颜色设置*/
+
+.fyl-input .anticon {
+    color: #bdbdbd;
+}
+
+
+/* 时间框宽高设置 */
+
+.fyl-start .ant-input {
+    height: 34px;
+    width: 140px;
+}
+
+
+/* 查询按钮设置 */
+
+.fyl-query {
+    float: right;
+    margin-right: 2%;
+    width: 68px;
+    height: 38px;
+    border-radius: 5px;
+    border-color: #999999;
+    color: #4d4d4d;
+}
+
+
+/* 分割线设置 */
+
+.fyl-partition {
+    margin-top: 30px;
+    width: 100%;
+    border-top: 1px solid #d9e5ea;
+    float: left;
+}
+
+
+/* 导出报表设置 */
+
+.fyl-report {
+    float: right;
+    margin-right: 2%;
+    margin-top: 1.5%;
+    margin-bottom: 20px;
+    color: #3498db;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* 表格边距 */
+
+.fyl-tableone {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 70px;
+}
+
+
+/* 表头字体颜色，加粗设置 */
+
+.fyl-tableone .ant-table-thead>tr>th {
+    font-weight: 900;
+    color: #48596c;
+    font-size: 15px;
+}
+
+
+/* 表框字体颜色 */
+
+.fyl-tableone .ant-table {
+    color: #48596c;
+}
+
+
+/* 表框基数行背景颜色 */
+
+.fyl-tableone .ant-table-tbody>tr:nth-child(2n+1) {
+    background-color: #fff;
+    line-height: 19px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+/* 表框偶数行背景颜色 */
+
+.fyl-tableone .ant-table-tbody>tr:nth-child(2n) {
+    background-color: #f5f8fa;
+    line-height: 19px;
+    width: 5%;
+}
+
+
+/* 左下每页14条数据字体颜色 */
+
+.fyl-table-one .ant-pagination {
+    color: #b8bdc1;
+}
+
+
+/* 表头背景颜色 */
+
+.fyl-table-one .ant-table-thead>tr>th {
+    background-color: #e9edf2;
+}
+
+.fyl-svg {
+    margin-right: 10px;
+}
+
+
+/* 时间虚线距离设置 */
+
+.fyl-line {
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+}
+
+
+/*表格样式设置*/
+
+.fyl-aijskq-table .ant-table-row-level-0 {
+    cursor: pointer;
+}
+
+.fyl-aijskq-table .ant-table table {
+    table-layout: fixed;
+}
+
+.fyl-aijskq-table .ant-table-thead>tr>th,
+.fyl-aijskq-table .ant-table-tbody>tr>td>div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

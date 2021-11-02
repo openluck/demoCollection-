@@ -1,0 +1,660 @@
+.image_public {
+    width: 100%;
+
+    .scl_header {
+        height: 60px;
+        width: 100%;
+        line-height: 60px;
+        font-size: 18px;
+        border-bottom: 1px solid #ededed;
+
+        >span:nth-child(1) {
+            width: 6px;
+            height: 20px;
+            background: #595959;
+            display: inline-block;
+            margin-left: 20px;
+            margin-top: 20px;
+            float: left;
+            margin-right: 10px;
+        }
+    }
+
+    .scl_kq_info {
+        width: 100%;
+        height: 276px;
+
+        .ant-progress-bg::after {
+            content: '.';
+            background: red;
+        }
+
+        &>div {
+            width: 50%;
+            float: left;
+            height: 100%;
+        }
+
+        .scl_kq_info_l {
+            position: relative;
+
+            .scl_kq_info_l_info {
+                width: 400px;
+                height: 70px;
+                position: absolute;
+                //line-height: 100px;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+
+                >div {
+                    float: left;
+                    margin-right: 50px;
+                }
+
+                >div:nth-child(1) {
+                    height: 70px;
+                    /* color: #32c261; */
+                    width: 70px;
+
+                    >div:nth-child(1) {
+                        color: #32c261;
+                        font-size: 24px;
+                        text-align: center;
+                    }
+
+                    >div:nth-child(2) {
+                        text-align: center;
+                        height: 34px;
+                        line-height: 34px;
+                    }
+                }
+
+                >div:nth-child(2) {
+                    height: 70px;
+                    line-height: 70px;
+                }
+
+                span {
+                    display: inline-block;
+                    height: 70px;
+                    line-height: 70px;
+                    float: left;
+                }
+            }
+        }
+
+        .kqfb_header {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .kqfb_con {
+            height: 100px;
+            width: 100%;
+        }
+    }
+
+    .scl_xydb {
+        height: 340px;
+        padding: 0 20px;
+        font-size: 15px;
+
+        >.header {
+            height: 40px;
+            color: #000;
+
+            // font-weight: 600;
+            >div:nth-child(1) {
+                float: left;
+                width: 50%;
+                height: 40px;
+                line-height: 40px;
+                display: flex;
+
+                .sort_svg {
+                    display: inline-block;
+                    margin-left: 10px;
+                    margin-top: 8px;
+
+                    svg {
+                        height: 12px;
+                        display: block;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            >div:nth-child(2) {
+                float: right;
+                // width: 220px;
+                width: 360px;
+            }
+        }
+
+        .content {
+            height: 300px;
+        }
+    }
+
+    .scl_kqqs {
+        height: 358px;
+        width: 100%;
+        padding: 0 20px;
+
+        .vs {
+            background: url('./../media/picture/img_vs.png') no-repeat center center;
+            background-position: center 7px;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+
+        >.header {
+            height: 40px;
+            line-height: 40px;
+            font-size: 15px;
+            // font-weight: 600;
+            color: #000;
+
+            >div:nth-child(1) {
+                float: left;
+                width: 170px;
+                height: 40px;
+            }
+
+            >div:nth-child(2) {
+                float: left;
+                width: 390px;
+                height: 40px;
+            }
+
+            >div:nth-child(3) {
+                float: right;
+                width: 360px;
+            }
+        }
+
+        .content {
+            height: 318px;
+            width: 100%;
+        }
+    }
+
+    .scl_kq_hhb {
+        height: 340px;
+        width: 100%;
+        padding: 0 20px;
+
+        >.header {
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            color: #000;
+
+            // font-weight: 600;
+            >div:nth-child(1) {
+                float: left;
+                width: 115px;
+                height: 40px;
+                margin-right: 20px;
+            }
+
+            >div:nth-child(2) {
+                float: left;
+                width: 100px;
+                height: 40px;
+            }
+
+            >div:nth-child(3) {
+                float: right;
+                width: 360px;
+            }
+        }
+
+        .content {
+            height: 300px;
+            width: 100%;
+            padding: 0 70px;
+
+            >div {
+                width: 40%;
+                height: 300px;
+
+                &:nth-child(1) {
+                    float: left;
+                }
+
+                &:nth-child(2) {
+                    float: right;
+                }
+
+                >div>div {
+                    margin-bottom: 20px;
+                }
+
+                .title {
+                    padding-top: 30px;
+                    overflow: hidden;
+
+                    >div:nth-child(1) {
+                        float: left;
+                    }
+
+                    >div:nth-child(2) {
+                        float: right;
+                        color: #a3a3a3;
+                        cursor: pointer;
+                    }
+                }
+
+                .pm {
+                    height: 230px;
+                }
+            }
+        }
+    }
+
+    .scl_kq_ycfx {
+        height: 420px;
+        width: 100%;
+        padding: 0 20px;
+
+        >.header {
+            height: 40px;
+            line-height: 40px;
+            font-size: 15px;
+            color: #000;
+            margin-bottom: 20px;
+
+            // font-weight: 600;
+            >div:nth-child(1) {
+                float: left;
+                width: 200px;
+                height: 40px;
+            }
+        }
+
+        .content {
+            .header {
+                height: 40px;
+                padding: 0 36px;
+                margin-bottom: 40px;
+                font-size: 17px;
+                color: #5a5a5a;
+
+                span {
+                    color: #ff4c4c;
+                    font-size: 26px;
+                    margin-left: 10px;
+                }
+            }
+
+            >div:nth-child(2) {
+                height: 200px;
+                width: 100%;
+
+                p {
+                    text-align: center;
+                    color: #333;
+                }
+
+                >div {
+                    width: 33.3%;
+                    float: left;
+                    height: 200px;
+
+                    >div {
+                        height: 200px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .jsqk_bz {
+        color: #b7babf;
+    }
+}
+
+.activeTab {
+    background: #0e88fd;
+    color: #fff;
+    border-color: #0e88fd;
+}
+
+.lj_tab {
+    height: 36px;
+    transition: 0.3s;
+    line-height: 36px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    border-right: 1px solid #d8d8d8;
+    border-top: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+    box-sizing: border-box;
+    position: relative;
+    width: 60px;
+    font-size: 14px;
+
+    &:hover {
+        background: #0e88fd;
+        color: #fff;
+    }
+
+    &:first-child {
+        border-radius: 10px 0 0 10px;
+        border-left: 1px solid #d8d8d8;
+    }
+
+    &:last-child {
+        border-radius: 0 10px 10px 0;
+    }
+}
+
+
+/*教师考勤*/
+
+.jskq {
+    height: 1850;
+}
+
+
+/*到课率*/
+
+.dkl {
+    width: 100%;
+    height: 1850;
+}
+
+
+/*就座率*/
+
+.jzl {
+    width: 100%;
+    height: 1850;
+}
+
+
+/*教学分析*/
+
+.jxfx {
+    width: 100%;
+
+    .scl_jxfx {
+        >div {
+            height: 250px;
+
+            >div:nth-child(1) {
+                height: 250px;
+                float: left;
+                width: 35%;
+
+                .header {
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                }
+
+                .content {
+                    height: 210px;
+                    width: 100%;
+                }
+            }
+
+            >div:nth-child(2) {
+                height: 250px;
+                float: left;
+                width: 65%;
+            }
+        }
+    }
+}
+
+
+/*学院综合*/
+
+
+.col_jskq {
+    >div {
+        height: 250px;
+
+        >div:nth-child(1) {
+            height: 250px;
+            float: left;
+            width: 30%;
+
+            .header {
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+            }
+
+            .content {
+                height: 210px;
+                width: 100%;
+            }
+        }
+
+        >div:nth-child(2) {
+            height: 250px;
+            float: left;
+            width: 70%;
+        }
+    }
+}
+
+
+/*课堂互动*/
+
+#kthd .scl_kqqs>.header .tab {
+    width: 220px;
+}
+
+#kthd .tab {
+    float: right;
+    width: 220px;
+
+    >div {
+        padding: 0px 10px;
+        float: left;
+        cursor: pointer;
+    }
+
+    >div:nth-child(1) {
+        margin-right: 10px;
+    }
+
+    .select {
+        border-bottom: 2px solid #1890ff;
+        color: #1890ff;
+    }
+
+    .notSelect {
+        border: none;
+        color: #333;
+    }
+}
+
+
+/*教室情况*/
+
+.jsqk {
+    height: 240px;
+
+    svg {
+        height: 20px;
+        width: 20px;
+        margin-right: 10px;
+    }
+
+    .jsqk_con {
+        height: 260px;
+        padding: 0 10px 0 30px;
+
+        >div {
+            width: 33.3%;
+            float: left;
+            height: 180px;
+
+            >div:nth-child(1) {
+                height: 90px;
+                line-height: 90px;
+
+                span {
+                    font-size: 14px;
+                }
+            }
+
+            >div:nth-child(2) {
+                height: 90px;
+
+                >div {
+                    width: 33.3%;
+                    float: left;
+
+                    >p:nth-child(1) {
+                        font-size: 20px;
+                        font-weight: bold;
+                        margin-bottom: 10px;
+                    }
+
+                    >p:nth-child(2) {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*教室情况*/
+
+.kthd {
+    .scl_kq_info_l_info {
+        >div:nth-child(1) {
+            width: 100px;
+
+            span {
+                font-size: 20px;
+                color: #333;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .kt_info {
+        height: 156px;
+        width: 100%;
+
+        >div {
+            float: left;
+            width: 50%;
+            position: relative;
+            height: 156px;
+
+            >div {
+                position: absolute;
+                width: 320px;
+                left: 50%;
+                height: 70px;
+                top: 50%;
+                transform: translate(-50%, -50%);
+
+                >div {
+                    display: inline-block;
+                    float: left;
+                    height: 70px;
+
+                    >div:nth-child(1) {
+                        height: 50px;
+                        text-align: center;
+                        margin-right: 30px;
+                        width: 110px;
+
+                        span {
+                            font-size: 20px;
+                        }
+                    }
+
+                    >div:nth-child(2) {
+                        height: 20px;
+                        width: 110px;
+                        text-align: center;
+                    }
+                }
+
+                >div:nth-child(2),
+                >div:nth-child(3),
+                >div:nth-child(4) {
+                    line-height: 70px;
+                }
+
+                >div:nth-child(2) {
+                    margin-right: 30px;
+                }
+            }
+        }
+    }
+}
+
+
+/*多媒体*/
+
+.dmt_info {
+    width: 100%;
+    height: 276px;
+    display: flex;
+    position: relative;
+
+    .p1_box_head {
+        line-height: 40px;
+        height: 40px;
+        margin-top: 10px;
+        font-size: 14px;
+        padding-left: 35px;
+    }
+
+    .p1_box_con {
+        width: 420px;
+        height: 150px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateY(-50%) translateX(-50%);
+        transform: translateY(-50%) translateX(-50%);
+        display: flex;
+    }
+
+    .p1_left {
+        width: 50%;
+        height: 100%;
+        text-align: center;
+
+        .p1_echarts {
+            width: 200px;
+            height: 150px;
+        }
+    }
+
+    .p1_right {
+        width: 50%;
+        height: 100%;
+
+        span {
+            line-height: 170px;
+            display: inline-block;
+            margin-right: 5px;
+            height: 100%;
+            float: left;
+        }
+
+        >span:nth-child(1) {
+            margin-right: 30px;
+        }
+    }
+}

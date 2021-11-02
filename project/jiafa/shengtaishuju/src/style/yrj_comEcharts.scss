@@ -1,0 +1,60 @@
+@import "./sizeChange.scss";
+.yrj_echart_pos{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.yrj_echarts_con{
+    position: absolute;
+    width: 100%;
+    // height: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: center;  
+    p{display: inline-block;width: 100%;}
+    P:nth-child(1){
+        color:rgb(159,210,227);
+        span:nth-child(1){
+            // font-weight: bold;
+            font-size: 22px;
+            @include sizeChange("font-size", 22px);
+            @include sizeChange("padding-top", 26px);
+        }
+        span:nth-child(2){
+            font-size: 12px;
+            margin-left: 2%;
+            @include sizeChange("font-size", 12px);
+        }
+    }  
+    P:nth-child(2){
+        position: relative;
+        top: -6%;
+        span:nth-child(1){
+           svg{
+            font-size: 10px;
+            @include sizeChange("font-size", 10px);
+           }
+           
+        }
+        span:nth-child(2){
+            font-size: 12px;
+            @include sizeChange("font-size", 12px);
+            margin-left: 2%;
+            margin-top:2%;
+            color:rgb(159,210,227);
+        }
+    }
+    .red{
+        color: rgb(255,76,76);
+    }
+    .green{
+        color: rgb(50,194,97);
+    }
+    .rote{
+        svg{
+            transform:rotate(180deg)
+        }
+        
+    }
+}

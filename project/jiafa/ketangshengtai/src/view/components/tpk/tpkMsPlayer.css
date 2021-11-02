@@ -1,0 +1,125 @@
+.lean-videoloading {
+  width: 100%;
+  min-height: 400px;
+  text-align: center;
+  /* border:1px solid red; */
+}
+
+.lean-video-titleinfo {
+  height: 60px;
+  line-height: 60px;
+  padding-left: 10px;
+}
+
+.lean-video-titleinfo ul {
+  list-style: none;
+}
+
+.lean-video-titleinfo ul li {
+  display: inline-block;
+  margin: 0 25px 0 0;
+  color: #666666;
+  min-width: 80px;
+}
+
+.lean-video-titleinfo ul li.fanhui{
+  min-width: auto;
+}
+
+.lean-video-titleinfo li.fanhui{
+  font-size: 20px;
+}
+
+.lean-video-titleinfo ul li svg {
+  margin-right: 5px;  width: 20px;
+  height: 20px;
+  fill: #bcbcbc;
+}
+
+/* #1a1a1a */
+
+.lean-msvideo-warp {
+  background: #262626;
+  padding: 5px 0;
+  overflow: hidden;
+}
+
+.lean-msvideo-header {
+  background: "#1a1a1a";
+  height: 50px;
+  background: #1a1a1a;
+  line-height: 50px;
+  padding-left: 5px;
+  position: relative;
+}
+
+.lean-msvideo-header > div {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  height: 70%;
+  color: #3496df;
+  /* border: 1px solid red; */
+  /* margin-top:5px; */
+  /* vertical-align: middle; */
+}
+/* 
+.lean-msvideo-header > div:first-child {
+  border-right: 1px solid #313131;
+} */
+
+
+/* 教学反思的机器人  */
+.lean-video-content-withrobot {
+  position: relative;
+}
+
+.lean-robot-zone {
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  flex-flow: row nowrap;
+  transition: all 300ms linear;
+  transform-origin: right top;
+}
+
+
+
+.lean-robot-zone-hide {
+  top: 35%;
+  right: 14px;
+  transform: rotate(-90deg);
+}
+
+.lean-robot-zone-hide:hover {
+  top: 35%;
+  right: 30px;
+  transform: rotate(-90deg);
+  cursor: pointer;
+}
+
+.lean-robot-zone-show {
+  top: 35%;
+  right: 15px;
+  transform: rotate(0deg);
+}
+
+.lean-robot-contentBox {
+  display: inline-block;
+  width: 300;
+  height: 125;
+  background: rgba(116, 109, 109, 0.78);
+  border-radius: 7px;
+  padding: 8px;
+  color:#fff;
+  margin-right:10px;
+}
+
+.lean-msvideo-warp{
+  overflow-x: hidden;
+  position: relative;
+}
+
+.JC-content > .ant-layout-content{
+  width:calc(100% - 200px);
+}

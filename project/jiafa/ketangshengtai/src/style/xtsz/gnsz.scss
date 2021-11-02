@@ -1,0 +1,102 @@
+.mj-gnsz-container {
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+}
+.mj-gnsz-content {
+  padding: 14px 16px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  .mj-gnsz-title {
+    font-size: 16px;
+    color: #494a4d;
+  }
+  .mj-gnsz-item {
+    margin-top: 50px;
+    padding: 0 44px;
+    .tipLine {
+      line-height: 40px;
+      font-weight: bold;
+      font-size: 16px;
+      color: #30bf99;
+      border-bottom: 1px solid #e6eaed;
+      span {
+        display: inline-block;
+        margin-right: 10px;
+        width: 4px;
+        height: 16px;
+        background-color: #30bf99;
+        vertical-align: text-top;
+      }
+    }
+    .mj-gnsz-optionCon {
+      padding-top: 50px;
+      .mj-gnsz-inputCon {
+        display: inline-block;
+        font-size: 16px;
+        .ant-input {
+          margin-left: 6px;
+          width: 220px;
+          height: 34px;
+          border-radius: 4px;
+        }
+      }
+      .mj-gnsz-labelCon {
+        margin-left: 20px;
+        font-size: 14px;
+        color: #797b80;
+        span {
+          color: #40c3a0;
+        }
+      }
+    }
+    .mj-gnsz-robitOptionCon {
+      .mj-gnsz-inputCon {
+        span {
+          margin-right: 6px;
+        }
+        .ant-switch {
+          background-color: #dfe2e5;
+        }
+        .ant-switch-checked {
+          background-color: #30bf99;
+        }
+      }
+    }
+  }
+  .mj-gnsz-btnCon {
+    padding: 68px 44px 0 44px;
+    .ant-btn {
+      width: 80px;
+      height: 34px;
+      color: #fff;
+      background-color: #47c6a4;
+      border-color: #47c6a4;
+      border-radius: 4px;
+    }
+  }
+}
+.mj-gnsz-tipCon {
+  div {
+    margin-left: calc(50% - 35px);
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+    background-color: #30bf99;
+    opacity: 0.6;
+  }
+  label {
+    display: block;
+    margin-top: 6px;
+    padding: 0 16px;
+    min-width: 90px;
+    height: 22px;
+    font-size: 14px;
+    opacity: 1;
+    background: rgba(255, 0, 0, 0.06);
+    border: 1px dashed rgba(255, 0, 0, 0.32);
+    text-align: center;
+    color: #606365;
+  }
+}

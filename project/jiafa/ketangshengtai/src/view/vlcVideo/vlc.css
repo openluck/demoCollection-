@@ -1,0 +1,210 @@
+.mzc-not-support,
+.mzc-not-install {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+}
+.mzc-not-support a {
+  color: #30bf99;
+}
+
+/* .mzc-vlc {
+  background-color: #000;
+} */
+.mzc-vlc-nodata {
+  width: 100%;
+  height: 100%;
+
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mzc-vlcControl {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  background-color: #000;
+}
+.mzc-vlcControlLive,
+.mzc-vlcControlPlayback {
+  width: 100%;
+  height: 50px;
+}
+
+.mzc-vlcControlPlayback-operation {
+  height: 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+.mzc-vlcControlPlayback-operationLeft img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.mzc-vlcControlPlayback-operationLeft span {
+  margin-left: 15px;
+  color: #fff;
+}
+.mzc-vlcControlPlayback-operationLeft,
+.mzc-vlcControlPlayback-operationRight {
+  display: flex;
+  height: 20px;
+}
+.mzc-vlcControlPlayback-operationRight img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.mzc-vlcControlPlayback-operationPing {
+  margin-left: 25px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.mzc-vlcControlPlayback-operationPing span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 8px;
+}
+
+/* 声音处理 */
+.mzc-vlcControlPlayback-operationVolume {
+  height: 100%;
+  width: 122px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.mzc-vlcControlPlayback-operationVolume > img {
+  cursor: pointer;
+  /* width: 20px;
+  height: 20px; */
+}
+.mzc-vlcControlPlayback-operationVolumeMask {
+  width: 90px;
+  height: 20px;
+  border-radius: 4px;
+  /* background-color: rgba(#000, 0.4); */
+  /* display: none; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: relative; */
+}
+.mzc-vlcControlPlayback-operationVolume:hover
+  .mzc-vlcControlPlayback-operationVolumeMask {
+  display: flex;
+}
+.mzc-vlcControlPlayback-operationVolumeLine {
+  width: 90px;
+  height: 7px;
+  cursor: pointer;
+  background-color: #fff;
+  position: relative;
+  border-radius: 4px;
+}
+.mzc-vlcControlPlayback-operationVolumeLinePro {
+  height: 7px;
+  border-radius: 4px;
+  background-color: #30bf99;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.mzc-vlcControlPlayback-operationVolumeLineBall {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-6px, 2px);
+  position: absolute;
+  left: 0;
+  top: -4px;
+}
+.mzc-vlcControlPlayback-operationVolumeLineBall i {
+  width: 6px;
+  height: 6px;
+  background-color: #30bf99;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+.mzc-vlcControlPlayback-operationVolumeLineBall:hover {
+  background-color: #30bf99;
+}
+.mzc-vlcControlPlayback-operationVolumeLineBall:hover i {
+  background-color: #fff;
+}
+
+.mzc-vlc-err {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* 进度条 */
+
+.mzc-vlcProgressBox {
+  width: 100%;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.mzc-vlcProgressBase {
+  transition: 1s;
+  width: 100%;
+  background-color: #fff;
+  height: 6px;
+  cursor: pointer;
+}
+.mzc-vlcProgressDis {
+  /* transition:2s; */
+  position: absolute;
+  height: 6px;
+  width: 0;
+  left: 0;
+  top: 3px;
+  background-color: #30bf99;
+  cursor: pointer;
+}
+
+.mzc-vlcProgressBall {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #30bf99;
+  cursor: pointer;
+  border-radius: 50%;
+  transform: translateX(-6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mzc-vlcProgressBall i {
+  display: block;
+  background-color: #fff;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}

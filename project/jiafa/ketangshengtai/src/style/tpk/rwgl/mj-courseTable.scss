@@ -1,0 +1,125 @@
+/*
+ * @Author: MinJ 
+ * @Date: 2020-01-21 13:50:38
+ * @Last Modified by: MinJ
+ * @Last Modified time: 2020-08-26 11:26:25
+ * 听评课V2.2——创建评课任务-选择课程表格
+ */
+// 表头
+.mj-ct-tableHeaderCon {
+  display: flex;
+  // margin-top: 20px;
+  height: 40px;
+  background-color: #f7f9fa;
+  color: #4d4d4d;
+  border: 1px solid #e6ebe9;
+  .mj-cs-titleCon {
+  border-right: 1px solid #e6ebe9;
+    .ant-checkbox {
+      margin-top: 10px;
+    }
+  }
+  div {
+    flex: 1;
+    line-height: 40px;
+    text-align: center;
+    border-right: 1px solid #e6ebe9;
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+// 表格内容
+.mj-ct-tableCon,
+.mj-cc-tableCon {
+  display: flex;
+  height: 40px;
+  color: #4c4c4c;
+  border: 1px solid #e6ebe9;
+  border-top: none;
+  .ant-checkbox {
+    margin-top: 10px;
+  }
+  div {
+    flex: 1;
+    text-align: center;
+    line-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 6px;
+    border-right: 1px solid #e6ebe9;
+  }
+  div:last-child {
+    color: #fc6969;
+    cursor: pointer;
+    border-right: none;
+  }
+}
+.mj-ct-tableCon:nth-child(2n) {
+  background-color: #fff;
+}
+.mj-cc-tableCon:nth-child(2n) {
+  background-color: #fff;
+}
+.mj-ct-back:nth-child(2n) {
+  background-color: #ffffff;
+}
+.mj-ct-back:nth-child(2n + 1) {
+  background-color: #fff;
+}
+
+// 分页
+.mj-ct-pagenation {
+  margin: 20px 0;
+  height: 40px;
+  line-height: 40px;
+  .mj-ct-total {
+    color: #99a1a7;
+  }
+  .ant-pagination {
+    float: right;
+  }
+  .ant-pagination-prev,
+  .ant-pagination-next,
+  .ant-pagination-jump-prev,
+  .ant-pagination-jump-next,
+  .ant-pagination-item {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #e7ebee;
+    a {
+      color: #a5acb1;
+    }
+  }
+  .ant-pagination-prev .ant-pagination-item-link,
+  .ant-pagination-next .ant-pagination-item-link {
+    background-color: #e7ebee;
+    font-size: 14px;
+  }
+  .ant-pagination-item-active {
+    background-color: #59a6ee;
+    a {
+      color: #fff;
+      font-size: 14px;
+    }
+  }
+}
+
+// 课程选择表格
+.mj-cs-titleCon {
+  padding: 0 15px;
+  border-right: 1px solid #e6ebe9;
+  .ant-checkbox-inner {
+    width: 20px;
+    height: 20px;
+  }
+}
+.mj-cs-tableCon {
+  div:last-child {
+    color: #4c4c4c;
+    cursor: unset;
+  }
+}

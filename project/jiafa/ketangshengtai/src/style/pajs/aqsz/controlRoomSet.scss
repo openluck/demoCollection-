@@ -1,0 +1,109 @@
+.ll-roomSet {
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  >div {
+    background-color: white;
+    // padding: 20px;
+  }
+
+  >.ll-roomSet-left {
+    height: 100%;
+    flex: 0.79;
+    padding: 20px;
+
+    >.ll-left-first {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    >.ll-left-second {
+      height: calc(100% - 105px);
+    }
+
+    .ll-left-list {
+      // border-bottom: #ebebeb 1px solid;
+      height: 100%;
+
+      .ll-list-rank {
+        display: flex;
+
+        >div {
+          //   background-color: #fafafa ;
+          height: 40px;
+          padding: 0 20px;
+          display: flex;
+          align-items: center;
+          border: #ebebeb 1px solid;
+          border-left: none;
+          flex-shrink: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .ll-classRoom {
+          width: 200px;
+        }
+
+        .ll-location {
+          flex: 1;
+        }
+
+        .ll-operation {
+          display: flex;
+          justify-content: center;
+          width: 100px;
+        }
+      }
+    }
+  }
+
+  >.ll-roomSet-right {
+    flex: 0.2;
+    height: 100%;
+
+    >div {
+      padding: 20px;
+    }
+
+    >.ll-universityName {
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ebebeb;
+    }
+  }
+
+  .ant-switch-checked {
+    background-color: #30bf99 !important;
+  }
+
+  .ant-switch {
+    background-color: #dfe2e6;
+  }
+
+  .ll-paginationCTN {
+    padding-top: 20px;
+
+    >div {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .ant-tree-treenode {
+    width: 100%;
+
+    .ant-tree-node-content-wrapper {
+      width: 100%;
+    }
+  }
+
+  .ant-tree .ant-tree-node-content-wrapper.ant-tree-node-selected {
+    background-color: #47c6a4;
+    color: white;
+  }
+
+}

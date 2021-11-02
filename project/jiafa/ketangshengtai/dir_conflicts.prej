@@ -1,0 +1,8 @@
+试图增加新属性 “svn:ignore”，但是它已经存在。
+<<<<<<< (��������ֵ)
+node_modules
+yarn.lock
+||||||| (incoming 'changed from' value)
+=======
+node_modules
+>>>>>>> (incoming 'changed to' value)

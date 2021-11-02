@@ -1,0 +1,84 @@
+.mj-apt-timeCon{
+  width: 100%;
+  height: 84px;
+  background-color: #262626;
+}
+.mj-apt-contain {
+  padding: 8px 0 0 1%;
+  width: 99%;
+  height: 72px;
+}
+
+/* 行为时长 */
+.mj-actionCon {
+    width: 100%;
+    position: relative;
+    top: 8px;
+    margin-bottom: 4px;
+}
+
+.mj-actionCon>span {
+    position: absolute;
+    top: 0;
+    transition: transform .3s;
+    -moz-transition: transform .3s;
+    /* Firefox 4 */
+    -webkit-transition: transform .3s;
+    /* Safari 和 Chrome */
+    -o-transition: transform .3s;
+    cursor: pointer;
+}
+
+.mj-actionCon>span:hover {
+    transform: scaleY( 1.4);
+    z-index: 9999;
+}
+
+/* 课长分段 */
+.mj-lineContain{
+  width: 99%;
+  height: 36px;
+  position: relative;
+  top: 10px;
+  color: #666666;
+}
+.mj-lineContain>div {
+    position: absolute;
+    top: 0;
+    width: 4px;
+    font-size: 12px;
+}
+.mj-lineContain>div::after {
+    position: absolute;
+    content: '';
+    left: 9px;
+    top: 8px;
+    height: 1px;
+    width: calc( 100% - 8px);
+    border-bottom: 2px solid #666666;
+    transform: translateY(0.8);
+}
+.mj-lineContain>div:last-child {
+    width: 4px !important;
+}
+
+.mj-lineContain>div>span {
+    display: block;
+    margin-left: -1px;
+}
+
+.mj-lineContain>div:first-child>span,
+.mj-lineContain>div:nth-child(2)>span {
+    margin-left: 2px;
+}
+
+.mj-lineContain>div:last-child {
+    margin-left: -1px;
+}
+.mj-point {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #666666;
+}
