@@ -1,0 +1,303 @@
+/*
+ * @Author: xq 
+ * @Date: 2021-01-18 17:21:09 
+ * @Last Modified by: xq
+ * @Last Modified time: 2021-02-25 10:44:37
+ * 房间规则 - 宿舍管理员设置
+ */
+.xq-rule-list,
+.xq-rule-list-add {
+    width: calc(25% - 15px);
+    margin-right: 15px;
+}
+
+.xq-rule-lists:after,
+.xq-rule-lists:before {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.xq-rule-lists {
+    padding: 15px 0 0 15px;
+    position: relative;
+
+    .xq-rule-list-add {
+        float: left;
+        border: 1px #e6e9eb solid;
+        height: 224px;
+        margin-bottom: 18px;
+        text-align: center;
+        padding-top: 60px;
+
+        svg {
+            cursor: pointer;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+        span {
+            color: #68696b;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .xq-rule-list {
+        float: left;
+        border: 1px #e6e9eb solid;
+        height: 224px;
+        margin-bottom: 18px;
+        padding-top: 15px;
+        padding: 15px 20px 0 20px;
+        position: relative;
+    }
+
+    .xq-rule-list-over {
+        width: calc(100% - 30px);
+        overflow-x: hidden;
+        margin: 0 auto;
+    }
+
+    .xq-rule-list-img {
+        width: 64px;
+        height: 64px;
+        float: left;
+        border: 1px #ebdde0 solid;
+        border-radius: 50%;
+    }
+
+    .xq-rule-list-r {
+        width: calc(100% - 84px);
+        float: right;
+        height: 135px;
+
+        &>span {
+            display: block;
+        }
+    }
+
+    .xq-rule-list-build {
+        padding-right: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .xq-rule-list-name {
+        font-size: 18px;
+    }
+
+    .xq-rule-list-dele {
+        height: 48px;
+        text-align: center;
+        color: #747779;
+        line-height: 48px;
+        cursor: pointer;
+        background-color: #f7f9fa;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        border-top: 1px #e6e9eb solid;
+
+        svg {
+            margin-right: 5px;
+            margin-top: -2px;
+        }
+    }
+}
+
+// 弹框样式
+.xq-rule-pop {
+    .ant-drawer-body {
+        padding: 0
+    }
+}
+
+.xq-rule-pop-heads {
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    height: 90px;
+
+    .xq-rule-pop-head {
+        width: 145px;
+        height: 40px;
+        position: relative;
+    }
+
+    .xq-rule-pop-idx {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        border: 1px #bfc0c2 solid;
+        color: #484a4d;
+        margin-right: 15px;
+    }
+
+    .xq-rule-pop-idx.curr:last-child {
+        border: none;
+        background-color: #2e8ae6;
+        color: #fff;
+    }
+
+    .xq-rule-pop-idx.curr:first-child {
+        background-color: #2e8ae6;
+
+    }
+
+    .xq-rule-pop-idx.gou:first-child {
+        background-color: #fff;
+        border: 1px #2e8ae6 solid;
+    }
+
+    .xq-rule-pop-head:first-child {
+        margin-right: 82px;
+    }
+
+    .xq-rule-pop-head:first-child:after {
+        content: '';
+        display: block;
+        width: 66px;
+        height: 2px;
+        background-color: #e6e9ec;
+        position: absolute;
+        top: 50%;
+        margin-top: -1px;
+        right: -70px;
+    }
+}
+
+.xq-rule-pop-search {
+    width: 560px;
+    margin: 0 auto;
+    position: relative;
+
+    input {
+        padding-right: 50px;
+    }
+
+    &>span {
+        display: block;
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        line-height: 32px;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+.xq-rule-person-table {
+    width: 560px;
+    margin: 0 auto;
+    margin-top: 20px;
+    // height: calc(100% - 200px);
+    // overflow-y: scroll;
+}
+
+.xq-rule-pop-pagination {
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+.xq-rule-pop {
+    .ant-drawer-body {
+        display: flex;
+        flex-direction: column;
+        // flex-flow: row wrap;
+        align-items: space-between;
+        -webkit-align-items: space-between;
+        justify-content: flex-start;
+        -webkit-justify-content: flex-start;
+    }
+
+    .xq-rule-pop-btns {
+        width: 640px;
+        height: 75px;
+        line-height: 75px;
+        text-align: center;
+        border-top: 1px #e1e4e6 solid;
+
+        .ant-btn:first-child {
+            margin-right: 20px;
+            // background:#3687d9;
+            // border-color: #3687d9;
+        }
+    }
+}
+
+.xq-rule-pop-trees {
+    width: 560px;
+    margin: 0 auto;
+    min-height: calc(100% - 240px);
+    margin-bottom: 20px;
+    position: relative;
+    border: 1px solid #e6e9eb;
+    height: auto;
+    .xq-rule-pop-tree {
+        padding: 20px;
+        padding-bottom: 65px;
+    }
+
+    .xq-rule-pop-tree-total {
+        padding-left: 20px;
+        position: absolute;
+        width: 100%;
+        height: 45px;
+        border-top: 1px solid #e6e9eb;
+        line-height: 45px;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+.xq-edit-pop.xq-rule-pop-trees {
+    height: calc(100% - 380px);
+}
+
+.xq-rule-person-info {
+    width: 560px;
+    border: 1px solid #e6e9eb;
+    background-color: #f7f9f9;
+    padding: 24px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 20px;
+
+    .xq-rule-person-info-li {
+        display: inline-block;
+
+        span:first-child {
+            display: inline-block;
+            width: 75px;
+        }
+    }
+
+    .xq-rule-person-info-li:nth-child(2n) {
+        width: 180px;
+        float: right;
+    }
+
+    .xq-rule-person-info-li:nth-child(2n+1) {
+        float: left;
+        width: 280px;
+    }
+}
+
+.xq-rule-edit-svg {
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+}

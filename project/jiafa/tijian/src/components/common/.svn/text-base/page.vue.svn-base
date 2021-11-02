@@ -1,0 +1,211 @@
+<template>
+  <div>
+    <!-- 分页 -->
+    <div class="pagination">
+      <div class="left">
+        <img src="@/assets/firstDisabled.jpg" v-if="pagination.current === 1" title="第一页"  class="pageDisabled">
+        <img src="@/assets/first.jpg" v-else title="第一页"  class="pageChange" @click="firstPage">
+
+        <img src="@/assets/prevDisabled.jpg" v-if="pagination.current === 1" title="上一页"  class="pageDisabled">
+        <img src="@/assets/prev.jpg" v-else title="上一页"  class="pageChange" @click="prevPage">
+
+        <span class="col"></span>
+        <span style="padding:0 5px">
+          第<input class="pageInput" v-model="pagination.current" @input="inputChange" @change.enter="showQuickJumper"/>页，共<span>{{pagination.pageTotal}}</span>页
+        </span>
+        <span class="col"></span>
+
+        <img src="@/assets/nextDisabled.jpg" v-if="pagination.current === pagination.pageTotal" title="下一页"  class="pageDisabled" style="margin-left:6px">
+        <img src="@/assets/next.jpg" v-else title="下一页"  class="pageChange" @click="nextPage" style="margin-left:6px">
+
+        <img src="@/assets/lastDisabled.jpg"  v-if="pagination.current === pagination.pageTotal" title="最后页"  class="pageDisabled">
+        <img src="@/assets/last.jpg" v-else title="最后页"  class="pageChange" @click="lastPage">
+      </div>
+
+      <div class="right">
+        显示<span>{{pagination.stripStart}}</span> - <span>{{pagination.stripEnd}}</span>条，共<span>{{pagination.stripTotal}}</span>条
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      pagination: {
+        current: 1, //当前第几页
+        pageSize: 20, //每页显示条数
+        pageTotal: null, //总页数
+        stripStart: null, //显示的开始条数
+        stripEnd: null, //显示的结束条数
+        stripTotal: null, //总条数
+      },
+    };
+  },
+  mounted() {
+    this.returnPageTotal()
+  },
+  methods: {
+    // 计算总页数 第一页显示的条数
+    returnPageTotal() {
+      let params = this.$parent.stripTotal
+      this.pagination.stripTotal = params
+      // 总页数
+      this.pagination.pageTotal = Math.ceil(this.pagination.stripTotal / this.pagination.pageSize)
+      // 开始条数
+      this.pagination.stripStart = 1
+      // 结束条数
+      if (this.pagination.stripTotal <= this.pagination.pageSize) {
+        this.pagination.stripEnd = this.pagination.stripTotal
+      } else {
+        this.pagination.stripEnd = this.pagination.pageSize
+      }
+    },
+
+    // 到首页
+    firstPage() {
+      // 当前显示页码
+      if (this.pagination.current === 1) {
+        return false
+      } else {
+        this.pagination.current = 1
+      }
+      // 开始条数
+      this.pagination.stripStart = 1
+      // 结束条数
+      if (this.pagination.stripTotal <= this.pagination.pageSize) {
+        this.pagination.stripEnd = this.pagination.stripTotal
+      } else {
+        this.pagination.stripEnd = this.pagination.pageSize
+      }
+
+      // 请求列表
+      this.$parent.search.current = this.pagination.current
+      this.$parent.getList()
+    },
+    // 上一页
+    prevPage() {
+      // 当前显示页码
+      if (this.pagination.current === 1) {
+        return false
+      } else {
+        this.pagination.current--
+      }
+      // 开始条数
+      this.pagination.stripStart = (this.pagination.current - 1) * this.pagination.pageSize + 1
+      // 结束条数
+      this.pagination.stripEnd = this.pagination.current * this.pagination.pageSize
+
+      // 请求列表
+      this.$parent.search.current = this.pagination.current
+      this.$parent.getList()
+    },
+    // 下一页
+    nextPage() {
+      // 当前显示页码
+      if (this.pagination.current === this.pagination.pageTotal) {
+        return false
+      } else {
+        this.pagination.current++
+      }
+      // 开始条数
+      this.pagination.stripStart = (this.pagination.current - 1) * this.pagination.pageSize + 1
+      // 结束条数
+      if (this.pagination.current === this.pagination.pageTotal) {
+        this.pagination.stripEnd = this.pagination.stripTotal
+      } else {
+        this.pagination.stripEnd = this.pagination.current * this.pagination.pageSize
+      }
+
+      // 请求列表
+      this.$parent.search.current = this.pagination.current
+      this.$parent.getList()
+    },
+    // 到尾页
+    lastPage() {
+      // 当前显示页码
+      if (this.pagination.current === this.pagination.pageTotal) {
+        return false
+      } else {
+        this.pagination.current = this.pagination.pageTotal
+      }
+      // 开始条数
+      this.pagination.stripStart = (this.pagination.current - 1) * this.pagination.pageSize + 1
+      // 结束条数
+      this.pagination.stripEnd = this.pagination.stripTotal
+
+      // 请求列表
+      this.$parent.search.current = this.pagination.current
+      this.$parent.getList()
+    },
+    //change事件
+    inputChange(e) {
+      // console.log(e.target.value)
+      this.pagination.current = e.target.value.replace(/[^\d]/g, '');
+    },
+    // 跳转到某一页
+    showQuickJumper(e) {
+      if (e.target.value < 1) {
+        this.pagination.current = 1
+      } else if (e.target.value > this.pagination.pageTotal) {
+        this.pagination.current = this.pagination.pageTotal
+      }
+
+      if (this.pagination.current === this.pagination.pageTotal) {
+        this.pagination.stripStart = (this.pagination.current - 1) * this.pagination.pageSize + 1
+        this.pagination.stripEnd = this.pagination.stripTotal
+      } else {
+        this.pagination.stripStart = (this.pagination.current - 1) * this.pagination.pageSize + 1
+        this.pagination.stripEnd = this.pagination.current * this.pagination.pageSize
+      }
+
+      this.pagination.current = Number(this.pagination.current)
+
+      // 请求列表
+      this.$parent.search.current = this.pagination.current
+      this.$parent.getList()
+    }
+  }
+};
+</script>
+<style lang="less">
+  .pagination{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    user-select:none;
+    .left{
+      display: flex;
+      align-items: center;
+      .pageChange{
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+        cursor: pointer;
+      }
+      .pageDisabled{
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+      }
+      
+      .pageInput{
+        width: 36px;
+        height: 20px;
+        margin: 0 2px;
+        padding: 2px;
+        text-align:right;
+        outline: none;
+        border: 1px solid #b5b8c8;
+        background-image: url('../../assets/inputBackground.jpg');
+      }
+
+      .col{
+        padding: 7px 0.5px;
+        background-color: lightsteelblue;
+      }
+    }
+  }
+</style>

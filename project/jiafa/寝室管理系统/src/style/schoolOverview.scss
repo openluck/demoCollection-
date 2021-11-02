@@ -1,0 +1,181 @@
+$bigFontColor: #464849;
+$smallFontColor: #a2a6a9;
+$borderColor: #ebebeb;
+
+.ll-schoolOverview {
+    background-color: #f8fafa;
+
+    >.ll-schoolOverview-first {
+        background-color: #f8fafa;
+        // min-height: 300px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    >.ll-schoolOverview-second {
+        margin: 10px 0;
+        padding: 10px;
+        background-color: white;
+        // min-height: 300px;
+    }
+
+    >.ll-schoolOverview-third {
+        padding: 10px;
+        background-color: white;
+        // min-height: 300px;
+
+        >.ll-schoolOverview-third-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        >.ll-schoolOverview-third-cardCTN {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            >div {
+                width: 24%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+.ll-situationCard {
+    background-color: white;
+    width: 32.5%;
+    // min-height: 300px;
+    padding: 10px;
+
+    >.ll-situationCard-first {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    >.ll-situationCard-second {
+        margin-top: 10px;
+    }
+
+    >.ll-situationCard-third {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        >div {
+            width: 49%;
+        }
+
+        >.ll-situationCard-third-right {
+            border: 1px solid $borderColor;
+
+            >.ll-error {
+                float: right;
+                text-align: center;
+                color: white;
+                background-color: #fa7d7d;
+                width: 35px;
+                border-bottom-left-radius: 7px;
+            }
+
+            >.ll-errorbox {
+                display: flex;
+                margin-top: 15px;
+                justify-content: space-between;
+
+                >div {
+                    width: 50%;
+                    // height: 156px;
+                }
+
+                >.ll-errorSvg {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                }
+
+                >.ll-errorText {
+                    padding: 0 10px;
+                }
+            }
+        }
+
+
+    }
+}
+
+.ll-bigFont {
+    font-size: 20px;
+    color: $bigFontColor;
+}
+
+.ll-smallFont {
+    font-size: 14px;
+    color: $smallFontColor;
+}
+
+.ll-card1 {
+    border: 1px solid $borderColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+
+    >.ll-cardSVG {
+        // background-color: lightcoral;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.ll-latePersonCard {
+    padding: 10px 0px;
+    width: 100%;
+    height: 100px;
+    border: 1px solid $borderColor;
+    display: flex;
+    margin-top: 15px;
+
+    >.ll-sexPicture {
+        width: 24.4%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        >div {
+            // height: 35px;
+            // width: 35px;
+            // background-color: lightblue;
+        }
+    }
+
+    >.ll-info {
+        width: 76%;
+    }
+}
+
+.ll-latePersonModal {
+    padding-right: 15px;
+    >.ll-lateFirst {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    >.ll-latePersonModal {
+        padding: 20px 0;
+
+    }
+
+}
+
+.ll-btnctn {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}

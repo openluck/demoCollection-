@@ -1,0 +1,149 @@
+/*
+ * @Author: xq 
+ * @Date: 2021-01-11 15:00:04 
+ * @Last Modified by: xq
+ * @Last Modified time: 2021-01-15 16:12:32
+ * @desc 住宿管理 - 配置向导
+ */
+.xq-guide-con {
+    padding: 0 25px;
+}
+
+.xq-guide-name {
+    line-height: 56px;
+    height: 56px;
+    color: #333;
+    font-size: 14px;
+}
+
+.xq-guide-detail {
+    padding: 15px;
+    background-color: #eff5fb;
+    border: 1px solid #d6e5f5;
+    color: #5b9fe5;
+
+    svg.icon {
+        width: 16px;
+        height: 16px;
+        color: #5b9fe5;
+        line-height: 30px;
+        margin-right: 10px;
+    }
+
+    .xq-guide-detail-t {
+        font-weight: bold;
+    }
+
+    .xq-guide-detail-p {
+        padding-left: 26px;
+    }
+}
+
+.xq-guide-explain {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    align-items: center;
+    -webkit-align-items: center;
+
+    .xq-guide-explain-svg {
+        width: 120px;
+        height: 96px;
+        text-align: center;
+        line-height: 96px;
+
+        .icon {
+            width: 32px;
+            height: 32px;
+            color: #aaafb3;
+        }
+    }
+}
+
+.xq-guide-explain-li {
+    margin: 40px 0;
+    width: 200px;
+    height: 96px;
+    border: 1px #e0e7eb solid;
+    border-radius: 8px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #aaafb3;
+    font-size: 13px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+
+    .icon {
+        width: 32px;
+        font-size: 16px;
+        height: 32px;
+        color: #aaafb3;
+        margin-bottom: 10px;
+    }
+}
+
+.xq-guide-upload {
+    margin-top: 40px;
+    width: 100%;
+    height: 242px;
+    display: flex;
+    -webkit-display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+
+.xq-guide-upload-r {
+    width: calc(55% - 10px);
+    height: 242px;
+}
+.xq-config-pro{
+    width: 100%;
+    width: 100%;
+    height: 30px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    align-items: center;
+    -webkit-align-items: center;
+    .xq-config-pro-l{
+        width: 30px;
+        line-height: 30px;
+        text-align: center;
+    }
+    .xq-config-pro-r{
+        width: calc(100% - 30px);
+        height: 30px;
+        line-height: 30px;
+        padding-right: 5px;
+    }
+    .xq-config-pro-line{
+        position: absolute;
+        width: calc(100% - 30px);
+        bottom: -2px;
+        right: 0;
+        height: 10px;
+    }
+    .xq-config-download{
+        color:'#616466';
+        text-decoration:underline;
+        cursor: pointer;
+        padding-left: 10px;
+    }
+    svg.xq-config-pro-del{
+        float: right;
+        width: 14px;
+        height: 14px;
+        position: relative;
+        top: 8px;
+        cursor: pointer;
+    }
+}
+.xq-config-pro:hover{
+    background-color: #f2f5f7;
+}

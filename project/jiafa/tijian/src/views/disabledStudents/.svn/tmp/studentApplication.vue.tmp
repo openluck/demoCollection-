@@ -1,0 +1,263 @@
+<<<<<<< .mine
+<template>
+  <div class="studentApplication">
+    <div class="top" style="margin-bottom: 20px">
+      <a-select
+        style="width: 120px; margin-right: 20px"
+        placeholder="请选择"
+        allowClear
+        v-model="search.tjzdm"
+      >
+        <a-select-option value = "0"> 全部 </a-select-option>
+        <a-select-option value = "1"> 已确认 </a-select-option>
+        <a-select-option value = "2"> 未确认 </a-select-option>
+      </a-select>
+      <a-button type="primary" style="margin-right: 20px">查询</a-button>
+      <a-button type="primary">打印告知书</a-button>
+    </div>
+
+    
+  </div>
+</template>
+ 
+<script>
+export default {
+  name: '',
+  components: {},
+  data() {
+    return {
+
+    }
+  },
+  computed: {
+
+  },
+  mounted() {
+
+  },
+  methods: {
+
+  },
+}
+</script>
+ 
+<style scoped lang = "less">
+#studentApplication {
+}
+</style>=======
+<template>
+  <div class="disabledStudents">
+    <div class="disabledStudentsT">
+      <div class="searchBtn">
+        <a-button @click="getList()" type="primary"> 生成告知书 </a-button>
+      </div>
+      <div class="export">
+        <a-button @click="getExport" type="primary"> 导出申请便利考生名单 </a-button>
+      </div>
+    </div>
+    <div class="list">
+      <a-table
+        :columns="columns"
+        :data-source="dataList"
+        :rowKey="(row) => row.orgCode"
+        bordered
+        :pagination="false"
+        :scroll="{ y: tableHeight }"
+        :loading="tableLoading"
+        :row-selection="rowSelection"
+      >
+      </a-table>
+    </div>
+  </div>
+</template>
+
+<script>
+const columns = [
+  {
+    title: "地区",
+    dataIndex: "orgName",
+    key: "orgName",
+    width: "20%",
+    align: "center",
+  },
+  {
+    title: "已上报残疾考生数",
+    dataIndex: "reportedCount",
+    key: "reportedCount",
+    width: "20%",
+    align: "center",
+  },
+  {
+    title: "已生成报告考生数",
+    dataIndex: "createdReportCount",
+    key: "createdReportCount",
+    width: "15%",
+    align: "center",
+  },
+  {
+    title: "未成报告考生数",
+    dataIndex: "noCreatedCount",
+    key: "noCreatedCount",
+    width: "20%",
+    align: "center",
+  },
+  {
+    title: "已确认考生数",
+    dataIndex: "affirmedCount",
+    key: "affirmedCount",
+    width: "15%",
+    align: "center",
+  },
+  {
+    title: "未确认考生数",
+    dataIndex: "noAffirmedCount",
+    key: "noAffirmedCount",
+    width: "20%",
+    align: "center",
+  },
+
+];
+const rowSelection = {
+  onChange: (selectedRowKeys, selectedRows) => {
+    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+  },
+  onSelect: (record, selected, selectedRows) => {
+    console.log(record, selected, selectedRows);
+  },
+  onSelectAll: (selected, selectedRows, changeRows) => {
+    console.log(selected, selectedRows, changeRows);
+  },
+}
+export default {
+  name: "",
+  components: {},
+  data() {
+    return {
+      columns,
+      tableHeight: 0, //table高度
+      tableLoading: false,
+      dataList: [], // 查询列表数据
+      search: {
+        orgCode: "", //机构代码
+        date: '', //体检日期
+      },
+      rowSelection
+    };
+  },
+  created() {
+  },
+  computed: {},
+  mounted() {
+    this.getList();
+    this.$nextTick(() => {
+      this.getTableHeight();
+    });
+  },
+  methods: {
+    // 获取表格高度
+    getTableHeight() {
+      let tableHeight = window.document.querySelector(".list");
+      this.tableHeight = tableHeight.clientHeight - 109 - 47 - 15;
+    },
+    async getList() {
+      this.tableLoading = true;
+      try {
+        // let { date } = this.search;
+        // if (date) {
+        //   date = moment(date).format("YYYY-MM-DD");
+        // }
+        const res = await this.$api.PhyExamProgressStatX.getList(this.search);
+        if (res.code === 200) {
+          this.dataList = res.data.list;
+        } else {
+        }
+      } catch (error) {
+        this.$message.error("请求失败！" + error);
+      } finally {
+        this.tableLoading = false;
+      }
+    },
+    async getExport() {
+      const data = {
+        orgCode: this.search.orgCode,
+        date: this.search.date,
+      };
+      try {
+        const res = await this.$api.PhyExamProgressStatX.getExport(data);
+        if (res) {
+          downloadFile(res);
+        } else {
+        }
+      } catch (error) {
+        this.$message.error("请求失败！" + error);
+      }
+    },
+    async getDate(code) {
+      const data = {
+        orgCode: code,
+      };
+      try {
+        const res = await this.$api.ChestXRayDataManage.getMedicalDate(data);
+        if (res.code === 200) {
+          this.dateList = res.data.Datelist;
+        } else {
+        }
+      } catch (error) {
+        this.$message.error("请求失败！" + error);
+      }
+    },
+  },
+};
+</script>
+
+<style scoped lang="less">
+.disabledStudents {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .disabledStudentsT {
+    width: 100%;
+    height: 34px;
+    // margin-bottom: 20px;
+    display: flex;
+    .conditionOrg {
+      height: 100%;
+      margin-right: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .searchBtn {
+      height: 100%;
+      width: 100px;
+      display: flex;
+      align-items: center;
+    }
+    .export {
+      height: 100%;
+      width: 100px;
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      justify-content: flex-end;
+    }
+  }
+  .list {
+    flex-grow: 1;
+    overflow-y: auto;
+    .addRow {
+      display: flex;
+      background-color: #fafafa;
+      height: 46px;
+      padding-right: 8px;
+      align-items: center;
+      justify-content: space-around;
+      border: 1px solid #e8e8e8;
+      border-top: 0;
+      .addItem {
+        text-align: center;
+      }
+    }
+  }
+}
+</style>
+>>>>>>> .r37556

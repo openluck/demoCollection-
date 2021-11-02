@@ -1,0 +1,129 @@
+.yhc-device{
+    align-content: space-between;
+    padding: 0px 15px 10px 15px;
+    width: 240px;
+    height: 175px;
+    border:1px solid #E0EAEB;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.yhc-device-item{
+    background-color: #EDF1F5;
+    height:115px;
+    width:100%;
+    display:flex;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.yhc-flex{
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+}
+.limegreen .ant-radio-inner::after{
+    background-color: limegreen;
+}
+.limegreen .ant-radio-checked .ant-radio-inner{
+    border-color: white;
+    background-color: rgb(200, 238, 210);
+}
+.red .ant-radio-inner::after{
+    background-color: tomato;
+}
+.red .ant-radio-checked .ant-radio-inner{
+    background-color: rgb(241, 211, 211);
+    border-color: white;
+}
+.yhc-dot{
+    width:100%;
+    height:15px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.yhc-device-block .yhc-margin{
+    margin-right: calc((1920px - 40px - (276px * 6)) / 6);
+}
+.yhc-device{
+    margin-bottom: 40px;
+}
+.yhc-device-block{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 100%;
+    // height: min($numbers: 400px);
+}
+.yhc-device-block .ant-empty{
+    margin: auto auto;
+}
+.yhc-checkBox{
+    opacity: 0;
+}
+.yhc-setDevice .ant-drawer-content-wrapper{
+    width: 48%!important;
+}
+.yhc-setDevice{
+    position:relative;
+    overflow:hidden;
+    padding:20px;
+    width:100%;
+    height: 100%;
+    background-color:white
+}
+.yhc-deviceInfo{
+    font-weight: 600;
+    color: #3687D9;
+    border-bottom: 4px solid #3687D9;
+    padding-bottom: 1px;
+    width: 57px;
+}
+.yhc-deviceInfoInput{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 20%;
+}
+.yhc-deviceInfoInput>div{
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.yhc-deviceInfoSet{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 20%;
+}
+.yhc-deviceInfoSet>div{
+    margin-bottom: 15px;
+    width: 80%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start;
+    &>p{
+        color: silver;
+    }
+}
+.yhc-flex label{
+    display: flex;
+    align-items: center;
+    margin-right: 5px !important;
+}
+.yhc-svg{
+    display: flex;
+    align-items: center;
+}
+.yhc-svg>svg{
+    margin-right: 3px;
+    height: 13px;
+    width: 13px;
+    color: #000;
+}

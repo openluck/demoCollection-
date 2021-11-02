@@ -1,0 +1,27 @@
+.yhc-roomType{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.yhc-setTableHeader .ant-table.ant-table-bordered > .ant-table-container > .ant-table-content > table > thead > tr > th{
+    text-align: center;
+}
+.yhc-tree .ant-tree-switcher-noop{
+    display: none;
+  }
+.yhc-tree .ant-tree-show-line .ant-tree-indent-unit::before{
+    position: absolute;
+    top: 0;
+    right: 12px;
+    bottom: -4px;
+    border-right: 1px dashed #d9d9d9!important;
+    content: '';
+}
+.yhc-tree{
+    width: 18%;
+    background-color: white;
+    padding: 20px;
+}
+.yhc-upload>.xq-guide-upload-l span{
+    display: inline-block;
+}

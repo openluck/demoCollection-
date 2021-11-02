@@ -1,0 +1,146 @@
+
+ .xq-drag-con {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    -webkit-display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-direction:column ;
+    .xq-drap-msg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: column nowrap;
+      background-color: #eff5fb;
+      border-radius: 6px;
+      border:1px #5b9fe5 dashed;
+      color: #5b9fe5;
+      font-size: 24px;
+      opacity: 1;
+      text-align: center;
+      line-height: 1.4;
+      &.xq-drap-msg-error {
+        background-color: #f7e7e7;
+        color: #cf8e99;
+      }
+  
+      &.xq-drap-msg-success {
+        background-color: #e7f7e7;
+        color: #8ecf99;
+      }
+  
+      .xq-drag-icon {
+        font-size: 64px;
+        margin-top: 20px;
+      }
+    }
+  }
+  
+  .xq-drag-area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    font-size: 24px;
+    color: #555555;
+    // border: 2px #c3c3c3 dashed;
+    border-radius: 12px;
+    .xq-drag-icon {
+      font-size: 64px;
+      margin-top: 20px;
+    }
+  }
+  .xq-guide-upload-l {
+    width: 45%;
+    height: 242px;
+    border: 1px dashed #c3ced9;
+    border-radius: 6px;
+    background-color: #fafbfc;
+
+    
+
+    span,
+    svg.icon {
+        display: block;
+        text-align: center;
+    }
+
+    .xq-guide-upload-t {
+        margin: 10px auto 7px auto;
+        color: #616466;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .xq-guide-upload-p {
+        margin-bottom: 6px;
+        color: #b6babe;
+    }
+
+    .xq-guide-download {
+        color: #5b9fe5;
+        text-decoration: underline;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+    }
+
+}
+
+.xq-guide-upload-input {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 0 auto;
+
+    svg.icon {
+
+        width: 40px;
+        height: 40px;
+        color: #3687d9;
+    }
+
+    
+}
+.xq-guide-upload-input-btn {
+    // width: 100%;
+    height: 100%;
+    // position: absolute;
+    // left: 0;
+    // top: 0;
+    margin-left: 20px;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+    input {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+.xq-guide-upload-input-btn>span{
+    color: #5b9fe5;
+    text-decoration: underline;
+    cursor: pointer;
+}
