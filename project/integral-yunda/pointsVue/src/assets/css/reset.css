@@ -1,0 +1,129 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.article-box a {
+    text-decoration: underline;
+}
+
+.article-box a:hover {
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration: none;
+}
+
+a:focus {
+    outline-style: none;
+    -moz-outline-style: none;
+}
+
+i {
+    font-style: normal;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-weight: normal;
+    font-style: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+
+q:before,
+q:after {
+    content: '';
+}
+
+fieldset,
+img,
+abbr,
+acronym {
+    border: 0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+.top-clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.top-clearfix {
+    *zoom: 1;
+    position: relative;
+}
+
+.hidden {
+    display: none;
+    font-size: 0;
+    text-indent: -999em;
+}
