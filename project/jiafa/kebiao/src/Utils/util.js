@@ -429,6 +429,135 @@ function downloadFile(res, type, failMess) {
     window.URL.revokeObjectURL(link.href);
   }
 }
+
+/*
+**
+* 图片大批量压缩及上传方法函数
+* @param { Blooean } params.isOnly 是否是单张图片处理
+* @param { Number } params.reqLen 单次请求文件的数量
+* @param { Array } params.files 待上传图片 
+* @param { String } params.inputId 文件输入框 documnt.getElementById("upload")
+* @param { Number } params.width 压缩后的文件宽
+* @param { Number } params.height 压缩后的文件高
+* @param { Function } success 压缩成功回调函数
+* @param { Function } fail 压缩失败回调函数
+*/
+export const fileUpload = function (params, success, fail) {
+  let { isOnly, reqLen, files, inputId, width, height } = params
+
+  /**
+   * 图片转base64
+   * @param {*} file 图片文件
+   */
+  const handleImg = (file) => {
+    let data = {
+      "imgBase64": '',
+      "imgName": file.name
+    };
+    return new Promise((resolve, reject) => {
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function (e) {
+        var img = new Image();
+        img.onload = function () {
+          let _this = this;
+          let canvas = document.createElement('canvas');
+          let context = canvas.getContext('2d');
+          canvas.width = width;
+          canvas.height = height;
+          context.drawImage(_this, 0, 0, width, height);
+          data.imgBase64 = canvas.toDataURL('image/jpeg');
+          console.log(data.imgName)
+          resolve(data)
+        };
+        img.src = e.target.result;
+      };
+    })
+  }
+  if (isOnly) {
+    // 单张处理
+    handleImg(files[0]).then(data => {
+      if (data.imgBase64) {
+        success([data])
+      } else {
+        fail()
+      }
+    })
+  } else {
+    // 批量处理
+    if (reqLen) {
+      // 单次请求数量不得超过20
+      if (reqLen > 20) {
+        alert('设置单次请求数不得超过20，请修改');
+        return;
+      }
+    } else {
+      reqLen = 10;
+    }
+    /**
+     * all 总文件长度
+     * num 应请求次数
+     * pro 每次请求增加数
+     */
+    let all = files.length; let num = 0;
+    all < reqLen || all === reqLen ? num = 1 : num = Math.ceil(all / reqLen);
+    // 图片处理
+    let imgData = [];
+    let realNum = 0
+    // console.log("tup", all, num)
+    for (let i = 0; i < all; i++) {
+      let file = files[i];
+
+      // 判断文件格式
+      let fileFormat = getFileSuffix(files[i].name)
+      if (fileFormat !== "jpg" && fileFormat !== 'JPG') {
+        message.warning(`暂不支持${fileFormat}格式，请上传jpg/JPG格式`);
+        // 清空上传输入框内容
+        // console.log(inputId)
+        inputId.value = "";
+        return;
+      }
+      try {
+        handleImg(file).then((data) => {
+          if (data.imgBase64) {
+            realNum++
+            imgData.push(data);
+            // console.log(imgData);
+            const fun = (imgData) => {
+              if (valueType(success) === 'function') {
+                success(imgData, num);
+              } else {
+                alert('必须为方法函数')
+              }
+            }
+            console.log("判断", all, i, num, imgData.length, reqLen, realNum)
+            if (imgData.length === reqLen) {
+              // 处理的图片数组等于每批次上传数量
+              fun(imgData);
+              imgData = [];
+            } else if (realNum === all) {
+              // 处理完成最后一张图片,排序为乱序
+              fun(imgData);
+              imgData = [];
+            } else if (num === 1) {
+              // 只有一张
+              if (imgData.length === all) {
+                fun(imgData);
+              }
+            }
+          } else {
+            fail();
+          }
+        })
+      } catch (e) {
+        console.log("处理图片错误")
+        fail();
+      }
+    }
+  }
+}
+
+
 /**
  * 导出
  **/

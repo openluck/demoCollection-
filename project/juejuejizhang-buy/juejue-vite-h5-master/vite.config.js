@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: OpenLcuk
+ * @Date: 2021-11-02 10:59:09
+ * @LastEditors: OpenLcuk
+ * @LastEditTime: 2021-11-04 15:28:33
+ */
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 import styleImport from 'vite-plugin-style-import'
@@ -35,14 +43,15 @@ export default defineConfig({
       'config': path.resolve(__dirname, 'src/config') // src 路径
     }
   },
-  // server: {
-  //   proxy: {
-  //     '/api': {
-  //       // 当遇到 /api 路径时，将其转换成 target 的值
-  //       target: 'http://47.99.134.126:7009',
-  //       changeOrigin: true,
-  //       rewrite: path => path.replace(/^\/api/, '') // 将 /api 重写为空
-  //     }
-  //   }
-  // }
+  server: {
+    proxy: {
+      '/api': {
+        // 当遇到 /api 路径时，将其转换成 target 的值
+        // target: 'http://47.99.134.126:7009',
+        target: 'http://127.0.0.1:7009/',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/, '') // 将 /api 重写为空
+      }
+    }
+  }
 })

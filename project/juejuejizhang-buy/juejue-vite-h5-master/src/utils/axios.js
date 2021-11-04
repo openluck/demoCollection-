@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: OpenLcuk
+ * @Date: 2021-11-02 10:59:09
+ * @LastEditors: OpenLcuk
+ * @LastEditTime: 2021-11-03 15:41:07
+ */
 import axios from 'axios'
 import { Toast } from 'zarm'
 
@@ -17,7 +25,7 @@ axios.interceptors.response.use(res => {
   }
   if (res.data.code != 200) {
     if (res.data.msg) Toast.show(res.data.msg)
-    if (res.data.code == 401) {
+    if (res.data.code == 401) {  // 所有接口返回为401的 都是 没有登录，或者token过期
       window.location.href = '/login'
     }
     if (res.data.code == 413) {

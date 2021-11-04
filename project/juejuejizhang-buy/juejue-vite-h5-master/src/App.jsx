@@ -17,6 +17,7 @@ const App = () => {
   useEffect(() => {
     console.log('location',location);
     console.log('pathname',pathname);
+    console.log('routes',routes);
     setShowNav(needNav.includes(pathname));
   }, [pathname]); // [] 内的参数若是变化，便会执行上述回调函数=
   return (
