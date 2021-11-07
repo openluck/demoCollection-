@@ -1,0 +1,79 @@
+/* pages/lottery/shake/shake.wxss */
+page{
+  padding: 0;
+}
+.body{
+  width:100%;
+  height:100%;
+  background:white;
+  text-align:center;
+  position: relative
+}
+.icon{
+  width:374rpx;
+  height:374rpx;
+  display:block;
+  margin:auto;
+  padding-top: 284rpx;
+}
+
+.dialog{
+  width:100%;
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  top:0;
+  left:0;
+  background:#ccc;
+}
+
+.win-dialog{
+  width: 90%;
+  background: white;
+  border-radius:20rpx;
+  /* margin: 254rpx auto; */
+  padding: 24rpx;
+}
+
+.win-img{
+  width: 660rpx;
+  height: 330rpx;
+  margin:auto;
+  position: relative
+}
+
+.parcelImg{
+  width: 200rpx;
+  height:200rpx;
+  margin: 0 auto
+}
+.again-btn{
+  width: 356rpx;
+  height: 80rpx;
+  background: #bc4343;
+  color:white;
+  border-radius: 80rpx;
+  line-height: 80rpx;
+}
+.flex{
+  display: flex;
+  padding: 20rpx 0;
+  width: 100%;
+  justify-content: space-around
+}
+.bottom-btn{
+  width: 45%;
+  border-radius: 50rpx;
+}
+.bottom-btn:first-child{
+  background: #bc4343;
+  color: white;
+}
+.bottom-btn:last-child{
+  background: white;
+  color: #333;
+  border:2rpx solid#333;
+}

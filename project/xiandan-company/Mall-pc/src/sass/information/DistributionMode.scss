@@ -1,0 +1,41 @@
+.distribution-mode{
+  .title{
+    padding: 20px 30px;
+    font-size:20px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:26px;
+    color:rgba(51,51,51,1);
+    opacity:1;
+    border-bottom: 1px solid #dedede;
+    text-align: center;
+  }
+  .distribution{
+    padding: 20px 30px;
+    font-size:18px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:24px;
+    color:rgba(219,11,11,1);
+    opacity:1;
+    border-bottom: 1px solid #dedede;
+    img{
+      display: block;
+      margin: 20px auto 0 auto;
+    }
+  }
+  .info{
+    padding: 20px 30px;
+  }
+  .announcements{
+    padding: 0 30px 20px 30px;
+  }
+  .info, .announcements{
+    font-size:14px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:28px;
+    color:rgba(51,51,51,1);
+    opacity:1;
+  }
+}

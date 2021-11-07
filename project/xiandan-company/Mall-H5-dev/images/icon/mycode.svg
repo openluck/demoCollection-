@@ -1,0 +1,7 @@
+svg xmlns="http://www.w3.org/2000/svg" width="686.001" height="1149" viewBox="0 0 686.001 1149">
+  <g id="额" transform="translate(-30 -289)">
+    <path id="圆角矩形_2" data-name="圆角矩形 2" d="M684,1438H62a31.974,31.974,0,0,1-32-32V567a40,40,0,1,0,0-80V321a31.974,31.974,0,0,1,32-32H684a31.974,31.974,0,0,1,32,32V487a40,40,0,1,0,0,80v839a31.974,31.974,0,0,1-32,32Z" fill="#fff"/>
+    <path id="圆角矩形_2_拷贝" data-name="圆角矩形 2 拷贝" d="M60,486.327V351a32,32,0,0,1,32-32H654a32,32,0,0,1,32,32V486.56m0,80.82V1379c0,17.673-7.327,29-25,29H85c-17.673,0-25-9.327-25-27V567.508" fill="none" stroke="#e8ecef" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <line id="形状_1" data-name="形状 1" x2="568.65" transform="translate(87 530)" fill="none" stroke="#fe6570" stroke-width="4" stroke-dasharray="48 4"/>
+  </g>
+</svg>

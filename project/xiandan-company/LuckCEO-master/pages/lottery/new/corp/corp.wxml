@@ -1,0 +1,17 @@
+<!--pages/lottery/new/corp/corp.wxml-->
+
+<import src="../../../../we-cropper/dist/we-cropper.wxml" />
+
+<view class="cropper-wrapper">
+  <template is="we-cropper" data="{{...cropperOpt}}" />
+
+  <view class="cropper-buttons" style="height:{{height*0.08}}px">
+    <view class="upload" bindtap="uploadTap">
+      选择图片
+    </view>
+    <view class="getCropperImage" style="width:50%;text-align:center" bindtap="getCropperImage">
+      生成图片
+    </view>
+  </view>
+
+</view>

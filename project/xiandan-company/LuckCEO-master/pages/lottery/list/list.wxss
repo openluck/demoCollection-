@@ -1,0 +1,142 @@
+/* pages/lottery/list/list.wxss */
+
+.item {
+  width: 100%;
+  height: 550rpx;
+  background: #fff;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+
+.item_active {
+  opacity: 0.5;
+}
+
+.click {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.click_active {
+  width: 100%;
+  height: 100%;
+  background: #ececec;
+}
+
+.cover-image-button {
+  border-radius: 30rpx;
+  position: absolute;
+  bottom: 30rpx;
+  right: 40rpx;
+  font-size: 10rpx;
+  width: auto
+}
+
+.los-lottery {
+  border-radius: 30rpx 0 0 30rpx;
+  margin-right: -35rpx;
+  background: #666 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.lottery {
+  border: none !important;
+  border-radius: 30rpx 0 0 30rpx;
+  margin-right: -35rpx;
+  background: #bc4343 !important;
+  color: white !important;
+}
+
+.cover {
+  width: 100%;
+  height: 376rpx;
+  position: absolute;
+  top: 10rpx;
+  bottom: 10rpx;
+}
+
+.status {
+  top: 30rpx;
+  left: 30rpx;
+  position: absolute;
+  line-height: 48rpx;
+  height: 48rpx;
+}
+
+.status-icon {
+  font-size: 42rpx;
+  color: #d2483c;
+  vertical-align: middle;
+}
+
+.status-text {
+  font-size: 32rpx;
+  font-weight: bold;
+  letter-spacing: 4rpx;
+  color: #d2483c;
+}
+
+.gifs-container {
+  position: absolute;
+  left: 40rpx;
+  bottom: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left
+}
+
+.open_title{
+  font-size: 34rpx;
+  color: #333333
+}
+
+.open_status {
+  /* height: 100rpx; */
+  color: #666666;
+  font-size: 28rpx;
+  text-align: left;
+  /* display: flex */
+}
+
+.open_text {
+  /* line-height: 100rpx; */
+}
+
+.weui-navbar {
+  background: #fff;
+  padding-left: 63rpx;
+  padding-right: 63rpx;
+  box-sizing: border-box;
+}
+
+.weui-bar__item_on .weui-navbar__title {
+  color: #333;
+  font-size: 32rpx;
+  font-weight: 400;
+}
+
+.weui-bar__item_on::after {
+  display: block;
+  content: "";
+  height: 8rpx;
+  width: 72rpx;
+  margin: auto;
+  background: #bc4343;
+}
+
+.weui-navbar__item {
+  text-align: center;
+  background: #fff;
+}
+
+.emptyPic {
+  width: 220rpx;
+  height: 225rpx;
+}
+
+.emptyText {
+  font-size: 28rpx;
+}

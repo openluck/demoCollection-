@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/lottery/new/new",
+    "pages/lottery/list/list",
+    "pages/lottery/detail/detail",
+    "pages/lottery/new/success/success",
+    "pages/lottery/showAllUser/showAllUser",
+    "pages/lottery/winners/winners",
+    "pages/share/share",
+    "pages/lottery/new/corp/corp",
+    "pages/lottery/shake/shake"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "抽奖CEO",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

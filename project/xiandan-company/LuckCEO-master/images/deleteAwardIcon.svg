@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #bc4343;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="组_121" data-name="组 121" transform="translate(-16 -703)">
+    <rect id="矩形_189" data-name="矩形 189" class="cls-1" width="17" height="17" rx="8.5" transform="translate(16 703)"/>
+    <rect id="矩形_190" data-name="矩形 190" class="cls-2" width="11" height="1" rx="0.5" transform="translate(20.964 707.257) rotate(45)"/>
+    <rect id="矩形_191" data-name="矩形 191" class="cls-2" width="11" height="1" rx="0.5" transform="translate(28.743 707.964) rotate(135)"/>
+  </g>
+</svg>

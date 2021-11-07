@@ -1,0 +1,29 @@
+
+.red-packet-wrapper {
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .salt-egg-top {
+        background: linear-gradient(to left, #FE5D68, #FF825C);
+        box-shadow: 0 3px 46px 0 rgba(254, 109, 109, 0.23);
+
+        div {
+            background: #961111;
+            opacity: 0.05;
+        }
+    }
+
+    .red-packet-empty {
+        width: 100%;
+        background: white;
+        border-radius: 16px;
+        margin-top: 16px;
+
+        h4 {
+            font-size: 14px !important;
+            font-weight: bold !important;
+        }
+    }
+}

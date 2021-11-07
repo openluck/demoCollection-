@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.722" y1="1" x2="0.278" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f99696"/>
+      <stop offset="1" stop-color="#f54040"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.733" y1="1.005" x2="0.267" y2="-0.005" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="待付款" transform="translate(-345 -716)">
+    <rect id="矩形_14_拷贝_2" data-name="矩形 14 拷贝 2" width="60" height="60" transform="translate(345 716)" fill="none"/>
+    <g id="组_13" data-name="组 13">
+      <g id="矩形_19" data-name="矩形 19">
+        <path id="矩形_19-2" data-name="矩形 19" d="M397,766H353a4,4,0,0,1-4-4V730a4,4,0,0,1,4-4h44a4,4,0,0,1,4,4v32A4,4,0,0,1,397,766Zm-3-17h-9a2,2,0,0,0,0,4h9a2,2,0,1,0,0-4Zm0,8H376a2,2,0,0,0,0,4h18a2,2,0,1,0,0-4Z" fill="url(#linear-gradient)"/>
+        <path id="Gradient_Overlay" data-name="Gradient Overlay" d="M397,766H353a4,4,0,0,1-4-4V730a4,4,0,0,1,4-4h44a4,4,0,0,1,4,4v32A4,4,0,0,1,397,766Zm-3-17h-9a2,2,0,0,0,0,4h9a2,2,0,1,0,0-4Zm0,8H376a2,2,0,0,0,0,4h18a2,2,0,1,0,0-4Z" opacity="0.95" fill="url(#linear-gradient-2)"/>
+      </g>
+      <rect id="矩形_20" data-name="矩形 20" width="52" height="4" transform="translate(349 733)" fill="#af0808"/>
+    </g>
+  </g>
+</svg>

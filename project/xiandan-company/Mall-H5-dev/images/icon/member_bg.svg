@@ -1,0 +1,31 @@
+<svg id="组_22" data-name="组 22" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="686" height="125" viewBox="0 0 686 125">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: #dfc890;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        opacity: 0.52;
+      }
+
+      .cls-3 {
+        opacity: 0.9;
+      }
+    </style>
+    <linearGradient id="linear-gradient" y1="62.5" x2="686" y2="62.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f6deb8"/>
+      <stop offset="1" stop-color="#ffefbd"/>
+    </linearGradient>
+  </defs>
+  <rect id="矩形_22" data-name="矩形 22" class="cls-1" width="686" height="125" rx="32" ry="32"/>
+  <path id="形状_18" data-name="形状 18" class="cls-2" d="M489.155,528.76c-13.268.349-6.083,52.189,77.845,50.24,82.875-1.924,116.961,38.862,119,41s20.431,32.8,38,23,26-87,26-87l-34-38s-141.924-15.394-144-15a11.585,11.585,0,0,1-4,0Z" transform="translate(-32 -534)"/>
+  <path id="形状_18_拷贝" data-name="形状 18 拷贝" class="cls-3" d="M508.155,507.76c-13.268.349-6.083,52.189,77.845,50.24,82.875-1.924,116.961,38.862,119,41s20.431,32.8,38,23,26-87,26-87l-34-38s-141.924-15.394-144-15a11.585,11.585,0,0,1-4,0Z" transform="translate(-32 -534)"/>
+  <path id="形状_18-2" data-name="形状 18" class="cls-2" d="M308,679c13.267-.349-35.625-75.8-119.553-73.849-82.875,1.925-116.961-38.862-119-41s-20.431-32.8-38-23-26,87-26,87l34,38s141.924,15.394,144,15a11.614,11.614,0,0,1,4,0Z" transform="translate(-32 -534)"/>
+  <path id="形状_18_拷贝-2" data-name="形状 18 拷贝" class="cls-4" d="M242.293,682.392c13.267-.35,6.082-52.189-77.846-50.241-82.875,1.925-116.961-38.862-119-41s-20.431-32.8-38-23-26,87-26,87l34,38s141.924,15.394,144,15a11.614,11.614,0,0,1,4,0Z" transform="translate(-32 -534)"/>
+</svg>

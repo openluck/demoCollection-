@@ -1,0 +1,21 @@
+body{
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0px;
+  margin: 0px;
+  background: #F8F8F8;
+}
+li{
+  list-style-type: none;
+}
+ul,div,p{
+  margin: 0px;
+  padding: 0px;
+}
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}

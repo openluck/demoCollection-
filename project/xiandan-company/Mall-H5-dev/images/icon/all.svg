@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.891" y1="1" x2="0.109" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f99696"/>
+      <stop offset="1" stop-color="#f54040"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.894" y1="1.005" x2="0.106" y2="-0.005" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="全订单" transform="translate(-131 -716)">
+    <rect id="矩形_14" data-name="矩形 14" width="60" height="60" transform="translate(131 716)" fill="none" opacity="0.471"/>
+    <g id="组_12" data-name="组 12">
+      <g id="矩形_18_拷贝" data-name="矩形 18 拷贝">
+        <path id="矩形_18_拷贝-2" data-name="矩形 18 拷贝" d="M177,772H145a4,4,0,0,1-4-4V724a4,4,0,0,1,4-4h22l14,14v34A4,4,0,0,1,177,772Zm-16-23H147a2,2,0,1,0,0,4h14a2,2,0,0,0,0-4Zm14,8H147a2,2,0,1,0,0,4h28a2,2,0,1,0,0-4Z" fill="url(#linear-gradient)"/>
+        <path id="矩形_18_拷贝-3" data-name="矩形 18 拷贝" d="M177,772H145a4,4,0,0,1-4-4V724a4,4,0,0,1,4-4h22l14,14v34A4,4,0,0,1,177,772Zm-16-23H147a2,2,0,1,0,0,4h14a2,2,0,0,0,0-4Zm14,8H147a2,2,0,1,0,0,4h28a2,2,0,1,0,0-4Z" fill="url(#linear-gradient-2)"/>
+      </g>
+      <path id="矩形_18" data-name="矩形 18" d="M181,734H171a4,4,0,0,1-4-4V720Z" fill="#af0808"/>
+    </g>
+  </g>
+</svg>

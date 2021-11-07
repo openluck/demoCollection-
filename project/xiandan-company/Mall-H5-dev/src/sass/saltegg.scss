@@ -1,0 +1,45 @@
+.salt-egg-container {
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .salt-egg-top {
+        background: linear-gradient(to left, #19E5BC, #0FD2A9);
+        box-shadow: 0 3px 46px 0 rgba(60, 235, 191, 0.23);
+
+        div {
+            background: #962C0C;
+            opacity: 0.02;
+        }
+    }
+
+    .egg-empty {
+        width: 100%;
+        background: white;
+        border-radius: 16px;
+        margin-top: 16px;
+
+        h4 {
+            font-size: 14px !important;
+            font-weight: bold !important;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

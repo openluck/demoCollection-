@@ -1,0 +1,28 @@
+<!--pages/lottery/shake/shake.wxml-->
+<view class="body" style="height:{{height}}">
+  <image src="{{shakeLogo}}" class="icon"></image>
+  <view style="font-size:36rpx;font-weight:600;line-height:100rpx">摇一摇</view>
+  <view>拼运气得无限大奖</view>
+  <view class="dialog" wx:if='{{code<=0}}'>
+    <view class="win-dialog" wx:if='{{code == -2}}'>
+      <view style="color:#333;line-height:150rpx;">未摇中</view>
+      <image src="../../../images/parcel.png" class="parcelImg"></image>
+      <view style="margin-bottom:40rpx">别放弃再摇一次，立马寻找到</view>
+      <button class="again-btn" bindtap="setAgain">再摇一次</button>
+    </view>
+    <view class="win-dialog" wx:if='{{code == 0}}'>
+      <view class="win-img">
+        <image src="../../../images/awardsCountTip.svg" style="width:180rpx;height:50rpx;position: absolute;top:-4rpx;left:0" wx:if='{{!(giftsCount=="一")}}'></image>
+        <text style="position: absolute;top:0;left:8rpx;font-size:30rpx;color:#ffffff" wx:if='{{!(giftsCount=="一")}}'>共{{giftsCount}}个奖项</text>
+        <image src="{{winImg}}" style="width:100%;height:100%;"></image>
+      </view>
+      <view style="text-align:left;line-height:80rpx">奖品：{{winTitle}}</view>
+      <view style="text-align:left;font-size:28rpx;color:#666" wx:if='{{openType=="1"}}'>{{openTime}} 自动开奖</view>
+      <view style="text-align:left;font-size:28rpx;color:#666" wx:else>满 {{openCount}} 人自动开奖</view>
+      <view class="flex">
+        <button class="bottom-btn" bindtap="onItemClick">参与抽奖</button>
+        <button class="bottom-btn" bindtap="setAgain">再摇一次</button>
+      </view>
+    </view>
+  </view>
+</view>

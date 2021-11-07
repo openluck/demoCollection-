@@ -1,0 +1,34 @@
+<!--miniprogram/pages/index/index.wxml-->
+<view class="container">
+	<image src="../../images/pg-background.jpg" mode="aspectFill" class="bg-image"></image>
+	<view class="nav">
+		<view class="nav-title">{{books[bookIndex].name}}</view>
+		<view class="fa fa-bars nav-menu" bindtap="onNavMenu"></view>
+	</view>
+	<view class="menu">
+		<view class="menu-prev" bindtap="onPrevTutorial">
+			<view class="fa fa-angle-left" wx:if="{{tutorialIndex > 0}}"></view>
+		</view>
+		<block wx:if="{{contents.length}}">
+
+			<view class="menu-container" bindtap="goClassPage" wx:if="{{$state.isRegisted}}">
+				<view class="menu-subject">{{contents[tutorialIndex].tutorial}}</view>
+				<view class="menu-content">{{contents[tutorialIndex].outline}}</view>
+				<view class="menu-arrow">点击去练习<text class="fa fa-arrow-right"></text></view>
+			</view>
+			<button class="menu-container" 
+			open-type="getUserInfo"
+			bindgetuserinfo="onGetUserInfo" wx:else>
+				<view class="menu-subject">{{contents[tutorialIndex].tutorial}}</view>
+				<view class="menu-content">{{contents[tutorialIndex].outline}}</view>
+				<view class="menu-arrow">点击去练习<text class="fa fa-arrow-right"></text></view>
+			</button>
+
+		</block>
+
+
+		<view class=" menu-next" bindtap="onNextTutorial">
+			<view class="fa fa-angle-right" wx:if="{{tutorialIndex < (contents.length - 1)}}"></view>
+		</view>
+	</view>
+</view>

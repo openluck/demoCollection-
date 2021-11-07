@@ -1,0 +1,53 @@
+[33md603938[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{0}: commit: 同步代码
+[33mbb93177[m HEAD@{1}: commit (merge): 同步代码
+[33mf31a3e6[m HEAD@{2}: checkout: moving from 504b3aadcbb7b2cc046ea7ee0ccc5b80bd10e5f5 to master
+[33m504b3aa[m HEAD@{3}: commit: 修改了ceo首页样式，居中了图标，修改了进入页面时导航栏无法准确显示当前处于首页的bug；修改发起抽奖页面因为merge产生的冲突bug，奖品名称为空时的提示不能显示几等奖，奖品份数输入框内容错误，发布抽奖按钮边距错误。
+[33m9dd24f3[m HEAD@{4}: pull --rebase: checkout 9dd24f358094a45b64bd7cffd84296094c75baad
+[33mf31a3e6[m HEAD@{5}: commit: 修改了ceo首页样式，居中了图标，修改了进入页面时导航栏无法准确显示当前处于首页的bug；修改发起抽奖页面因为merge产生的冲突bug，奖品名称为空时的提示不能显示几等奖，奖品份数输入框内容错误，发布抽奖按钮边距错误。
+[33m742dd0a[m HEAD@{6}: commit: 解决了merge错误
+[33m1183c68[m HEAD@{7}: pull: Fast-forward
+[33mcd781d2[m HEAD@{8}: commit: 更新图片
+[33mda9b662[m HEAD@{9}: commit: 按照设计稿将pc端移动端首页进行了调整，发起抽奖页面将各个位置的值进行了绑定，以及缺省时的提示
+[33m6b38a25[m HEAD@{10}: rebase finished: returning to refs/heads/master
+[33m6b38a25[m HEAD@{11}: pull --rebase: 同步代码
+[33ma4d3227[m HEAD@{12}: pull --rebase: checkout a4d322737b72a7b084b4b22b6aac5508ce441a1c
+[33m93a0deb[m HEAD@{13}: commit: 同步代码
+[33mb55cedc[m HEAD@{14}: commit: 优化了头部组件跳转方式
+[33mf915007[m HEAD@{15}: pull: Fast-forward
+[33mce2926b[m HEAD@{16}: checkout: moving from master to master
+[33mce2926b[m HEAD@{17}: commit: 发起抽奖页面实现了选择封面并裁剪得功能
+[33m4edeaa0[m HEAD@{18}: commit: 移动端添加了点击弹出小程序二维码功能
+[33m4c99085[m HEAD@{19}: commit: 更新图片
+[33m5573444[m HEAD@{20}: commit: 更新图片
+[33mdaea52d[m HEAD@{21}: commit: 修改了移动端首页组件路由名称
+[33mdefdc3f[m HEAD@{22}: pull --rebase: Fast-forward
+[33m13a3026[m HEAD@{23}: rebase finished: returning to refs/heads/master
+[33m13a3026[m HEAD@{24}: pull --rebase: 抽奖列表实现了点击弹出二维码；移动端完成了首页，footer，header，和路由跳转功能
+[33md34e9bf[m HEAD@{25}: pull --rebase: checkout d34e9bf34c784e0f167a169a2598411e9586850f
+[33mb4c9210[m HEAD@{26}: commit: 抽奖列表实现了点击弹出二维码；移动端完成了首页，footer，header，和路由跳转功能
+[33m769aee5[m HEAD@{27}: commit: 修改了联系我们页面的地图和联系方式布局
+[33m3a31b0a[m HEAD@{28}: pull --rebase: Fast-forward
+[33m770225e[m HEAD@{29}: commit: 为抽奖列表查看详情和首页微信小程序按钮添加了点击时间（图片为试用）,优化了header
+[33mfcf34d4[m HEAD@{30}: rebase finished: returning to refs/heads/master
+[33mfcf34d4[m HEAD@{31}: pull --rebase: 为首页，活动列表添加公共组件，raffle添加了跳转至发起以及从发起返回的功能，raffle添加了转换分页和循环生成的功能
+[33mb5e03a6[m HEAD@{32}: pull --rebase: checkout b5e03a6563b88de9a3d6a9af0b21a1ef932d3144
+[33m6942820[m HEAD@{33}: commit: 为首页，活动列表添加公共组件，raffle添加了跳转至发起以及从发起返回的功能，raffle添加了转换分页和循环生成的功能
+[33m684a506[m HEAD@{34}: pull --rebase: Fast-forward
+[33mdfe3b29[m HEAD@{35}: commit: 更新图片资源
+[33m88b7102[m HEAD@{36}: commit: 完成了发起活动页面的样式层，替换了首页的图片
+[33m375ad3d[m HEAD@{37}: pull --rebase: Fast-forward
+[33ma4743d2[m HEAD@{38}: checkout: moving from master to master
+[33ma4743d2[m HEAD@{39}: reset: moving to HEAD
+[33ma4743d2[m HEAD@{40}: rebase finished: returning to refs/heads/master
+[33ma4743d2[m HEAD@{41}: pull --rebase: 添加首页图片资源
+[33m3c9afae[m HEAD@{42}: pull --rebase: 根据ui新设计稿，重写抽奖列表页面和首页的样式
+[33md9a2119[m HEAD@{43}: pull --rebase: checkout d9a21193fca96ce7414d5ec33e22e15c773413a5
+[33m3a4ae37[m HEAD@{44}: pull: Merge made by the 'recursive' strategy.
+[33meabf4f9[m HEAD@{45}: commit: 添加首页图片资源
+[33mcb27df0[m HEAD@{46}: commit: 根据ui新设计稿，重写抽奖列表页面和首页的样式
+[33m0fa2a09[m HEAD@{47}: commit (merge): 同步代码
+[33m6cf6dcf[m HEAD@{48}: checkout: moving from master to master
+[33m6cf6dcf[m HEAD@{49}: rebase: updating HEAD
+[33m9f888b9[m HEAD@{50}: pull --rebase: checkout 9f888b9329e84dbf75ceebbd5246db9817545480
+[33m6cf6dcf[m HEAD@{51}: commit: 重写了header和footer，增加了抽奖页面和抽奖列表
+[33me176153[m HEAD@{52}: clone: from git@git.code.tencent.com:hopeu/OfficialWebsite.git

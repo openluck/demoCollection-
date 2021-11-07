@@ -1,0 +1,206 @@
+.user-auth-container {
+  .auth-img {
+    width: 100%;
+    background: url("/images/common/auth.png") no-repeat center center;
+    background-size: cover;
+    height: 200px;
+    text-align: center;
+    color: white;
+    position: relative;
+
+    .auth-mask {
+      width: 100%;
+      height: 200px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background: rgba(20, 20, 20, 0.6);
+    }
+
+    .auth-title {
+      position: relative;
+      z-index: 999;
+
+      p:first-of-type {
+        font-size: 25px;
+        font-family: fantasy;
+        padding-top: 13%;
+      }
+
+      p:nth-of-type(2) {
+        font-size: 14px;
+        letter-spacing: 1px;
+        margin-top: 15px;
+      }
+
+      p:nth-of-type(3) {
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .auth-warning {
+    height: 40px;
+    font-size: 12px;
+    line-height: 40px;
+    margin-left: 10px;
+
+    .iconfont {
+      font-size: 17px;
+      color: #26A2FF;
+      position: relative;
+      top: 1px;
+    }
+
+    span:nth-of-type(1) {
+      color: gray;
+    }
+  }
+
+  .auth-equity {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    color: #a9a8a8;
+
+    .auth-equity-title {
+      font-size: 15px;
+      letter-spacing: 1px;
+      width: 100%;
+      text-align: center;
+    }
+
+    div:nth-of-type(2) {
+      width: 100%;
+      margin-top: 1%;
+
+      p {
+        display: inline-block;
+        width: 32%;
+        text-align: center;
+
+        span:nth-of-type(1) {
+          display: block;
+          font-size: 12px;
+          margin-top: 5px;
+        }
+
+        .iconfont {
+          font-size: 28px;
+          fill: #a9a8a8;
+        }
+      }
+    }
+  }
+
+  .warning-popup {
+    width: 80%;
+    border-radius: 10px;
+  }
+
+  .auth-tips {
+    width: 90%;
+    margin: auto;
+
+    p:first-of-type {
+      font-size: 14px;
+      color: orange;
+      text-align: center;
+      height: 40px;
+      line-height: 40px;
+
+      span {
+        display: inline-block;
+        width: 25%;
+        height: 1px;
+        position: relative;
+        top: -4px;
+      }
+
+      span:nth-of-type(1) {
+        background: -webkit-linear-gradient(right, orange, #FFFFFF);
+      }
+
+      span:nth-of-type(2) {
+        background: -webkit-linear-gradient(left, orange, #FFFFFF);
+      }
+
+      label {
+        margin: 0 10px;
+      }
+    }
+
+    p:nth-of-type(2), p:nth-of-type(3) {
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .button {
+      width: 80%;
+      height: 36px;
+      background: #26a2ff;
+      border-radius: 18px;
+      border: none;
+      color: white;
+      margin: 20px auto;
+      font-size: 14px;
+
+      span {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  .mint-button-large {
+    display: block;
+    width: 97%;
+    margin: 30px auto auto;
+  }
+
+  .panel {
+    .panel-top {
+      padding: 0 10px;
+      .mint-cell-text {
+        font-size: 15px;
+      }
+
+      .mint-field-core {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .identity-card {
+    height: 130px;
+    background: #4A90E4;
+    width: calc(100% - 32px);
+    padding: 16px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    margin: 16px auto auto;
+    color: white;
+    font-size: 14px;
+    position: relative;
+
+    p:nth-of-type(2) {
+      margin-top: 12px;
+    }
+
+    p:nth-of-type(3) {
+      margin-top: 40px;
+    }
+
+    .iconfont {
+      position: absolute;
+      right: 16px;
+      top: 0;
+      font-size: 80px;
+    }
+  }
+}

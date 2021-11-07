@@ -1,0 +1,8 @@
+/* pages/lottery/showAllUsers/showAllUser.wxss */
+
+.heads_container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  display: -webkit-flex;
+}

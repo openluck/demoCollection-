@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.789" y1="1" x2="0.211" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f99696"/>
+      <stop offset="1" stop-color="#f54040"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.803" y1="1.005" x2="0.197" y2="-0.005" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="待收货物" transform="translate(-559 -716)">
+    <rect id="矩形_14_拷贝" data-name="矩形 14 拷贝" width="60" height="60" transform="translate(559 716)" fill="none"/>
+    <g id="圆角矩形_7" data-name="圆角矩形 7">
+      <path id="圆角矩形_7-2" data-name="圆角矩形 7" d="M605,770H573a8,8,0,0,1-8-8V730a8,8,0,0,1,8-8h32a8,8,0,0,1,8,8v32A8,8,0,0,1,605,770Zm3.411-32.41a2.071,2.071,0,0,0-2.929,0L596,747.071l-4.481-4.481a2.071,2.071,0,0,0-2.929,2.929l5.858,5.858a2.338,2.338,0,0,0,3.1,0l10.858-10.858A2.071,2.071,0,0,0,608.411,737.59Z" fill="url(#linear-gradient)"/>
+      <path id="Gradient_Overlay" data-name="Gradient Overlay" d="M605,770H573a8,8,0,0,1-8-8V730a8,8,0,0,1,8-8h32a8,8,0,0,1,8,8v32A8,8,0,0,1,605,770Zm3.411-32.41a2.071,2.071,0,0,0-2.929,0L596,747.071l-4.481-4.481a2.071,2.071,0,0,0-2.929,2.929l5.858,5.858a2.338,2.338,0,0,0,3.1,0l10.858-10.858A2.071,2.071,0,0,0,608.411,737.59Z" opacity="0.95" fill="url(#linear-gradient-2)"/>
+    </g>
+    <g id="组_14" data-name="组 14">
+      <rect id="圆角矩形_8" data-name="圆角矩形 8" width="12" height="4" rx="2" transform="translate(569 740)" fill="#af0808"/>
+      <rect id="圆角矩形_8_拷贝" data-name="圆角矩形 8 拷贝" width="18" height="4" rx="2" transform="translate(569 748)" fill="#af0808"/>
+    </g>
+  </g>
+</svg>

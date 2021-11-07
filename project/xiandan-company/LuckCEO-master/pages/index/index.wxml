@@ -1,0 +1,91 @@
+<!--index.wxml-->
+<import src="/templates/login.wxml" />
+
+<view class='center_container' wx:if="{{logining}}" style='background:#fff'>
+  <image src="/images/icon.png" mode="cover" style='width:209rpx;height:209rpx'></image>
+  <text style='font-size:36rpx; margin-top:30rpx;font-family:PingFang SC; font-weight:400;line-height:40rpx;color:rgba(51,51,51,1);'>正在登录中</text>
+  <view class='weui-loading' style='width:32rpx;height:32rpx' />
+</view>
+
+<view class='center_container' wx:elif="{{redirecting}}" style='background:#fff'>
+  <image src="/images/icon.png" mode="cover" style='width:160rpx;height:160rpx'></image>
+  <text style='margin-top:32rpx'>跳转中....</text>
+  <view class='weui-loading' style='width:32rpx;height:32rpx' />
+</view>
+
+<view class="page" wx:else>
+  <view class=" userinfo">
+    <image src="{{userInfo.avatarUrl  ? userInfo.avatarUrl : '/images/avatar.svg'}}" class='userinfo-avatar'></image>
+    <view style='userinfo-nickname' class='userinfo-nickname'>{{userInfo.nickName != null ? '昵称：'+userInfo.nickName : '未登陆'}}</view>
+    <view class="weui-cell__fd">
+    </view>
+  </view>
+  <view class="luckyList">
+    <view class="myList" bindtap='onJoinLottery'>
+      <view style="font-size:40rpx">{{userInfo.joint_count}}</view>
+      <view>参与抽奖</view>
+    </view>
+    <view style="color:#dfdfdf">|</view>
+    <view class="myList" bindtap='onMyLottery'>
+      <view style="font-size:40rpx">{{userInfo.publish_count}}</view>
+      <view>发起抽奖</view>
+    </view>
+    <view style="color:#dfdfdf">|</view>
+    <view class="myList" bindtap='onWinsLottery'>
+      <view style="font-size:40rpx">{{userInfo.win_count}}</view>
+      <view>中奖记录</view>
+    </view>
+  </view>
+
+  <view class="weui-cells">
+    <button class="weui-cell" bindtap='onShake'  style="background:white; height:100rpx;">
+      <view class="weui-cell__ft">
+        <image src="/images/shake.svg" style="width:48rpx;height:48rpx;vertical-align: middle;"></image>
+      </view>
+      <view class="weui-cell__bd" style="padding-left:12rpx;">
+        <view style="font-size:32rpx;text-align:left;padding:20rpx 0 20rpx 0">摇摇抽奖</view>
+      </view>
+    </button>
+  </view>
+
+  <view class="weui-cells">
+
+    <button class="weui-cell" bindtap='onGoAddress' style="background:white; height:100rpx;">
+      <view class="weui-cell__ft">
+        <image src="/images/location.svg" style="width:48rpx;height:48rpx;vertical-align: middle;"></image>
+      </view>
+      <view class="weui-cell__bd" style="padding-left:12rpx;">
+        <view style="font-size:32rpx;text-align:left;padding:20rpx 0 20rpx 0">收货地址</view>
+      </view>
+    </button>
+
+    <button class="weui-cell" open-type='contact' style="background:white; height:100rpx;">
+      <view class="weui-cell__ft">
+        <image src="/images/service.svg" style="width:48rpx;height:48rpx;vertical-align: middle;"></image>
+      </view>
+      <view class="weui-cell__bd" style="padding-left:12rpx">
+        <view style="font-size:32rpx;text-align:left;padding:20rpx 0 20rpx 0">联系客服</view>
+      </view>
+    </button>
+
+    <button class="weui-cell" open-type='feedback' style="background:white; height:100rpx;" wx:if="{{feedback}}">
+      <view class="weui-cell__ft">
+        <image src="/images/suggest.svg" style="width:48rpx;height:48rpx;vertical-align: middle;"></image>
+      </view>
+      <view class="weui-cell__bd" style="padding-left:12rpx">
+        <view style="font-size:32rpx;text-align:left;padding:20rpx 0 20rpx 0">意见反馈</view>
+      </view>
+    </button>
+
+  </view>
+
+  <view class='button-new_container'>
+    <view class='button-new' hover-class='button-new_active' bindtap='onNewLottery'>
+      <!-- <view class='button-new_icon iconfont icon-plus'></view> -->
+      <view class='button-new_text'>发起抽奖</view>
+    </view>
+  </view>
+  
+</view>
+
+<template is="login" data='{{...login}}' />

@@ -1,0 +1,15 @@
+<!--pages/lottery/showAllUsers/showAllUser.wxml-->
+<view class='page' wx:if="{{!loading}}">
+  <view class="heads_container" wx:if="{{heads.length > 0}}">
+    <block wx:for-items="{{heads}}" wx:key="index">
+      <image class="weui-grid__icon" src="{{item ? item : '/images/avatar.svg'}}" style='margin:10rpx' />
+    </block>
+  </view>
+
+  <view wx:else class='center_container'>
+    <view style='color:grey'> {{mode == 1 ? '未有人参与' : '未有人中奖'}}</view>
+  </view>
+
+  <ad unit-id="adunit-928e605a256eb422" class='weui-footer weui-footer_fixed-bottom'></ad>
+
+</view>

@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/tutorial/tutorial"
+  ],
+  "window": {
+    "backgroundColor": "#FFF3E3",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFF3E3",
+    "navigationBarTitleText": "好学生写好字",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

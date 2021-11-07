@@ -1,0 +1,101 @@
+/* miniprogram/pages/index/index.wxss */
+.nav {
+  margin-top: 86rpx;
+  width: 100%;
+  height: 86rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-title {
+  width: calc(100% - 82rpx);
+  height: 56rpx;
+  vertical-align: middle;
+  line-height: 86rpx;
+  color: rgba(16, 16, 16, 1);
+  font-size: 20px;
+  text-align: center;
+  font-family: PingFangSC-regular;
+}
+
+.nav-menu {
+  width: 48rpx;
+  height: 48rpx;
+  line-height: 86rpx;
+  color: #4D4B4B;
+}
+
+.menu {
+  margin-top: 160rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-container {
+  width: 100%;
+  background-color: transparent;
+  font-weight: 400;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.menu-subject {
+  width: 100%;
+  height: 39px;
+  text-align: center;
+  color: rgba(16, 16, 16, 1);
+  font-size: 36px;
+  font-family: 方正楷体-标准;
+}
+
+.menu-content {
+  margin-top: 32rpx;
+  padding-left: 64rpx;
+  padding-right: 64rpx;
+  letter-spacing: 32rpx;
+  color: rgba(16, 16, 16, 1);
+  font-size: 60rpx;
+  text-align: center;
+  font-family: 方正楷体-标准;
+}
+
+.menu-prev {
+  /* display: none; */
+  line-height: 100%;
+  width: 124rpx;
+  font-size: 96rpx;
+  color: #D0D0D0;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.menu-next {
+  line-height: 100%;
+  width: 124rpx;
+  font-size: 96rpx;
+  color: #D0D0D0;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.menu-arrow {
+  height: 20px;
+  width: 100%;
+  color: rgba(191, 191, 191, 1);
+  font-size: 14px;
+  margin-top: 26rpx;
+  text-align: center;
+  font-family: PingFangSC-regular;
+}
+
+.feedback {
+  position: absolute;
+  left: 80rpx;
+  bottom: 220rpx;
+  color: #101010;
+  font-size: 28rpx;
+  text-align: left;
+  font-family: 方正楷体-标准;
+}

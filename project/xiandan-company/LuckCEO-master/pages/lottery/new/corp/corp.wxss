@@ -1,0 +1,91 @@
+/* pages/lottery/new/corp/corp.wxss */
+
+.root {
+  height: 2000px;
+  width: 2000px;
+  position: fixed;
+  /* background: #000; */
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  background: #00000057;
+}
+
+.corp_box_left {
+  width: 1px;
+  border-left: 1px dashed rgba(93, 93, 93, 0.5);
+  position: absolute;
+}
+
+.corp_box_top {
+  height: 1px;
+  border-top: 1px dashed rgba(93, 93, 93, 0.5);
+  position: absolute;
+  background: #474747;
+  opacity: 0.8;
+}
+
+.corp_box_right {
+  width: 1px;
+  border-right: 1px dashed rgba(93, 93, 93, 0.5);
+  position: absolute;
+}
+
+.corp_box_bottom {
+  height: 1px;
+  border-bottom: 1px dashed rgba(93, 93, 93, 0.5);
+  position: absolute;
+  background: #474747;
+  opacity: 0.8;
+}
+
+.cropper-button {
+  width:100%;
+  height:80rpx;
+  padding-top: 36rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: white;
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  background: #474747;
+}
+
+
+
+.cropper-wrapper{
+  width: 100%;
+  height: 100%;
+}
+
+.cropper-buttons{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* height: 80rpx; */
+  background: #474747;
+  color: #fff;
+  /* padding-top: 36rpx; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center
+}
+
+.upload{
+  display: flex;
+  justify-content: center;
+  width:50%;
+  height: 100%;
+  text-align:center;
+  align-items: center;
+  border-right: 4rpx solid #2a2a2a
+}

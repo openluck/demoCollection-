@@ -1,0 +1,180 @@
+/* pages/tutorial/tutorial.wxss */
+
+.scroll {
+  overflow: auto;
+}
+
+.process-contains {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 32px;
+  justify-content: center;
+}
+
+.process {
+  width: 11px;
+  height: 11px;
+  border-radius: 11px;
+  margin-left: 7px;
+  line-height: 20px;
+  background-color: rgba(191, 191, 191, 1);
+  text-align: center;
+  border: 1px solid rgba(191, 191, 191, 1);
+}
+
+.process.ing {
+  width: 21px;
+  height: 21px;
+  line-height: 20px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid rgba(4, 202, 19, 1);
+}
+
+.process.done {
+  width: 11px;
+  height: 11px;
+  margin-left: 7px;
+  line-height: 20px;
+  background-color: #04CA13;
+  text-align: center;
+  border: 1px solid #04CA13;
+}
+
+.video {
+  margin: 20rpx;
+  width: 308px;
+  height: 411px;
+  border-radius: 20rpx;
+}
+
+.video-cover {
+  margin: 20rpx;
+  width: 308px;
+  height: 411px;
+  border-radius: 10rpx;
+}
+
+.word-contains {
+  margin-top: 23px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.word-prev {
+  /* display: none; */
+  line-height: 100%;
+  width: 124rpx;
+  font-size: 96rpx;
+  vertical-align: middle;
+  text-align: center;
+  color: rgb(208, 208, 208);
+}
+
+.word-next {
+  line-height: 100%;
+  width: 124rpx;
+  font-size: 96rpx;
+  vertical-align: middle;
+  text-align: center;
+  color: rgb(208, 208, 208);
+}
+
+.none {
+  flex-grow: 1;
+}
+
+.sample {
+  /* float: left; */
+  width: 70px;
+  height: 70px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDUwICg1NDk4MykgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+R3JvdXA8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz4KICAgICAgICA8cmVjdCBpZD0icGF0aC0xIiB4PSIwIiB5PSIwIiB3aWR0aD0iNzgiIGhlaWdodD0iNzgiPjwvcmVjdD4KICAgIDwvZGVmcz4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMS4wMDAwMDAsIDEuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJSZWN0YW5nbGUiPgogICAgICAgICAgICAgICAgPHJlY3Qgc3Ryb2tlPSIjMjY3MzMyIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0ic3F1YXJlIiBmaWxsPSIjRkZGRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHg9IjEiIHk9IjEiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiI+PC9yZWN0PgogICAgICAgICAgICAgICAgPHVzZSBzdHJva2U9IiM5Nzk3OTciIHN0cm9rZS13aWR0aD0iMSIgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPHBhdGggZD0iTTc2LDM5IEwyLDM5IiBpZD0iTGluZSIgc3Ryb2tlPSIjMjY3MzMyIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS1kYXNoYXJyYXk9IjQiPjwvcGF0aD4KICAgICAgICAgICAgPHBhdGggZD0iTTM5LjUsMi41IEwzOS41LDc3LjUiIGlkPSJMaW5lLTIiIHN0cm9rZT0iIzI2NzMzMiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2UtZGFzaGFycmF5PSIxLDEsMSw0Ij48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=);
+  line-height: 70px;
+  font-size: 30px;
+  background-size: cover;
+  color: rgba(16, 16, 16, 1);
+  text-align: center;
+  font-family: 方正楷体-标准;
+}
+
+.btn-submit {
+  width: 164px;
+  height: 45px;
+  padding: 0;
+  line-height: 45px;
+  margin-top: 28px;
+  border-radius: 4px;
+  background-color: rgba(246, 247, 177, 0.98);
+  color: rgba(16, 16, 16, 1);
+  font-size: 16px;
+  text-align: center;
+  font-family: PingFang SC;
+  border: 1px solid rgba(210, 161, 81, 1);
+}
+
+.assignment {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.assignment-info {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.assignment-head {
+  width: 35px;
+  height: 35px;
+  margin-left: 10px;
+  border-radius: 35px;
+}
+
+.assignment-name {
+  height: 24px;
+  line-height: 24px;
+  color: rgba(16, 16, 16, 1);
+  font-size: 16px;
+  text-align: left;
+  margin-left: 7px;
+  font-family: SourceHanSansSC-regular;
+}
+
+.assignment-date {
+  height: 24px;
+  line-height: 24px;
+  color: rgba(166, 166, 166, 1);
+  font-size: 14px;
+  text-align: left;
+  margin-left: 7px;
+  font-family: PingFangSC-regular;
+}
+
+.assignment-picture {
+  width: 154px;
+  height: 273px;
+  margin-left: 50px;
+  /* height: auto; */
+  margin-top: 2px;
+  border-radius: 10px;
+}
+
+.no-open-image {
+  width: 750rpx;
+  height: 750rpx;
+}
+
+.no-paid-image {
+  width: 750rpx;
+  height: 750rpx;
+}

@@ -1,0 +1,13 @@
+.information-container{
+  padding: 0 13.59%;
+  display: flex;
+  margin-top: 5px;
+  min-width: 1200px;
+  margin-bottom: 29px;
+  .rout-area{
+    width: calc(100% - 250px);
+    margin-left: 10px;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(222,222,222,1);
+  }
+}

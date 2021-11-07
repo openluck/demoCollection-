@@ -1,0 +1,137 @@
+.collection-container {
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+
+    .collection-list {
+        margin-top: 16px;
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+
+        .collection-top {
+            height: 30px;
+            width: 100%;
+            padding-top: 16px;
+            border-bottom: 1px solid #F0F3F5;
+
+            .tags {
+                display: inline-block;
+                margin-left: 16px;
+                font-size: 12px;
+            }
+
+            .cancel-collect {
+                float: right;
+                margin-right: 16px;
+                font-size: 12px;
+                color: #636566;
+                position: relative;
+                top: 1px;
+            }
+        }
+
+        .collection-bottom {
+            width: 100%;
+            height: 120px;
+            overflow: hidden;
+            position: relative;
+
+            .collection-img {
+                width: 90px;
+                height: 90px;
+                margin-left: 16px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+
+                img {
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 8px;
+                }
+            }
+
+            .collection-title {
+                padding: 0 16px 0 116px;
+                width: 100%;
+                box-sizing: border-box;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+
+                div:nth-of-type(1) {
+                    color: #313233;
+                    font-size: 14px;
+                    font-weight: bold;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                    line-height: 20px;
+                }
+
+                div:nth-of-type(2) {
+                    margin-top: 14px;
+
+                    & > span:nth-of-type(1) {
+                        color: #F10D0D;
+                        font-size: 16px;
+                    }
+
+                    & > span:nth-of-type(2) {
+                        float: right;
+
+                        span:nth-of-type(1) {
+                            font-size: 12px;
+                            color: #969899;
+                        }
+
+                        span:nth-of-type(2) {
+                            font-size: 12px;
+                            color: #F10D0D;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .no-collection {
+        width: 100%;
+        background: white;
+        margin-top: 16px;
+        border-radius: 16px;
+
+        h4 {
+            font-size: 14px !important;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

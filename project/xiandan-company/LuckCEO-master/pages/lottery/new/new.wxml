@@ -1,0 +1,154 @@
+<!--pages/activity/new/new.wxml-->
+<view class='page'>
+  <view>
+    <view class='cover-image_container'>
+      <image class='.cover-image' src="{{cover == null ? '/images/lottery_cover.png' : cover}}" mode='aspectFill' bindtap='showCover' />
+      <input name='cover' value='{{cover}}' hidden>{{cover}}</input>
+      <button class='weui-btn mini-btn cover-image-button' type='warn' plain="true" size='mini' bindtap='onChangePicture' wx:if="{{!isSubmiting}}">更换抽奖封面</button>
+    </view>
+
+    <view class="weui-cells" style='margin-top:0'>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd" style="display:flex;justify-content:center">
+          <view class="tip" wx:if='{{titleTipFlag}}'>
+            <image class='background-image' src='../../../images/tipBackground.svg' style="" mode="aspectFill"></image>
+            <view class="content">请输入抽奖标题</view>
+          </view>
+          <input id="lotteryTitle" name='title' class="weui-input title" style="" placeholder-class="title-placeholder" placeholder="输入抽奖标题（16字以内）" maxlength="16" bindinput="onTitleInputChanged"bindblur="disfocus" disabled='{{isSubmiting}}' />
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cells weui-cells_after-title" style="margin-top:30rpx;display:flex;flex-direction: row;justify-content: space-around;" wx:for='{{awards}}' wx:key='item'>
+      <view id="{{item.index}}" bindtap='onRemoveAward' wx:if='{{awards.length>1}}' class='weui-cell' style=''>
+        <image src="../../../images/deleteAwardIcon.svg" style="width:34rpx;height:34rpx"></image>
+      </view>
+      <view style="width:100%; {{awards.length>1?'margin-left:-40rpx':''}}">
+        <view class="weui-cell">
+          <view class="weui-cell__bd label">{{item.grade}}</view>
+        </view>
+        <view class="weui-cell weui-cell_input" wx:key='name'>
+          <view class="weui-cell__bd label">奖品名称</view>
+          <view class="weui-cell__ft" style="display: flex;flex-direction: row;justify-content: space-between;">
+            <view class="tip" wx:if='{{item.nameTipFlag}}'>
+              <image class='background-image' src='../../../images/tipBackground.svg' mode="aspectFill"></image>
+              <view class="content">请输入奖品名称</view>
+            </view>
+            <input class="weui-input" style="width:300rpx" id="awardName{{item.index}}" name="awardName{{item.index}}" maxlength="10" value="{{item.awardName}}" bindblur="disfocus" focus='{{item.isShowAwardName}}' disabled='{{isSubmiting}}' wx:if='{{item.isShowAwardName}}'
+            />
+            <view id="awardName{{item.index}}" style="width:300rpx;color:#000000" bindtap="showAwardInput" wx:else>
+              <view style="color:#808080" wx:if='{{item.awardName==""}}'>名称（10字以内）</view>
+              {{item.awardName}}
+            </view>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input" wx:key='count'>
+          <view class="weui-cell__bd label">奖品份数</view>
+          <view class="weui-cell__ft" style="display: flex;flex-direction: row;justify-content: space-between;">
+            <view class="tip" wx:if="{{item.countTipFlag}}">
+              <image class='background-image' src='../../../images/tipBackground.svg' mode="aspectFill"></image>
+              <view class="content">请输入奖品数量</view>
+            </view>
+            <input class="weui-input text-align_right" id="awardCount{{item.index}}" name='awardCount{{item.index}}' value="{{item.awardCount}}" type='number' style='width:300rpx; margin-right = 40rpx' bindblur="disfocus" focus='{{item.isShowAwardCount}}' disabled='{{isSubmiting}}'
+              wx:if='{{item.isShowAwardCount}}' />
+            <view id="awardCount{{item.index}}" style="width:300rpx;color:#000000" bindtap="showAwardInput" wx:else>
+              <view style="color:#808080" wx:if='{{item.awardCount==""}}'>份数</view>
+              {{item.awardCount}}
+            </view>
+          </view>
+          <view class="weui-cell__ft label">个</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="box-add" bindtap='onAddAward' wx:if='{{!isSubmiting && awards.length < 10}}'>
+      <image src="../../../images/addAwards.svg" style="width:48rpx;height:48rpx; position: absolute;top:18rpx;left:240rpx"></image>
+      <view style="font-size:32rpx;font-weight:blod;position: absolute;left:300rpx">添加新奖项</view>
+    </view>
+    <view class="box-add" style="background:#666666" wx:if='{{awards.length>=10}}'>
+      <view>
+        <view style="color:#fff;font-size:32rpx">达到最大数目无法添加</view>
+      </view>
+    </view>
+
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd label">开奖条件</view>
+        <view class="weui-cell__ft">
+          <view class="radios {{openType==1?'checked':'dischecked'}}" bindtouchend="radioChange" data-index="1">时间开奖</view>
+          <view class="radios {{openType==2?'checked':'dischecked'}}" bindtouchend="radioChange" data-index="2">人数开奖</view>
+        </view>
+      </view>
+
+      <label class="weui-cell weui-check__label" wx:if='{{openType==1}}'>
+        <view class="weui-cell__bd label">开奖时间</view>
+        <picker class="weui-cell__ft selector-item" mode="multiSelector" range='{{dateRange}}' name='openTime' value="{{dateSelect}}" bindchange="bindDateChange" disabled='{{isSubmiting}}'>
+          <view class="weui-input" disabled='{{isSubmiting}}'>{{openTime}}</view>
+        </picker>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </label>
+
+
+      <label class="weui-cell weui-check__label" wx:if='{{openType==2}}'>
+        <view class="weui-cell__bd text-align_right lable">开奖人数</view>
+        <view class="weui-cell__ft">
+          <input class="weui-input" style="width:300rpx" disabled='{{isSubmiting}}' name='openCount' value="{{openCount}}" type='number' focus='{{isShowOpenCount}}' bindblur="hideOpenCount" wx:if='{{isShowOpenCount}}' />
+          <view style="width:300rpx;color:#000000" bindtap="showOpenCount" wx:else>
+            <view style="color:#808080" wx:if='{{openCount==""}}'>人数</view>
+            {{openCount}}
+          </view>
+        </view>
+      </label>
+    </view>
+    <view style="color:#bc4343;font-size:24rpx;margin:8rpx 32rpx" wx:if="{{openType==2}}">开奖人数到达一定数目后自动开奖</view>
+
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd label">公共抽奖</view>
+        <view class="weui-cell__ft">
+          <switch class="weui-switch" checked="{{isChecked}}" bindchange="checkedChange" />
+        </view>
+      </view>
+    </view>
+    <view style="color:#bc4343;font-size:24rpx;margin:8rpx 32rpx" wx:if="{{isChecked}}">已开启公共抽奖，大家可以去摇一摇参与抽奖</view>
+
+    <view class="weui-cells weui-cells_after-title" style="margin-top:40rpx;margin-bottom:160rpx;">
+      <view style="padding:0 20rpx">
+        <view class="label label-intro">抽奖说明</view>
+        <view>
+          <textarea class="weui-textarea" name='intro' value="{{textareaValue}}" disabled='{{isSubmiting}}' style="height:300rpx;width:91%;background:#F2F2F2;padding:30rpx;" maxlength='500' cursor-spacing='100' bindinput='onIntroChange' focus='{{isShowTextarea}}'
+            bindblur="hideTextarea" wx:if='{{isShowTextarea}}' />
+          <view style="width:91%;height: 300rpx;background:#EEEEEE;padding:30rpx" bindtap="showTextarea" wx:else>
+            <view style="background:#EEEEEE;color:#808080;" wx:if='{{textareaValue==""}}'>自定义抽奖说明</view>
+            <scroll-view scroll-y="true" style="height:300rpx; overflow: auto;">
+              <text style="text-overflow: ellipsis;word-break: break-all;"> {{textareaValue}}</text>
+            </scroll-view>
+          </view>
+          <view style="width:100%; text-align:right; font-size: 24rpx;color: #656565;">{{intro_count}}/500</view>
+        </view>
+      </view>
+      <view class="weui-cell" wx:for='{{images}}' wx:key='item' style="padding:40rpx;height:auto">
+        <image src='{{item}}' mode='widthFix' style='width: 100%;height: 100%;' bindtap='onShowPictures' data-index='{{index}}'> </image>
+        <view class='cover-image-button iconfont icon-dot' style="position:absolute;top:20rpx;right:0" data-index='{{index}}' bindtap='onImageRemove' wx:if="{{!isSubmiting}}" />
+      </view>
+      <view bindtap='onAddImages' wx:if='{{images.length < 9 && !isSubmiting}}'>
+        <view class="weui-cell__bd button-add_image">
+          <view style="padding:0 10rpx;font-size:40rpx">+</view>
+          <view style="line-height:100rpx;"> 添加照片 </view>
+        </view>
+      </view>
+    </view>
+
+    <view style="width:100%;height:120rpx;background:#fff;border-top:2rpx solid #999999;display: flex;flex-direction: column;justify-content: center;align-items: center;position:fixed;bottom: 0;">
+      <button class='weui-btn' bindtap='formSubmit' type='primary' style='display: flex;flex-direction: column;justify-content: center;align-items: center;width:95%;height:90rpx;background:#bc4343;border-radius:0' loading='{{isSubmiting}}'>
+        <text>发起新抽奖</text>
+      </button>
+    </view>
+
+  </view>
+
+</view>
+
+<canvas canvas-id='canvas' style='width:375px;height:300px' wx:if='{{showCanvas}}'>
+
+</canvas>

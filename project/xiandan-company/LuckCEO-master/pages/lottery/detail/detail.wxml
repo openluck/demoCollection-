@@ -1,0 +1,152 @@
+<!-- pages/lottery/detail/detail.wxml -->
+<!-- pages/activity/new/new.wxml -->
+<import src="/templates/share.wxml" />
+<import src="/templates/login.wxml" />
+<view class='page {{share.isShowShare || (lottery.status == 3 && lottery.is_confirm_address == 0) || (lottery.status == 2 && lottery.is_confirm_address == 0)? "filter": ""}}' wx:if="{{ready}}">
+  <view class='cover-image_container'>
+    <image class='cover-image' src='{{lottery.cover}}' mode="widthFix" />
+  </view>
+  <view style='background:#fff;'>
+    <view style='padding:20rpx'>标题:{{lottery.title}}</view>
+    <view class="weui-cell__bd" style='padding:0 20rpx 20rpx;color:#999;font-size:24rpx'>
+      {{lottery.open_type == 1 ? lottery.open_time : '满' + lottery.open_count + '人' }} {{ lottery.status > 1 ? '已自动开奖' : '自动开奖' }}
+    </view>
+    <view class="weui-article__section" style='border-top:20rpx #eee solid'>
+      <view class="weui-article__title" style='padding:10px;font-size:26rpx;border-bottom: 20rpx solid #eee;'>
+        <view wx:for='{{lottery.gifts}}' style="display: flex;flex-direction: row;align-items: center;margin-bottom:20rpx;" wx:key='name'>
+          <view decode="{{true}}" style="font-size:32rpx;display: inline-block;">
+            {{giftLabs[index]}}
+          </view>
+          <view style="width:12rpx;height:12rpx;border-radius: 50%;margin:0 6rpx 0 6rpx;{{index==0 ? 'background:#BC4343':(index==1?'background:#329AD6':'background:#AAAAAA')}};display: inline-block"></view>
+          <view style="font-size:32rpx;display: block">
+            {{item.name + " × " +item.count}}
+          </view>
+        </view>
+      </view>
+      <view>
+        <view class="weui-cell" style='padding:10px; border-bottom: 20rpx solid #eee;'>
+          <view class="weui-cell__bd">发起抽奖者</view>
+          <view class="weui-cell__fd">{{lottery.nick_name}}</view>
+        </view>
+      </view>
+      <view class="weui-article__section" style='padding:20rpx'>
+        <view class="weui-article__h3" style='text-align:center'>抽奖说明</view>
+        <text decode="{{true}}" selectable='true' style='color:#999;font-size:30rpx'>
+          {{lottery.intro}}
+        </text>
+      </view>
+      <view class="weui-article__section">
+        <view class="weui-article__p">
+          <image class="weui-article__img" src='{{item}}' style='width: 100%;height: auto;margin-bottom:40rpx' mode="widthFix" wx:for='{{lottery.images}}' wx:key='item' bindtap='onShowPictures' data-index='{{index}}' />
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部信息 -->
+  <view class="btn-join_container" style="background:#FFFFFF">
+    <button class='btn-join' 
+    style="border:10px solid #cd7575;line-height:220rpx" 
+    hover-class='btn-join-active'
+    wx:if='{{lottery.status == 0}}'
+    bindtap="onJoin">
+      {{submitButTitles[lottery.status]}}
+    </button>
+    <view class='btn-join' disabled style="background:#BC4343;color:white;display: flex;justify-content: center;align-items: center" wx:else>
+      <view style="width: 210rpx;height: 210rpx;border: 2rpx solid #fff;border-radius: 50%;display: flex;justify-content: center;align-items: center">
+        <text>{{submitButTitles[lottery.status]}}</text>
+      </view>
+    </view>
+    <block wx:if='{{lottery.status == 2}}'>
+      <view class='text_bold' style="color:#666666">奖品: {{lottery.gift}}</view>
+      <form bindsubmit='onGoAddress' report-submit='true'>
+        <block wx:if='{{isCanAddress}}'>
+          <button formType="submit" class='button_clear color-red'>
+            <view class="weui-cell-nolines weui-cell_access" hover-class="weui-cell_active">
+              <view class="weui-cell__bd" style="font-size:32rpx;border:2rpx solid #BC4343;padding:15rpx;height:50rpx;line-height:50rpx">
+                {{lottery.is_confirm_address == 0 ? '请填写收货地址' : '更换收货地址' }}
+              </view>
+            </view>
+          </button>
+        </block>
+        <block wx:else>
+          <button open-type='openSetting' class='button_clear color-red'>
+            <view class="weui-cell-nolines weui-cell_access" hover-class="weui-cell_active">
+              <view class="weui-cell__bd" style="font-size:32rpx;border:2rpx solid #BC4343;padding:15rpx;height:50rpx;line-height:50rpx">
+                {{lottery.is_confirm_address == 0 ? '请填写收货地址' : '更换收货地址' }}
+              </view>
+            </view>
+          </button>
+        </block>
+      </form>
+    </block>
+    <view class="weui-cell-nolines weui-cell_access" hover-class="weui-cell_active" bindtap='onShowAll' style='font-size:26rpx;margin-bottom:16rpx'>
+      <view class="weui-cell__bd" wx:if='{{lottery.status < 2}}'>
+        已有{{lottery.join_count}}人参与抽奖
+      </view>
+      <view class="weui-cell__bd" style="color:#666" wx:else>有{{lottery.win_count}}人中奖</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+    <view class="weui-flex">
+      <block wx:for-items="{{lottery.heads}}" wx:key="index">
+        <image class="weui-flex__item weui-grid__icon" src="{{item ? item : '/images/avatar.svg'}}" style='margin:10rpx' />
+      </block>
+    </view>
+    <view style='{{isFixed?"position: fixed;bottom: 0;":""}} margin-top: 40rpx;display:flex;width:100%;z-index:99'>
+      <button style='background:#333;' class="bottom-btn" type="default" plain="true" bindtap='onShareView'>
+        分享给好友
+      </button>
+      <button style='background:#bc4343;' class="bottom-btn" type="primary" plain="true" bindtap='onNewLottery'>
+        发起新抽奖
+      </button>
+    </view>
+    <ad id='ad' unit-id="adunit-703740ccb579794e" style='margin-bottom:80rpx'></ad>
+  </view>
+</view>
+<!-- 中奖弹窗 -->
+<view wx:if='{{lottery.status == 2 && lottery.is_confirm_address == 0}}' style='width:100%;height:100%;position: fixed; top:0' catchtouchmove="ture">
+  <view class='show_gift'>
+    <view class='gift-header' style='font-size:42rpx;background:#D84C4C'>恭喜你中奖了!</view>
+    <image src="../../../images/prize_logo.png" style="width:132rpx;height:148rpx;margin:100rpx 0 50rpx"></image>
+    <view style="font-size:40rpx;color:#E91111;padding:0 20rpx">恭喜你获得奖品:{{lottery.gift}}</view>
+    <form bindsubmit='onGoAddress' report-submit='true'>
+      <block wx:if='{{isCanAddress}}'>
+        <button formType="submit" class='button_clear'>
+          <view class="weui-cell-nolines weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd" style='font-size:32rpx;color:#666'>温馨提示：请确认收货地址>></view>
+          </view>
+        </button>
+      </block>
+      <block wx:else>
+        <button open-type='openSetting' class='button_clear color-red'>
+          <view class="weui-cell-nolines weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd" style='font-size:32rpx;color:#666666'>温馨提示：请确认收货地址>></view>
+          </view>
+        </button>
+      </block>
+    </form>
+    <button class="gift-btn" style="background:#D84C4C" bindtap='onCloseGift'>确认</button>
+  </view>
+</view>
+<!-- 未中奖提示 -->
+<view wx:if='{{lottery.status == 3 && lottery.is_confirm_address == 0}}' style='width:100%;height:100%;position: fixed; top:0;' catchtouchmove="ture">
+  <view class='show_gift'>
+    <view class='gift-header' style="background:#333">很遗憾，未中奖</view>
+    <view style="width:620rpx; margin-top:36rpx;font-size:34rpx;font-weight:blod;text-align:left">
+      为您准备了如下福利
+    </view>
+    <view style="width:620rpx;border:2rpx solid #BC4343;border-radius:16rpx;margin:16rpx 32rpx 0 32rpx;padding:20rpx ;">
+      <image src="../../../images/logo.svg" style="display:inlne-block;width:54rpx;height:32rpx;margin-bottom:-4rpx"></image>
+      <view style="display:inline-block; font-size:32rpx;text-align:center;color:#BC4343;margin-bottom:16rpx;padding-left:10rpx">
+        您可前往闲蛋商城领取超值优惠券
+      </view>
+      <official-account style="margin:30rpx" binderror="onOfficaialAccountShowFail"></official-account>
+      <image style="width:60%;margin-left:20%" src="https://wafer-1253463974.cos.ap-guangzhou.myqcloud.com/lottery/qr/qrcode.png" data-url="https://wafer-1253463974.cos.ap-guangzhou.myqcloud.com/lottery/qr/qrcode.png" mode="widthFix" bindtap="previewImage" wx:if="{{showQr}}"></image>
+    </view>
+    <button class="gift-btn" style="background:#333" bindtap='onCloseGift'>确认</button>
+  </view>
+</view>
+<template is="share" data='{{...share}}' />
+<template is="login" data='{{...login}}' />
+<canvas canvas-id='canvas' style='width:375px;height:300px;right:-1000;position:fixed' wx:if='{{showCanvas}}'>
+  <cover-view style='width:100%;height:100%;background:#f8f8f8;'></cover-view>
+</canvas>

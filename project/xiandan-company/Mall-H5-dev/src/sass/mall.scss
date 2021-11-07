@@ -1,0 +1,123 @@
+// 商城样式
+* {
+    margin: 0;
+    padding: 0;;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+body {
+    font-family: 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1', 'Hiragino Sans GB', tahoma, arial, sans-serif;
+    background-color: #f8fafc;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    word-break: break-all;
+
+    img {
+        pointer-events: none;
+    }
+}
+
+.panel {
+    background-color: #f8fafc;
+    width: 100%;
+    height: 100%;
+}
+
+.button {
+    text-decoration: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.warning {
+    font-size: 12px;
+    color: #ff983b;
+}
+
+.success {
+    font-size: 12px;
+    color: #30ff7d;
+}
+
+.clearfixed {
+    zoom: 1;
+
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+}
+
+//解决盒子塌陷
+.collapse:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+//无数据的样式
+.data-scroll-loading {
+    width: 15px;
+    height: 15px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.data-scroll-end {
+    padding: 10px;
+    text-align: center;
+    color: #313233;
+    font-size: 14px;
+}
+
+//加载数据
+.wait-scroll-loading {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body .mint-msgbox {
+    border-radius: 16px;
+    overflow: hidden;
+
+    .mint-msgbox-header {
+        display: none;
+    }
+
+    .mint-msgbox-content {
+        padding: 10px 0;
+    }
+
+    .mint-msgbox-message {
+        color: black;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .mint-msgbox-btns {
+        height: 57px;
+        line-height: 57px;
+        font-size: 18px;
+
+        .mint-msgbox-cancel {
+            color: #636566;
+            font-weight: bold;
+        }
+
+        .mint-msgbox-confirm {
+            color: #F10D0D;
+            font-weight: bold;
+        }
+    }
+}
+
+

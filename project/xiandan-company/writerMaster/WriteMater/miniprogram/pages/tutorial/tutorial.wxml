@@ -1,0 +1,66 @@
+<!--miniprogram/pages/class/class.wxml-->
+<wxs module="DateFormat" src="dataformat.wxs"></wxs>
+<view style="overflow:hidden;"
+ 			bindtouchstart="touchStart"
+      bindtouchmove="touchMove"
+      bindtouchend="touchEnd"
+      bindtouchcancel="touchCancel">
+	<image src="../../images/pg-background.jpg" mode="aspectFill" class="bg-image"></image>
+	<view class="scroll" style="height:{{windowHeight}}px;">
+		<view class="container" wx:if="{{content}}">
+			<block wx:if="{{!content.classes[classIndex].isOpen}}">
+				<image class="no-open-image" src="{{noOpenImage}}" mode="aspectFill"></image>
+				<view class="btn-submit" bindtap="onBack">返回</view>
+			</block>
+			<block wx:elif="{{content.classes[classIndex].isFree || content.classes[classIndex].isPaid}}">
+				<view class="process-contains">
+					<block class="process" wx:for="{{content.classes}}" wx:key="_id">
+						<view class="process" wx:if="{{classIndex < index}}"></view>
+						<view class="process done" wx:elif="{{classIndex > index}}"></view>
+						<view class="process ing" wx:else></view>
+					</block>
+				</view>
+				<image wx:if="{{$state.reviewVersion === '1.0.2'}}"
+				 src="{{content.classes[classIndex].cover ? content.classes[classIndex].cover : noPaidImage}}"
+				 mode="aspectFill"
+				 class="video-cover"></image>
+				<video class="video" 
+				src="{{content.classes[classIndex].video}}" 
+				loop="true"
+				poster="{{content.classes[classIndex].cover}}"
+				 wx:else></video>
+				<view class="word-contains">
+					<view class="word-prev" bindtap="onPrevClass">
+						<view class="fa fa-angle-left" wx:if="{{classIndex > 0}}"></view>
+					</view>
+					<view class="none"></view>
+					<view class="sample">
+						{{content.classes[classIndex].word}}
+					</view>
+					<view class="none"></view>
+					<view class="word-next" bindtap="onNextClass">
+						<view class="fa fa-angle-right" wx:if="{{classIndex < content.classes.length - 1}}"></view>
+					</view>
+				</view>
+
+				<view class="btn-submit" bindtap="onTakePicture" wx:if="{{$state.isRegisted}}">提交作品</view>
+				<button class="btn-submit" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" wx:else>提交作品</button>
+
+				<block wx:if="{{showAssignments}}">
+					<view wx:for="{{assignments}}" wx:key="_id" class="assignment">
+						<view class="assignment-info">
+							<image src="{{item.headImg}}" class="assignment-head"></image>
+							<view class="assignment-name">{{item.nickName}}</view>
+							<view class="assignment-date">{{DateFormat.date(item.date)}}</view>
+						</view>
+						<image src="{{item.picture}}" mode="aspectFill" data-url='{{item.picture}}' class="assignment-picture" bindtap="onPreviewImage"></image>
+					</view>
+				</block>
+			</block>
+			<block wx:else>
+				<image class="no-paid-image" src="{{noPaidImage}}" mode="aspectFill"></image>
+				<button class="btn-submit" open-type="contact">咨询老师</button>
+			</block>
+		</view>
+	</view>
+</view>

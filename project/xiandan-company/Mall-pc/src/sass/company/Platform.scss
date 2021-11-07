@@ -1,0 +1,153 @@
+.platform{
+  padding: 14px 13.59% 48px 13.59%;
+  background: #ffffff;
+  min-width: 1200px;
+  display: flex;
+  border-bottom: 48px solid #f8f8f8;
+  .platform-name{
+    width: 186px;
+    text-align: center;
+    opacity:1;
+    height: 53px;
+    p{
+      background:rgba(51,51,51,1);
+      padding: 16px 0;
+      font-size:16px;
+      font-family:Microsoft YaHei;
+      font-weight:400;
+      line-height:21px;
+      color:rgba(255,255,255,1);
+
+    }
+  }
+  .platform-container{
+    width: calc(100% - 200px);
+    border:1px solid rgba(153,153,153,1);
+    box-sizing: border-box;
+    padding: 14px 14% 48px 14%;
+    margin-left: 14px;
+    font-size:16px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:24px;
+    color:rgba(51,51,51,1);
+    opacity:1;
+    .platform-title{
+      margin-bottom: 16px;
+    }
+    .img-input{
+      display: none;
+    }
+    .upload-license{
+      border:1px solid rgba(196,196,196,1);
+      padding: 18px;
+      box-sizing: border-box;
+      text-align: center;
+      .no-img{
+        padding: 140px;
+        .upload-icon{
+          font-size: 60px;
+          border-radius: 50%;
+          color: #999999;
+          border: 1px solid #999999;
+          margin-bottom: 16px;
+        }
+        p{
+          margin-top: 16px;
+          color: #333333;
+          font-size: 16px;
+        }
+      }
+      img{
+        width: 100%;
+      }
+    }
+    .contacts-info, .company-info{
+      display: flex;
+      justify-content: space-between;
+      margin: 24px 0;
+      input{
+        display: block;
+        width: calc(50% - 10px);
+        padding: 6px 16px;
+        box-sizing: border-box;
+      }
+    }
+    .contact-email{
+      display: block;
+      width: 100%;
+      padding: 6px 16px;
+      box-sizing: border-box;
+    }
+    .company-scope{
+      display: block;
+      width: 100%;
+      margin: 24px 0;
+      min-height:176px;
+      box-sizing: border-box;
+      opacity:1;
+      border:1px solid rgba(196,196,196,1);
+      resize: none;
+      outline: none;
+    }
+    .choose-type{
+      display: flex;
+      .title{
+        font-size:16px;
+        font-family:Microsoft YaHei;
+        font-weight:400;
+        line-height:24px;
+        color:rgba(51,51,51,1);
+        opacity:1;
+        margin-right: 30px;
+      }
+      .check-radio{
+        font-size: 16px;
+      }
+      .upload-reminder{
+        font-size:14px;
+        font-family:Microsoft YaHei;
+        font-weight:300;
+        line-height:24px;
+        color:rgba(219,11,11,1);
+        opacity:1;
+        margin-left: 16px;
+      }
+    }
+    .cross-border{
+      margin: 19px 0;
+      text-align: center;
+      .license-img{
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+    .submit-platform{
+      border: none;
+      display: block;
+      width: 100%;
+      background: #15AEE4;
+      padding: 16px;
+      color: #ffffff;
+      margin-top: 24px;
+    }
+  }
+}
+.alert-text{
+  text-align: center;
+  font-size:16px;
+  font-family:Microsoft YaHei;
+  font-weight:400;
+  line-height:21px;
+  color:rgba(51,51,51,1);
+  opacity:1;
+  .succeed-text{
+    font-size:20px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:26px;
+    color:rgba(219,11,11,1);
+    opacity:1;
+    margin: 16px;
+  }
+}

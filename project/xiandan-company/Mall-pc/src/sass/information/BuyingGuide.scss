@@ -1,0 +1,64 @@
+.buying-guide{
+
+  .buying-title{
+    padding: 18px 32px;
+    font-size:20px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:26px;
+    color:rgba(51,51,51,1);
+    text-align: center;
+  }
+  .model{
+    padding: 28px 24px;
+    border-top: 1px solid rgba(222,222,222,1);
+    .title{
+      font-size:18px;
+      font-family:Microsoft YaHei;
+      font-weight:400;
+      line-height:28px;
+      color:rgba(219,11,11,1);
+      opacity:1;
+      display: flex;
+      margin-bottom: 14px;
+      .title-number{
+        display: block;
+        width:23px;
+        height:23px;
+        background:rgba(219,11,11,1);
+        border-radius:50%;
+        font-size:16px;
+        font-family:Microsoft YaHei;
+        font-weight:bold;
+        line-height:21px;
+        color:rgba(256,256,256,1);
+        text-align: center;
+        margin-right: 8px;
+      }
+    }
+    .step{
+      padding-left: 31px;
+      font-size:14px;
+      font-family:Microsoft YaHei;
+      font-weight:400;
+      line-height:28px;
+      color:rgba(51,51,51,1);
+      opacity:1;
+      p+p{
+        margin-top: 16px;
+      }
+    }
+  }
+  .login{
+    .step-img, .login-img{
+      margin: 0 auto;
+      display: block;
+    }
+    .step-img{
+      margin-bottom: 27px;
+    }
+    .login-img{
+      margin-top: 20px;
+    }
+  }
+}

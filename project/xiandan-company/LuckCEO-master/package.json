@@ -1,0 +1,24 @@
+{
+  "name": "luckceo",
+  "version": "1.0.0",
+  "description": "lottery tools",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.code.tencent.com/hopeu/LuckCEO.git"
+  },
+  "keywords": [
+    "lottery",
+    "ceo"
+  ],
+  "author": "HOPEYOO.COM",
+  "license": "ISC",
+  "dependencies": {
+    "we-cropper": "^1.3.9",
+    "weui-miniprogram": "^1.0.3",
+    "wxministore": "^1.2.9"
+  }
+}

@@ -1,0 +1,16 @@
+<!--pages/share/share.wxml-->
+<canvas canvas-id='canvas' style='width:{{width}}px;height:{{height}}px;' wx:if="{{loading}}">
+
+  <cover-view class='center_container' style='background:#000'>
+    <cover-view style='color:white'>海报生成中....</cover-view>
+  </cover-view>
+
+</canvas>
+
+
+<view wx:else>
+
+  <image src='{{path}}' mode='widthFix' style='width:100%; height:auto;' bindtap='onPreview'></image>
+  <!-- <button type="primary" size='mini' plain='true' class='save_button' bindtap='onShare'>保存到相册</button> -->
+
+</view>

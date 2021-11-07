@@ -1,0 +1,270 @@
+.commodity-detail {
+  min-width: 1200px;
+  .loading{
+    padding: 400px 0;
+  }
+  .detail-container {
+    border-top: 4px solid #f5f5f5;
+    padding: 68px 13.59% 0 13.59%;
+    display: flex;
+    background: #ffffff;
+    max-width: 1400px;
+
+    .detail-left{
+      width: 400px;
+      margin-right: 20px;
+      .commodity-img {
+        width: 400px;
+        height: 400px;
+        img{
+          width: 100%;
+        }
+      }
+      .img-list{
+        display: flex;
+        justify-content: space-between;
+        .img-item{
+          width: 15%;
+          display: block;
+        }
+        .active-img{
+          width: 15%;
+          display: block;
+          box-sizing: border-box;
+          border: 1px solid #db0b0b;
+        }
+        .icon{
+          font-size: 20px;
+          color: #999999;
+          display: block;
+          padding-top: 20px;
+        }
+      }
+    }
+
+    .commodity-right {
+      width: calc(100% - 420px);
+      min-width: 480px;
+      box-sizing: border-box;
+      padding-top: 60px;
+
+      .detail-icon {
+        display: flex;
+
+        .country-icon {
+          width: 24px;
+          height: 24px;
+          margin-right: 12px;
+          box-sizing: border-box;
+          border: none;
+          margin-top: 6px;
+          img{
+            width: 100%;
+            border-radius: 50%;
+            border:1px solid rgba(209,209,209,1);
+          }
+        }
+
+        .warehouse {
+          height: 24px;
+          background: rgba(219, 11, 11, 1);
+          opacity: 1;
+          border-radius: 2px;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 16px;
+          padding: 4px 13px;
+          box-sizing: border-box;
+          color: rgba(255, 255, 255, 1);
+          display: block;
+          margin-top: 7px;
+        }
+      }
+
+      .commodity-name {
+        margin: 14px 0 24px 0;
+        font-size: 20px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        line-height: 26px;
+        color: rgba(51, 51, 51, 1);
+        opacity: 1;
+        text-overflow: ellipsis; //当对象内文本溢出时显示省略标记
+        display: -webkit-box;
+        -webkit-line-clamp: 2; //这边的2指的是两行
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .title {
+        margin-right: 40px;
+        font-size: 12px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        line-height: 16px;
+        color: rgba(102, 102, 102, 1);
+        opacity: 1;
+      }
+
+      .price {
+        padding: 16px;
+        box-sizing: border-box;
+        background: rgba(248, 248, 248, 1);
+        margin-bottom: 20px;
+
+        .sold-price {
+          font-size: 20px;
+          font-family: Microsoft YaHei;
+          font-weight: 400;
+          line-height: 26px;
+          color: rgba(219, 11, 11, 1);
+          opacity: 1;
+          margin-right: 10px;
+        }
+
+        .original-price {
+          font-size: 12px;
+          font-family: Microsoft YaHei;
+          font-weight: 400;
+          line-height: 16px;
+          color: rgba(153, 153, 153, 1);
+          opacity: 1;
+        }
+      }
+
+      .carriage {
+        margin-bottom: 10px;
+
+        .carriage-info {
+          font-size: 12px;
+          font-family: Microsoft YaHei;
+          font-weight: 400;
+          line-height: 16px;
+          color: rgba(51, 51, 51, 1);
+          opacity: 1;
+        }
+      }
+
+      button, input {
+        display: block;
+        padding: 0;
+        margin: 0;
+        outline: none;
+        border: none;
+        background: none;
+      }
+
+      .count {
+        display: flex;
+
+        .steeper {
+          display: flex;
+
+          button {
+            width: 21px;
+            height: 22px;
+            background: rgba(255, 255, 255, 1);
+            border: 1px solid rgba(174, 174, 174, 1);
+            color: rgba(174, 174, 174, 1);
+          }
+
+          input {
+            width: 48px;
+            height: 22px;
+            border-top: 1px solid rgba(174, 174, 174, 1);
+            border-bottom: 1px solid rgba(174, 174, 174, 1);
+            box-sizing: border-box;
+            text-align: center;
+            color: #333333;
+          }
+        }
+
+        .collection {
+          margin: 0 6px 0 40px;
+        }
+
+        .iconcollection {
+          display: block;
+          margin-top: 2px;
+        }
+
+        .collectioned {
+          color: rgba(219, 12, 12, 1);
+        }
+
+        .uncollection {
+          color: rgba(174, 174, 174, 1);
+        }
+      }
+
+      .btn {
+        display: flex;
+        margin-top: 32px;
+
+        .sell-btn, .add-btn {
+          font-size: 16px;
+          font-family: Microsoft YaHei;
+          font-weight: 400;
+          line-height: 21px;
+          padding: 12px 51px;
+        }
+
+        .sell-btn {
+          margin-right: 20px;
+          border: 1px;
+          background: rgba(255, 255, 255, 1);
+          border: 1px solid rgba(219, 11, 11, 1);
+          color: rgba(219, 11, 11, 1);
+        }
+
+        .add-btn {
+          background: rgba(219, 12, 12, 1);
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+    }
+
+  }
+
+  .img-area {
+    background: #ffffff;
+    padding: 0 13.59%;
+    .title{
+      padding-top: 30px;
+      padding-bottom: 20px;
+      font-size:30px;
+      font-family:Microsoft YaHei;
+      font-weight:400;
+      line-height:26px;
+      color:rgba(51,51,51,1);
+      text-align: center;
+      opacity:1;
+    }
+    video,img{
+      display: block;
+      margin: 0 auto;
+      max-width:100%;
+    }
+  }
+}
+
+.go-weixin{
+  margin:  0 auto;
+  background: #ffffff;
+  display: flex;
+  p{
+    font-size:16px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:24px;
+    color:rgba(102,102,102,1);
+    opacity:1;
+  }
+  canvas{
+    width: 110px;
+    margin-right: 30px;
+  }
+}
+.alert-area{
+  width: 500px;
+}

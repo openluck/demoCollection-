@@ -1,0 +1,153 @@
+.new-package {
+    .new-mask {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        opacity: 0.5;
+        z-index: 2019;
+    }
+
+    .new-popup {
+        width: calc(100% - 32px);
+        margin: auto;
+        height: calc(100% - 190px);
+        background: white;
+        z-index: 2020;
+        position: absolute;
+        left: 16px;
+        top: 70px;
+        border-radius: 16px;
+        padding: 0 16px 16px 16px;
+        box-sizing: border-box;
+
+        .iconfont {
+            font-size: 20px;
+            float: right;
+            position: relative;
+            top: 6px;
+            right: -6px;
+            fill: #4D4D4D;
+        }
+
+        .new-title {
+            font-size: 18px;
+            color: #05000E;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            display: table;
+        }
+
+        .coupon-list {
+            border: 1px solid #DEE0E3;
+            box-sizing: border-box;
+
+            .coupon-list-title {
+                margin-top: 34px !important;
+            }
+        }
+
+        & > div {
+            margin-top: 5px;
+            height: calc(100% - 100px);
+            overflow: auto;
+        }
+
+        .new-coupon-button {
+            width: calc(100% - 32px);
+            background: #F84848;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            height: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px auto auto;
+            line-height: 40px;
+        }
+
+        .iconfont-chacha1 {
+            font-size: 25px;
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            opacity: 0.7;
+        }
+    }
+}
+
+.new-underline {
+    height: 40px;
+    width: 1px;
+    border-left: 1px dashed #FD7C45;
+    float: left;
+    margin-top: 15px;
+}
+
+.circular-a {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    border: 1px solid #FD7C45;
+    position: absolute;
+    top: 11px;
+    left: 7px;
+}
+
+.circular-b {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #FD7C45;
+    position: absolute;
+    bottom: 11px;
+    left: 7px;
+}
+
+.circular-c {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    border: 1px solid #FD7C45;
+    position: absolute;
+    bottom: 11px;
+    right: 7px;
+}
+
+.icon-quan {
+    position: absolute;
+    font-size: 70px;
+    color: gray;
+    z-index: 2022;
+    opacity: 0.2;
+    right: -12px;
+    top: -18px;
+    transform: rotate(-45deg);
+}
+
+.circular-left {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    background: #FE6F43;
+    border-radius: 10px;
+    transform: translateY(-50%);
+}
+
+.circular-right {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    background: #FB8A47;
+    border-radius: 10px;
+    transform: translateY(-50%);
+}

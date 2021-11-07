@@ -1,0 +1,28 @@
+.recommend-price{
+  .current-price{
+    font-size:18px;
+    font-family:PingFang SC;
+    font-weight:800;
+    line-height:25px;
+    color:rgba(219,11,11,1);
+    opacity:1;
+  }
+  .origin-price-big{
+    margin-left: 13px;
+  }
+  .origin-price-normal{
+    margin-left: 8px;
+  }
+  .origin-price-big, .origin-price-normal{
+    font-size:14px;
+    font-family:PingFang SC;
+    font-weight:400;
+    line-height:20px;
+    color:rgba(153,153,153,1);
+    opacity:1;
+  }
+  .price-icon{
+    font-size: 14px;
+    margin-right: 2px;
+  }
+}

@@ -1,0 +1,102 @@
+.web-footer{
+  background: #ffffff;
+  min-width:1200px;
+  padding: 0 13.59% 48px 13.59%;
+  //margin-top: 48px;
+  font-family:Nirmala UI;
+  .footer-top{
+    border-bottom: 1px solid rgba(228,228,228,1);
+    display: flex;
+    justify-content: space-around;
+    padding: 32px 80px 40px 80px;
+    .top-item{
+      display: flex;
+      justify-content: space-between;
+      .left-icon{
+        width:47px;
+        height:47px;
+        border:2px solid rgba(153,153,153,1);
+        border-radius:50%;
+        opacity:1;
+        box-sizing: border-box;
+        padding: 5px 11px;
+        font-size:21px;
+        font-weight:400;
+        line-height:29px;
+        color:rgba(51,51,51,1);
+      }
+      .right-text{
+        font-size:21px;
+        font-weight:400;
+        line-height:29px;
+        color:rgba(51,51,51,1);
+        margin-left: 12px;
+        .right-info{
+          font-size: 16px;
+          color: #666666;
+        }
+      }
+    }
+  }
+  .footer-middle{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    .right-logo{
+      .iconlogo{
+        font-size: 110px;
+      }
+    }
+    .link-list{
+      color: #333333;
+      display: flex;
+      width: 50%;
+      justify-content: space-around;
+      .link-item{
+        .link-info{
+          a{
+            display: block;
+            color: #333333;
+            font-size: 14px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+    .right-qr{
+      width: 123px;
+      img{
+        width: 100%;
+      }
+      p{
+        text-align: center;
+        font-size: 16px;
+        color: #333333;
+      }
+    }
+  }
+  .footer-bottom{
+    text-align: center;
+    font-size:16px;
+    font-weight:400;
+    line-height:16px;
+    color:rgba(51,51,51,1);
+    .bottom-desc{
+      font-size: 12px;
+      font-family:Microsoft YaHei;
+    }
+    .rule-list{
+      padding: 14px 0;
+      display: flex;
+      justify-content: center;
+      span,a{
+        color: #333333;
+        font-size: 12px;
+        padding: 0 5px;
+      }
+      a+a{
+        border-left: 1px solid #333333;
+      }
+    }
+  }
+}
