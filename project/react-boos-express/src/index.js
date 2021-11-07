@@ -28,8 +28,7 @@ ReactDom.render(
 			<div>
 				{/* 注意 AuthRoute 不在 Switch中 */}
 				<AuthRoute></AuthRoute>
-				<Switch>
-					
+				<Switch>	
 					<Route path='/bossinfo' component={BossInfo}></Route>
 					<Route path='/geniusinfo' component={GeniusInfo}></Route>
 					<Route path='/login' component={Login}></Route>

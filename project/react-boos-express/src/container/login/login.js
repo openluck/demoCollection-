@@ -81,7 +81,6 @@ class Login extends React.Component{
 						{this.props.msg?<p className='error-msg'>{this.props.msg}</p>:null}
 						<InputItem
 							onChange={v=>this.props.handleChange('user',v)}
-
 						>用户</InputItem>
 						<WhiteSpace />
 						<InputItem
@@ -94,8 +93,6 @@ class Login extends React.Component{
 					<WhiteSpace />
 					<Button onClick={this.register} type='primary'>注册</Button>
 				</WingBlank>
-
-
 			</div>
 		)
 	}
