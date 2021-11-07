@@ -1,0 +1,54 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true
+  },
+  "search.exclude": {
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/node_modules": true
+  },
+  "search.followSymlinks": false,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "stylelint.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.options": {
+    //指定vscode的eslint所处理的文件的后缀
+    "extensions": [
+      ".js",
+      ".ts",
+      ".tsx"
+    ]
+  },
+  "less.validate": true,
+  "stylelint.validate": [
+    "css",
+    "less",
+    "source.css.styled",
+    "styled-css",
+    "vue",
+    "vue-html",
+  ],
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.format.enable": true,
+  "vetur.format.enable": true,
+  "vetur.format.defaultFormatter.less": "none",
+  "vetur.validation.script": false,
+  "vetur.format.defaultFormatter.html": "none",
+  "typescript.tsdk": "node_modules/typescript/lib",
+}

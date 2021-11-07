@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://img.ssl.msdk.qq.com/msdk_client_test/MSDKWebViewDemo.html -->
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <style id="style-1-cropbar-clipper">
+      .en-markup-crop-options {
+        top: 18px !important;
+        left: 50% !important;
+        margin-left: -100px !important;
+        width: 200px !important;
+        border: 2px rgba(255, 255, 255, .38) solid !important;
+        border-radius: 4px !important;
+      }
+
+      .en-markup-crop-options div div:first-of-type {
+        margin-left: 0px !important;
+      }
+    </style>
+  </head>
+
+  <body onload="iOSVisibleOnly()">
+    <meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1">
+    <title>MSDK JavaScript Interface Test Page</title>
+
+    <script>
+      // msdk javascript封装代码
+      var uniqueId = 1
+      var msdkiOSHandler
+
+      function log(message, data) {
+        var log = document.getElementById('log')
+        var el = document.createElement('div')
+        el.className = 'logLine'
+        el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)
+        if (log && log.children && log.children.length) {
+          log.insertBefore(el, log.children[0]);
+        } else if (log) {
+          log.appendChild(el);
+        } else {
+          //
+        }
+      }
+
+      window.onerror = function (err) {
+        log('window.onerror: ' + err)
+      }
+
+      function setupWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+        if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+        window.WVJBCallbacks = [callback];
+        var WVJBIframe = document.createElement('iframe');
+        WVJBIframe.style.display = 'none';
+        WVJBIframe.src = 'https://__bridge_loaded__';
+        document.documentElement.appendChild(WVJBIframe);
+        setTimeout(function () { document.documentElement.removeChild(WVJBIframe) }, 0)
+      }
+      // ---MSDK 测试方法，游戏测需要根据自己的条件进行判断---
+      function isiOS() {
+        return (/iPad|iPhone|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) && !window.MSStream
+      }
+
+      setupWebViewJavascriptBridge(function (bridge) {
+        msdkiOSHandler = bridge.callHandler
+        bridge.registerHandler('MSDKJSHandler', function (data, responseCallback) {
+          log('ObjC called MSDKJSHandler with', data)
+          alert(data)
+        })
+        bridge.registerHandler('OnEnterForeground', function (data, responseCallback) {
+          OnEnterForeground()
+        })
+
+        bridge.registerHandler('OnEnterBackground', function (data, responseCallback) {
+          OnEnterBackground()
+        })
+
+        bridge.registerHandler('OnGetNetworkType', function (data, responseCallback) {
+          OnGetNetworkType(data)
+        })
+
+        bridge.registerHandler('OnOpenPhoto', function (data, responseCallback) {
+          OnOpenPhoto(data)
+        })
+      })
+
+      function OnEnterForeground() {
+        alert("OnEnterForeground")
+      }
+      function OnEnterBackground() {
+        alert("OnEnterBackground")
+      }
+      function OnGetNetworkType(data) {
+        alert(data)
+      }
+      function OnOpenPhoto(data) {
+        alert(data)
+      }
+
+      function selfWebLogin(data) {
+        console.log('selfWebLogin invoked -- start');
+        var loginDataVar = document.getElementById('loginData').value;
+        if (loginDataVar == '') {
+          loginDataVar = data;
+        }
+        if (isiOS()) {
+          window.webkit.messageHandlers.MSDKSelfWeb.postMessage(loginDataVar);
+        } else {
+          MSDKSelfWeb.onResult(loginDataVar);
+        }
+      }
+
+
+      // MSDK js 测试接口
+      function msdkCall(data) {
+        console.log('msdkCall invoked -- start');
+        console.log(data, "data")
+        if (isiOS()) {
+          msdkiOSHandler('MSDKCall', data, null)
+        } else {
+          if (data.indexOf("nativeCallJS") > -1) {
+            console.log('msdkCall invoked nativeCallJS : ' + data);
+            alert(data)
+          } else {
+            console.log('msdkCall invoked : ' + data);
+            prompt(data)
+          }
+        }
+      }
+
+      // 下面接口暂时不用
+      function msdkShare(data) {
+        if (isiOS()) {
+          msdkiOSHandler('OpenShare', data, null)
+        } else {
+          prompt(data)
+        }
+      }
+
+      function msdkCloseWebview() {
+        if (isiOS()) {
+          msdkiOSHandler('closeWebView', data, null);
+        } else {
+          var data = '{"MsdkMethod":"closeWebView"}'
+          prompt(data)
+        }
+      }
+
+      function iOSVisibleOnly() {
+        var iOSOnlyDiv = document.getElementById("iOS_Only");
+        if (isiOS()) {
+          iOSOnlyDiv.setAttribute("style", "display");
+        } else {
+          iOSOnlyDiv.setAttribute("style", "display:none");
+        }
+      }
+
+      function getUserAgent() {
+        var agent = navigator.userAgent;
+        alert(agent);
+      }
+    // ---Js接口 END---
+    </script>
+
+    <div>
+      <p align="center" style="margin-bottom: 20px;margin-top: 0px;">MSDK JavaScript Interface Test Page
+      </p>
+      <div id="iOSView" style="display: none;">
+        <a href="https://v.qq.com/iframe/player.html?vid=y0140id0vna&amp;tiny=0&amp;auto=0">Tencent Video Web Page</a>
+        <br><br>
+        <a href="https://pvp.qq.com/ingame/all/match2/live.shtml?match_id=5">INGAME Video WebTest</a>
+        <br><br>
+        <a href="https://itunes.apple.com/cn/app/teng-xun-shi-pin-zui-quan/id458318329?mt=8">Tencent Video App</a>
+        <br><br>
+        <a href="https://game.weixin.qq.com/cgi-bin/h5/static/msdk/index.html">WeChat</a>
+        <br><br>
+        <div id="log"></div>
+        <br>
+    </div>
+      <!--
+    <div id="interfaceContainer">
+      <p>嵌入式浏览器：</p>
+      <input class="btn" type="button" onclick="msdkCall(EmbedWebViewType)" value="嵌入式浏览器：查询当前网络状态" />
+      <input class="btn" type="button" onclick="msdkCall(EmbedWebViewBack)" value="嵌入式浏览器：后退" />
+      <input class="btn" type="button" onclick="msdkCall(EmbedWebViewForward)" value="嵌入式浏览器：前进" />
+      <a href="https://img.ssl.msdk.qq.com/msdk_client_test/MSDKWebViewSecondPage.html">嵌入式浏览器:跳转到测试页2</a>
+
+      <p><input type="button" value="关闭嵌入式浏览器" onclick="msdkCall(CloseWebView)"></p>
+    </div>
+
+
+    <p>【本地图片】Webview使用本地图片测试，图片数据大会造成页面卡顿，建议根据实际情况进压缩</p>
+    <div style="font-size: 13px">
+      <p>QQ sendMessage link/invite<input type="file" id="22" onchange="ReaderImgage(this,1)"></p>
+      <p>QQ sendMessage image<input type="file" id="23" onchange="ReaderImgage(this,2)"></p>
+      <p>QQ share link/invite<input type="file" id="24" onchange="ReaderImgage(this,3)"></p>
+      <p>QQ share Image<input type="file" id="25" onchange="ReaderImgage(this,4)"></p>
+
+
+      <p>WX sendMessage link/invite<input type="file" id="33" onchange="ReaderImgage(this,5)"></p>
+      <p>WX sendMessage image<input type="file" id="34" onchange="ReaderImgage(this,6)"></p>
+      <p>WX share link/invite<input type="file" id="35" onchange="ReaderImgage(this,7)"></p>
+      <p>WX share Image<input type="file" id="36" onchange="ReaderImgage(this,8)"></p>
+    </div>
+
+    <hr /> -->
+
+      <div id="iOS_Only" style="display:none">
+        <p>iOS 独占：</p>
+        <p><input type="button" value="Open URL In Safari" onclick="msdkCall(OpenURLInSafari)"></p>
+        <p><input type="file" value="Open ImagePickerController" onclick="msdkCall(OpenImagePicker)"></p>
+      </div>
+
+      <p>SelfWeb 模拟登录测试</p>
+      <p> <input type="text" id="loginData"></p>
+      <p> <input type="button" value="模拟登陆" onclick="selfWebLogin(SelfWebLoginData)"></p>
+
+      <p>WebView 基本接口测试：</p>
+      <p><input type="button" value="关闭MSDK内置浏览器" onclick="msdkCall(CloseWebView)"></p>
+      <p><input type="button" value="设置浏览器全屏" onclick="msdkCall(SetFullScreen)"></p>
+      <p><input type="button" value="还原浏览器全屏" onclick="msdkCall(ReSetFullScreen)"></p>
+      <p><input type="button" value="设置浏览器横屏" onclick="msdkCall(SetLandscapeScreen)"></p>
+      <p><input type="button" value="设置浏览器竖屏" onclick="msdkCall(SetPortraitScreen)"></p>
+      <p><input type="button" value="JS数据到Native -&gt; Js -&gt; Native" onclick="msdkCall(JsCallNative)"></p>
+      <p><input type="button" value="获取User Agent" onclick="getUserAgent()"></p>
+
+      <p>【QQ】 WebView sendMessage 接口测试：</p>
+      <p><input type="button" value="sendMessage TEXT" onclick="msdkCall(QQ_SendMessage_TEXT)"></p>
+      <p><input type="button" value="sendMessage LINK" onclick="msdkCall(QQ_SendMessage_LINK)"></p>
+      <p><input type="button" value="sendMessage IMG" onclick="msdkCall(QQ_SendMessage_IMG)"></p>
+      <p><input type="button" value="sendMessage INVITE" onclick="msdkCall(QQ_SendMessage_INVITE)"></p>
+      <p><input type="button" value="sendMessage MUSIC" onclick="msdkCall(QQ_SendMessage_MUSIC)"></p>
+      <p><input type="button" value="sendMessage VIDEO" onclick="msdkCall(QQ_SendMessage_VIDEO)"></p>
+
+      <p>【QQ 空间】 WebView share 接口测试：</p>
+      <p><input type="button" value="Share TEXT" onclick="msdkCall(QQ_Share_TEXT)"></p>
+      <p><input type="button" value="Share LINK" onclick="msdkCall(QQ_Share_LINK)"></p>
+      <p><input type="button" value="Share IMG" onclick="msdkCall(QQ_Share_IMG)"></p>
+      <p><input type="button" value="Share INVITE" onclick="msdkCall(QQ_Sharew_INVITE)"></p>
+      <p><input type="button" value="Share MUSIC" onclick="msdkCall(QQ_Share_MUSIC)"></p>
+      <p><input type="button" value="Share VIDEO" onclick="msdkCall(QQ_Share_VIDEO)"></p>
+
+      <p>【WeChat】 WebView sendMessage 接口测试：</p>
+      <p><input type="button" value="sendMessage TEXT" onclick="msdkCall(WeChat_SendMessage_TEXT)"></p>
+      <p><input type="button" value="sendMessage LINK" onclick="msdkCall(WeChat_SendMessage_LINK)"></p>
+      <p><input type="button" value="sendMessage IMG" onclick="msdkCall(WeChat_SendMessage_IMG)"></p>
+      <p><input type="button" value="sendMessage INVITE" onclick="msdkCall(WeChat_SendMessage_INVITE)"></p>
+      <p><input type="button" value="sendMessage MUSIC" onclick="msdkCall(WeChat_SendMessage_MUSIC)"></p>
+      <p><input type="button" value="sendMessage VIDEO" onclick="msdkCall(WeChat_SendMessage_VIDEO)"></p>
+      <p><input type="button" value="sendMessage MINI APP" onclick="msdkCall(WeChat_SendMessagew_MINI_APP)"></p>
+
+      <p>【WeChat 朋友圈】 WebView share 接口测试：</p>
+      <p><input type="button" value="Share TEXT" onclick="msdkCall(WeChat_Share_TEXT)"></p>
+      <p><input type="button" value="Share LINK" onclick="msdkCall(WeChat_Share_LINK)"></p>
+      <p><input type="button" value="Share IMG" onclick="msdkCall(WeChat_Share_IMG)"></p>
+      <p><input type="button" value="Share INVITE" onclick="msdkCall(WeChat_Share_INVITE)"></p>
+      <p><input type="button" value="Share MUSIC" onclick="msdkCall(WeChat_Share_MUSIC)"></p>
+      <p><input id="AndroidView" type="button" value="Share VIDEO" onclick="msdkCall(WeChat_Share_VIDEO)"></p>
+      <!--     <p><input id="iOSView" type="button" value="Share VIDEO" onclick="msdkCall(WeChat_Share_VIDEO_IOS)"></p>
+ -->
+      <p><input type="button" value="Share MINI APP" onclick="msdkCall(WeChat_Share_MINI_APP)"></p>
+
+      <p>【Open App】Webview通过scheme打开App测试</p>
+      <p><a href="mqq://">打开QQ</a></p>
+      <p><a href="weixin://">打开Wechat</a></p>
+      <p><a href="fb://facewebmodal/f?href=">打开Facebook - Android</a></p>
+      <p><a href="kakao://">打开Kakao(本地未安装Kakao)</a></p>
+
+    </div>
+
+    <script>
+      // 调用 MSDK Javascript 接口的demo，游戏可参考此示例
+      // ******START******
+      initView()
+
+      function initView() {
+        if (!isiOS()) {
+          document.getElementById("iOSView").style.display = "none"
+        } else {
+          document.getElementById("AndroidView").style.display = "none";
+        }
+      }
+
+      // 测试数据
+      // https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/1b/4c/e7/1b4ce7bb-26cb-dea7-ee94-f0611532a900/AppIcon-1-1x_U007emarketing-85-220-3.png/246x0w.jpg
+
+      var SelfWebLoginData = '{"token": "Bw3DAGjs_iT81yUX2IWb0eG1u5YJa4xh@Ons@9epGK0HkIsJkVj78E@oyfEGkKEsgj6Io7mOzYRvxGkWGLc45Q==", "uid": "19290979911670", "expire": 1594381211, "ret": 0, "msg": "Success"}'
+      var SetFullScreen = '{"MsdkMethod":"setFullScreen","isFullScreen":true}';
+      var ReSetFullScreen = '{"MsdkMethod":"setFullScreen","isFullScreen":false}';
+      var CloseWebView = '{"MsdkMethod":"closeWebView"}';
+      var JsCallNative = '{"MsdkMethod":"jsCallNative","type":"execCallJS","IsEmbedWebView":true}';
+      var EmbedWebViewType = '{"MsdkMethod":"GetNetworkType","Callback":"OnGetNetworkType"}';
+      var EmbedWebViewBack = '{"MsdkMethod":"GoBack"}';
+      var EmbedWebViewForward = '{"MsdkMethod":"GoForward"}';
+
+      var OpenURLInSafari = '{"MsdkMethod":"openURLInSafari","URLInSafari":"http://v.qq.com/iframe/player.html?vid=y0140id0vna&tiny=0&auto=0"}'
+      var OpenImagePicker = '{"MsdkMethod":"openImagePickerController","Callback":"OnOpenPhoto"}'
+
+      if (isiOS()) {
+        //screenOrientation 可以参考 UIDeviceOrientationPortrait = 1 的定义
+        var SetLandscapeScreen = '{"MsdkMethod":"setScreenOrientation","screenOrientation":"3"}';
+        var SetPortraitScreen = '{"MsdkMethod":"setScreenOrientation","screenOrientation":"1"}';
+      } else {
+        //screenOrientation 可以参考 ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE = 0 的定义
+        var SetLandscapeScreen = '{"MsdkMethod":"setScreenOrientation","screenOrientation":"0"}';
+        var SetPortraitScreen = '{"MsdkMethod":"setScreenOrientation","screenOrientation":"1"}';
+      }
+
+
+      // 分享数据 -START-
+      var DATA_SHARE_TEXT = '"actionReport":"MSG_INVITE","desc":" MSDK 文本分享测试","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"http:\/\/www.qq.com\/","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"share10000","type":10000,"user":""';
+
+      var DATA_SHARE_LINK = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"https:\/\/www.facebook.com","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"","title":"不带缩略图测试","type":10001,"user":""';
+
+      var DATA_SHARE_IMG = '"actionReport":"MSG_INVITE","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"http:\/\/www.qq.com\/","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"https://img.ssl.msdk.qq.com/msdk_client_test/Images/launch_640x960.png","title":"超大图测试（3.5M）","type":10002,"user":""';
+
+      var DATA_SHARE_IMG_Q = '"actionReport":"MSG_INVITE","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"http:\/\/www.qq.com\/","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"超大图测试（3.5M）","type":10002,"user":""';
+
+      var DATA_SHARE_INVITE_Q = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"http:\/\/m.gamecenter.qq.com\/directout\/detail\/1106977030?_wv=2147484679&_wwv=4&ADTAG=gamecenter&autodownload=1&pf=invite&appid=1106977030&asyncMode=3&appType=1&_nav_bgclr=ffffff&_nav_titleclr=ffffff&_nav_txtclr=ffffff&_nav_anim=true&_nav_alpha=0","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"share10003","type":10003,"user":""';
+
+      var DATA_SHARE_INVITE = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"http:\/\/m.gamecenter.qq.com\/directout\/detail\/1106977030?_wv=2147484679&_wwv=4&ADTAG=gamecenter&autodownload=1&pf=invite&appid=1106977030&asyncMode=3&appType=1&_nav_bgclr=ffffff&_nav_titleclr=ffffff&_nav_txtclr=ffffff&_nav_anim=true&_nav_alpha=0","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"share10003","type":10003,"user":""';
+
+      var DATA_SHARE_MUSIC = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"http:\/\/y.qq.com\/#type=song&mid=000cz9pr0xlAId","mediaPath":"http:\/\/music.163.com\/song\/media\/outer\/url?id=317151.mp3","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"share10004","type":10004,"user":""';
+
+      var DATA_SHARE_VIDEO = '"actionReport":"MSG_INVITE","desc":"王者时刻","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"http:\/\/www.qq.com\/","mediaPath":"\/storage\/emulated\/0\/Android\/data\/com.tencent.itop.example\/files\/msdk-test\/test_video.mp4","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"游戏视频","type":10005,"user":""';
+
+      var DATA_SHARE_MINI_APP = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","innerAppID":"gh_e9f675597c15","link":"https:\/\/www.baidu.com","mediaPath":"pages\/indexSelAddr\/indexSelAddr","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"\/storage\/emulated\/0\/Android\/data\/com.example.wegame\/files\/msdk-test\/res5thumb.png","title":"share10006","type":10006,"user":""';
+
+
+      var DATA_SEND_TEXT = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"http:\/\/www.qq.com\/","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"sendMessage10000","type":10000,"user":""';
+
+      var DATA_SEND_LINK = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"https:\/\/www.facebook.com","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"\/storage\/emulated\/0\/Android\/data\/com.example.wegame\/files\/msdk-test\/res5thumb.png","title":"带缩略图分享","type":10001,"user":""';
+
+      var DATA_SEND_LINK_Q = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"https:\/\/www.facebook.com","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"带缩略图分享","type":10001,"user":""';
+
+      var DATA_SEND_IMG = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imagePath":"https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/1b/4c/e7/1b4ce7bb-26cb-dea7-ee94-f0611532a900/AppIcon-1-1x_U007emarketing-85-220-3.png/246x0w.jpg","link":"http:\/\/www.qq.com\/","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"超大图测试，带缩略图（3.5）","type":10002,"user":""';
+
+      var DATA_SEND_IMG_Q = '"actionReport":"MSG_INVITE","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"http:\/\/www.qq.com\/","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"https://img.ssl.msdk.qq.com/msdk_client_test/Images/launch_640x960.png","title":"超大图测试，带缩略图（3.5）","type":10002,"user":""';
+
+      var DATA_SEND_INVITE_Q = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"http:\/\/m.gamecenter.qq.com\/directout\/detail\/1106977030?_wv=2147484679&_wwv=4&ADTAG=gamecenter&autodownload=1&pf=invite&appid=1106977030&asyncMode=3&appType=1&_nav_bgclr=ffffff&_nav_titleclr=ffffff&_nav_txtclr=ffffff&_nav_anim=true&_nav_alpha=0","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"sendMessage10003","type":10003,"user":""';
+
+      var DATA_SEND_INVITE = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"sendMessage10003","type":10003,"user":"","extraJson":"{\\"game_data\\":\\"game_data\\"}"';
+
+
+      var DATA_SEND_MUSIC = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"http:\/\/y.qq.com\/#type=song&mid=000cz9pr0xlAId","mediaPath":"http:\/\/music.163.com\/song\/media\/outer\/url?id=317151.mp3","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"sendMessage10004","type":10004,"user":""';
+
+      var DATA_SEND_VIDEO = '"actionReport":"MSG_INVITE","desc":"王者时刻","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"http:\/\/shzjwxsns.video.qq.com\/102\/20202\/snsvideodownload?filekey=30270201010420301e02016604025348041086277b0fa88402549570698994b49289020310eefe0400&hy=SH&storeid=32303137303530383038353035323030303832333037626533333166346336613965333230613030303030303636&bizid=1023","mediaPath":"\/storage\/emulated\/0\/Android\/data\/com.example.wegame\/files\/msdk-test\/wechat_sight_121.mp4","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/shzjwxsns.video.qq.com\/102\/20202\/snsvideodownload?filekey=30270201010420301e02016604025348041086277b0fa88402549570698994b49289020310eefe0400&hy=SH&storeid=32303137303530383038353035323030303832333037626533333166346336613965333230613030303030303636&bizid=1023","title":"游戏视频","type":10005,"user":""';
+
+      var DATA_SEND_VIDEO_IOS = '"actionReport":"MSG_INVITE","desc":"王者时刻","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","link":"https:\/\/img.ssl.msdk.qq.com\/msdk_client_test\/IMG_0986.MOV","mediaPath":"https:\/\/img.ssl.msdk.qq.com\/msdk_client_test\/IMG_0986.MOV","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/shzjwxsns.video.qq.com\/102\/20202\/snsvideodownload?filekey=30270201010420301e02016604025348041086277b0fa88402549570698994b49289020310eefe0400&hy=SH&storeid=32303137303530383038353035323030303832333037626533333166346336613965333230613030303030303636&bizid=1023","title":"游戏视频","type":10005,"user":""';
+
+
+      var DATA_SEND_MINI_APP = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imagePath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","innerAppID":"gh_e9f675597c15","link":"https:\/\/www.baidu.com","mediaPath":"pages\/indexSelAddr\/indexSelAddr","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"sendMessage10006","type":10006,"user":"","extraJson":"{\\"weapp_id\\":\\"gh_e9f675597c15\\"}"';    // 分享数据 -END-
+
+      var DATA_SHARE_IMG_LOCAL = '"actionReport":"MSG_INVITE","imagePath":"\/storage\/emulated\/0\/Android\/data\/com.tencent.itop.example\/files\/msdk-test\/usdk_sns_img_3m.png","link":"http:\/\/www.qq.com\/","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"超大图测试（3.5M）","type":10002,"user":""';
+
+      // 定义常量 -START-
+      var JSON_BEGIN = '{';
+      var JSON_END = '}';
+      var JSON_DOT = ',';
+      var METHOD_SHARE = '"MsdkMethod":"shareWebView"';
+      var METHOD_SEND = '"MsdkMethod":"sendMsgWebView"';
+      var CHANNEL_QQ = '"channel":"QQ"';
+      var CHANNEL_WECHAT = '"channel":"WeChat"';
+      // 定义常量 -END-
+
+      var QQ_Share_TEXT = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SHARE + JSON_DOT + DATA_SHARE_TEXT + JSON_END;
+      var QQ_Share_LINK = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SHARE + JSON_DOT + DATA_SHARE_LINK + JSON_END
+      var QQ_Share_IMG = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SHARE + JSON_DOT + DATA_SHARE_IMG_Q + JSON_END
+      var QQ_Sharew_INVITE = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SHARE + JSON_DOT + DATA_SHARE_INVITE_Q + JSON_END
+      var QQ_Share_MUSIC = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SHARE + JSON_DOT + DATA_SHARE_MUSIC + JSON_END
+      var QQ_Share_VIDEO = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SHARE + JSON_DOT + DATA_SHARE_VIDEO + JSON_END
+      var QQ_Share_MINI_APP = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SHARE + JSON_DOT + DATA_SHARE_MINI_APP + JSON_END
+
+      var QQ_SendMessage_TEXT = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SEND + JSON_DOT + DATA_SEND_TEXT + JSON_END;
+      var QQ_SendMessage_LINK = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SEND + JSON_DOT + DATA_SEND_LINK_Q + JSON_END;
+      var QQ_SendMessage_IMG = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SEND + JSON_DOT + DATA_SEND_IMG_Q + JSON_END;
+      var QQ_SendMessage_INVITE = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SEND + JSON_DOT + DATA_SEND_INVITE_Q + JSON_END;
+      var QQ_SendMessage_MUSIC = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SEND + JSON_DOT + DATA_SEND_MUSIC + JSON_END;
+      var QQ_SendMessage_VIDEO = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SEND + JSON_DOT + DATA_SEND_VIDEO + JSON_END;
+      var QQ_SendMessage_MINI_APP = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SEND + JSON_DOT + DATA_SEND_MINI_APP + JSON_END;
+
+      var WeChat_Share_TEXT = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SHARE + JSON_DOT + DATA_SHARE_TEXT + JSON_END;
+      var WeChat_Share_LINK = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SHARE + JSON_DOT + DATA_SHARE_LINK + JSON_END;
+      var WeChat_Share_IMG = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SHARE + JSON_DOT + DATA_SHARE_IMG + JSON_END;
+      var WeChat_Share_INVITE = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SHARE + JSON_DOT + DATA_SHARE_INVITE + JSON_END;
+      var WeChat_Share_MUSIC = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SHARE + JSON_DOT + DATA_SHARE_MUSIC + JSON_END;
+      var WeChat_Share_VIDEO = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SHARE + JSON_DOT + DATA_SHARE_VIDEO + JSON_END;
+      var WeChat_Share_MINI_APP = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SHARE + JSON_DOT + DATA_SHARE_MINI_APP + JSON_END;
+      var WeChat_Share_VIDEO_IOS = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SHARE + JSON_DOT + DATA_SEND_VIDEO_IOS + JSON_END;
+
+
+      var WeChat_SendMessage_TEXT = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SEND + JSON_DOT + DATA_SEND_TEXT + JSON_END;
+      var WeChat_SendMessage_LINK = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SEND + JSON_DOT + DATA_SEND_LINK + JSON_END;
+      var WeChat_SendMessage_IMG = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SEND + JSON_DOT + DATA_SEND_IMG_Q + JSON_END;
+      var WeChat_SendMessage_INVITE = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SEND + JSON_DOT + DATA_SEND_INVITE + JSON_END;
+      var WeChat_SendMessage_MUSIC = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SEND + JSON_DOT + DATA_SEND_MUSIC + JSON_END;
+      var WeChat_SendMessage_VIDEO = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SEND + JSON_DOT + DATA_SEND_VIDEO + JSON_END;
+
+      var WeChat_SendMessagew_MINI_APP = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SEND + JSON_DOT + DATA_SEND_MINI_APP + JSON_END;
+
+
+      // ******END******
+
+      function ReaderImgage(fileObj, type) {
+        var file = fileObj.files['0'];
+        console.log(file)
+        var rFilter = /^(image\/jpeg|image\/png)$/i; // 检查图片格式
+        if (!rFilter.test(file.type)) {
+          alert("请选择jpeg、png格式的图片");
+          return;
+        }
+        var oReader = new FileReader();
+        oReader.onload = function (e) {
+          var imgstr = e.target.result; //这就是base64字符串
+          compressImg(imgstr, 0.9, function (imgstr) {
+            if (type == 1) {
+              var local_data_send_qq_link = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imgData":"' + imgstr +
+                '", "thumbData":"' + imgstr + '","link":"https:\/\/www.facebook.com","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"带缩略图分享","type":10001,"user":""';
+              var js = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SEND + JSON_DOT + local_data_send_qq_link +
+                JSON_END;
+              msdkCall(js);
+            } else if (type == 2) {
+              var local_data_send_qq_image = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imgData":"' + imgstr +
+                '","link":"http:\/\/www.qq.com\/","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"超大图测试，带缩略图（3.5）","type":10002,"user":""';
+              var js = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SEND + JSON_DOT + local_data_send_qq_image +
+                JSON_END;
+              msdkCall(js);
+            } else if (type == 3) {
+              var local_data_share_qq_link = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imgData":"' + imgstr +
+                '","link":"https:\/\/www.facebook.com","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"","title":"不带缩略图测试","type":10001,"user":""';
+              var js = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SHARE + JSON_DOT + local_data_share_qq_link +
+                JSON_END;
+              msdkCall(js);
+            } else if (type == 4) {
+              var local_data_share_qq_image = '"actionReport":"MSG_INVITE","imgData":"' + imgstr +
+                '","link":"http:\/\/www.qq.com\/","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"http:\/\/mat1.gtimg.com\/www\/qq2018\/imgs\/qq_logo_2018x2.png","title":"超大图测试（3.5M）","type":10002,"user":""';
+              var js = JSON_BEGIN + CHANNEL_QQ + JSON_DOT + METHOD_SHARE + JSON_DOT + local_data_share_qq_image +
+                JSON_END;
+              msdkCall(js);
+            } else if (type == 5) {
+              var local_data_send_wx_link = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imgData":"' + imgstr +
+                '","link":"https:\/\/www.facebook.com","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"\/storage\/emulated\/0\/Android\/data\/com.example.wegame\/files\/msdk-test\/res5thumb.png","title":"带缩略图分享","type":10001,"user":""';
+              var js = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SEND + JSON_DOT + local_data_send_wx_link +
+                JSON_END;
+              msdkCall(js);
+            } else if (type == 6) {
+              var local_data_send_wx_image = '"actionReport":"MSG_INVITE","imgData":"' + imgstr +
+                '","link":"http:\/\/www.qq.com\/","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"https://img.ssl.msdk.qq.com/msdk_client_test/Images/launch_640x960.png","title":"超大图测试，带缩略图（3.5）","type":10002,"user":""';
+              var js = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SEND + JSON_DOT + local_data_send_wx_image +
+                JSON_END;
+              msdkCall(js);
+            } else if (type == 7) {
+              var local_data_share_wx_link = '"actionReport":"MSG_INVITE","desc":"文本发送测试","imgData":"' + imgstr +
+                '","link":"https:\/\/www.facebook.com","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"","title":"不带缩略图测试","type":10001,"user":""';
+              var js = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SHARE + JSON_DOT + local_data_share_wx_link +
+                JSON_END;
+              msdkCall(js);
+            } else if (type == 8) {
+              var local_data_share_wx_image = '"actionReport":"MSG_INVITE","imgData":"' + imgstr +
+                '","link":"http:\/\/www.qq.com\/","messageExt":"messageExt","tailLogo":"WECHAT_SNS_JUMP_APP","thumbPath":"https://img.ssl.msdk.qq.com/msdk_client_test/Images/launch_640x960.png","title":"超大图测试（3.5M）","type":10002,"user":""';
+              var js = JSON_BEGIN + CHANNEL_WECHAT + JSON_DOT + METHOD_SHARE + JSON_DOT + local_data_share_wx_image +
+                JSON_END;
+              msdkCall(js);
+            }
+          })
+        }
+        oReader.readAsDataURL(file);
+      }
+
+      //压缩图片 图片路径src ,图片品质（0，1）, callback回调处理
+      function compressImg(src, quality, callback) {
+        var img = new Image();
+        img.src = src;
+        img.onload = function () {
+          var that = this;
+          // 默认按比例压缩
+          var w = that.width;
+          h = that.height;
+          scale = w / h;
+          w = w > 550 ? 550 : w;
+          h = w / scale;
+          //生成canvas
+          var canvas = document.createElement('canvas');
+          var ctx = canvas.getContext('2d');
+          // 创建属性节点
+          var anw = document.createAttribute("width");
+          anw.nodeValue = w;
+          var anh = document.createAttribute("height");
+          anh.nodeValue = h;
+          canvas.setAttributeNode(anw);
+          canvas.setAttributeNode(anh);
+          ctx.drawImage(that, 0, 0, w, h);
+
+          // quality值越小，所绘制出的图像越模糊
+          var base64 = canvas.toDataURL('image/jpeg', quality);
+          // 回调函数返回base64的值
+          callback(base64);
+        }
+      }
+    </script>
+
+
+
+  </body>
+
+</html>

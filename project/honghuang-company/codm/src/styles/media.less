@@ -1,0 +1,750 @@
+/* 屏幕分辨率比大于2 */
+@media screen and (min-aspect-ratio: ~'200/100') {
+  #app {
+    margin: 0 0.5rem;
+  }
+
+  #app.ios {
+    margin: 0;
+  }
+  // 修改侧边栏距离
+  .content .nav-box {
+    right: 0.61rem !important;
+  }
+  // // 适配热门枪械
+  // .firearms-page {
+  //   .hot-content {
+  //     .content-left {
+  //       width: 48% !important;
+  //     }
+
+  //     .content-right {
+  //       width: 50% !important;
+  //     }
+  //   }
+  // }
+}
+/* 屏幕分辨率比大于2.16 */
+@media screen and (min-aspect-ratio: ~'216/100') {
+  #app {
+    margin: 0 0.5rem;
+  }
+
+  #app.ios {
+    margin: 0 0.5rem;
+  }
+  // 我的消息中心标题
+  .mesg-btn {
+    width: 20% !important;
+  }
+  // 战域
+  .war-area {
+    height: calc(100vh - 0.9rem) !important;
+  }
+  // 修改侧边栏距离
+  .content .nav-box {
+    right: 0.61rem !important;
+  }
+}
+
+/* 适配无法使用 media query 匹配到的 iphone 手机： iPhone 12 and iPhone 12 Pro */
+html.iphone-12 {
+  #app {
+    margin: 0 0.5rem;
+  }
+  // 适配热门枪械
+  .firearms-page {
+    height: calc(100vh - 0.9rem) !important;
+  }
+
+  // 战域
+  .war-area {
+    height: calc(100vh - 0.9rem) !important;
+  }
+
+  .np-comment-report-pop {
+    padding: 0 0.5rem;
+  }
+
+  .content .nav-box {
+    right: 0.61rem !important;
+  }
+}
+
+/* 适配iphone X */
+@media only screen and (device-width: 375px) and (device-height: 812px) and (orientation: landscape) {
+  #app {
+    margin: 0 0.5rem;
+  }
+
+  #app.ios {
+    margin: 0 0.5rem;
+  }
+
+  .home-bottom {
+    height: 48% !important;
+  }
+
+  // 战域
+  .war-area {
+    height: calc(100vh - 0.9rem) !important;
+  }
+
+  .np-comment-report-pop {
+    padding: 0 0.5rem;
+  }
+
+  // 修改侧边栏距离
+  .content .nav-box {
+    right: 0.61rem !important;
+  }
+}
+/* 适配iphone X 宽高写反 */
+@media only screen and (device-width: 812px) and (device-height: 375px) and (orientation: landscape) {
+  #app {
+    margin: 0 0.5rem;
+  }
+
+  #app.ios {
+    margin: 0 0.5rem;
+  }
+
+  .home-bottom {
+    height: 48% !important;
+  }
+
+  // 战域
+  .war-area {
+    height: calc(100vh - 0.9rem) !important;
+  }
+
+  .np-comment-report-pop {
+    padding: 0 0.5rem;
+  }
+  // 修改侧边栏距离
+  .content .nav-box {
+    right: 0.61rem !important;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3),
+  only screen and (-o-min-device-pixel-ratio: 3/1),
+  only screen and (min-width: 844px) and (orientation: landscape) {
+  #app {
+    margin: 0 0.5rem;
+  }
+
+  #app.ios {
+    margin: 0 0.5rem;
+  }
+
+  // 适配热门枪械
+  .firearms-page {
+    height: calc(100vh - 0.9rem) !important;
+  }
+
+  // 战域
+  .war-area {
+    height: calc(100vh - 0.9rem) !important;
+  }
+
+  .np-comment-report-pop {
+    padding: 0 0.5rem;
+  }
+}
+
+// 适配 iphone Xs max
+@media only screen and (device-width: 414px) and (device-height: 896px) and (orientation: landscape) {
+  #app {
+    margin: 0 0.5rem;
+  }
+
+  #app.ios {
+    margin: 0 0.5rem;
+  }
+  // 适配热门枪械
+  .firearms-page {
+    height: calc(100vh - 0.9rem) !important;
+  }
+  // 战域
+  .war-area {
+    height: calc(100vh - 0.9rem) !important;
+  }
+  // 修改侧边栏距离
+  .content .nav-box {
+    right: 0.61rem !important;
+  }
+}
+
+// 适配iPhone 12 Pro Max
+@media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+  #app {
+    margin: 0 0.5rem;
+  }
+
+  #app.ios {
+    margin: 0 0.5rem;
+  }
+  // 适配热门枪械
+  .firearms-page {
+    height: calc(100vh - 0.9rem) !important;
+  }
+
+  .gun-content {
+    height: calc(100% - 0.9rem);
+  }
+  // 战域
+  .war-area {
+    height: calc(100vh - 0.9rem) !important;
+  }
+
+  .np-comment-report-pop {
+    padding: 0 0.5rem;
+  }
+  // 修改侧边栏距离
+  .content .nav-box {
+    right: 0.61rem !important;
+  }
+}
+
+/* ipad 真机 */
+@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+  // 去除ipad两边留白：margin值
+  #app.ios {
+    margin: 0;
+  }
+
+  .home-page {
+    .home-top {
+      height: 30% !important;
+    }
+
+    .home-bottom {
+      height: 65% !important;
+      margin-top: 0.26rem;
+
+      .zx-li {
+        height: 31.3% !important;
+      }
+    }
+  }
+
+  .bd-ul {
+    .bd-li {
+      background: url(https://gzhcos.qq.com/codm/home/bd-li.png) no-repeat right / cover !important;
+    }
+  }
+
+  .content-right {
+    .zx-ul {
+      .zx-li {
+        margin-bottom: 3% !important;
+      }
+    }
+  }
+
+  .area-con {
+    .area-left {
+      position: relative;
+
+      .zone-ul {
+        height: 69% !important;
+        position: absolute;
+        transform: translateY(12%);
+      }
+    }
+
+    .content-right {
+      position: relative;
+
+      .hotgl-up {
+        height: 23% !important;
+        position: absolute;
+        transform: translateY(36%);
+      }
+
+      .zx-ul {
+        height: 43% !important;
+        position: absolute;
+        transform: translateY(74%);
+      }
+    }
+  }
+
+  .resource-list {
+    height: calc(100% - 3.3rem) !important;
+    margin: 0.58rem auto 0 !important;
+
+    &::-webkit-scrollbar {
+      width: 0.04rem;
+      background: transparent !important;
+    }
+  }
+}
+/* ipad 浏览器模拟 */
+@media only screen and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
+  // 去除ipad两边留白：margin值
+  #app.ios {
+    margin: 0;
+  }
+
+  .home-page {
+    .home-top {
+      height: 30% !important;
+    }
+
+    .home-bottom {
+      height: 65% !important;
+      margin-top: 0.26rem;
+
+      .zx-li {
+        height: 31.3% !important;
+      }
+    }
+  }
+
+  .bd-ul {
+    .bd-li {
+      background: url(https://gzhcos.qq.com/codm/home/bd-li.png) no-repeat right / cover !important;
+    }
+  }
+
+  .content-right {
+    .zx-ul {
+      .zx-li {
+        margin-bottom: 3% !important;
+      }
+    }
+  }
+
+  .area-con {
+    .area-left {
+      position: relative;
+
+      .zone-ul {
+        height: 69% !important;
+        position: absolute;
+        transform: translateY(12%);
+      }
+    }
+
+    .content-right {
+      position: relative;
+
+      .hotgl-up {
+        height: 23% !important;
+        position: absolute;
+        transform: translateY(36%);
+      }
+
+      .zx-ul {
+        height: 43% !important;
+        position: absolute;
+        transform: translateY(74%);
+      }
+    }
+  }
+
+  .resource-list {
+    height: calc(100% - 3.3rem) !important;
+    margin: 0.58rem auto 0 !important;
+
+    &::-webkit-scrollbar {
+      width: 0.04rem;
+      background: transparent !important;
+    }
+  }
+}
+
+/* ipad pro 真机 */
+@media only screen and (device-width: 1024px) and (device-height: 1366px) and (orientation: landscape) {
+  // 去除ipad两边留白：margin值
+  #app.ios {
+    margin: 0;
+  }
+
+  .home-page {
+    .home-top {
+      height: 30% !important;
+    }
+
+    .home-bottom {
+      height: 65% !important;
+      margin-top: 0.26rem;
+
+      .zx-li {
+        height: 31.3% !important;
+      }
+    }
+  }
+
+  .bd-ul {
+    .bd-li {
+      background: url(https://gzhcos.qq.com/codm/home/bd-li.png) no-repeat right / cover !important;
+    }
+  }
+
+  .content-right {
+    .zx-ul {
+      .zx-li {
+        margin-bottom: 3% !important;
+      }
+    }
+  }
+
+  .area-con {
+    .area-left {
+      position: relative;
+
+      .zone-ul {
+        height: 69% !important;
+        position: absolute;
+        transform: translateY(12%);
+      }
+    }
+
+    .content-right {
+      position: relative;
+
+      .hotgl-up {
+        height: 23% !important;
+        position: absolute;
+        transform: translateY(36%);
+      }
+
+      .zx-ul {
+        height: 43% !important;
+        position: absolute;
+        transform: translateY(74%);
+      }
+    }
+  }
+
+  .resource-list {
+    height: calc(100% - 3.3rem) !important;
+    margin: 0.58rem auto 0 !important;
+
+    &::-webkit-scrollbar {
+      width: 0.04rem;
+      background: transparent !important;
+    }
+  }
+}
+/* 以下为ipad的各个机型适配 */
+@media only screen and (device-width: 820px) and (device-height: 1180px) and (orientation: landscape) {
+  // 去除ipad两边留白：margin值
+  #app.ios {
+    margin: 0;
+  }
+
+  .home-page {
+    .home-top {
+      height: 30% !important;
+    }
+
+    .home-bottom {
+      height: 65% !important;
+      margin-top: 0.26rem;
+
+      .zx-li {
+        height: 31.3% !important;
+      }
+    }
+  }
+
+  .bd-ul {
+    .bd-li {
+      background: url(https://gzhcos.qq.com/codm/home/bd-li.png) no-repeat right / cover !important;
+    }
+  }
+
+  .content-right {
+    .zx-ul {
+      .zx-li {
+        margin-bottom: 3% !important;
+      }
+    }
+  }
+
+  .area-con {
+    .area-left {
+      position: relative;
+
+      .zone-ul {
+        height: 69% !important;
+        position: absolute;
+        transform: translateY(12%);
+      }
+    }
+
+    .content-right {
+      position: relative;
+
+      .hotgl-up {
+        height: 23% !important;
+        position: absolute;
+        transform: translateY(36%);
+      }
+
+      .zx-ul {
+        height: 43% !important;
+        position: absolute;
+        transform: translateY(74%);
+      }
+    }
+  }
+
+  .resource-list {
+    height: calc(100% - 3.3rem) !important;
+    margin: 0.58rem auto 0 !important;
+
+    &::-webkit-scrollbar {
+      width: 0.04rem;
+      background: transparent !important;
+    }
+  }
+}
+/* 以下为ipad的各个机型适配 */
+@media only screen and (device-width: 834px) and (device-height: 1112px) and (orientation: landscape) {
+  // 去除ipad两边留白：margin值
+  #app.ios {
+    margin: 0;
+  }
+
+  .home-page {
+    .home-top {
+      height: 30% !important;
+    }
+
+    .home-bottom {
+      height: 65% !important;
+      margin-top: 0.26rem;
+
+      .zx-li {
+        height: 31.3% !important;
+      }
+    }
+  }
+
+  .bd-ul {
+    .bd-li {
+      background: url(https://gzhcos.qq.com/codm/home/bd-li.png) no-repeat right / cover !important;
+    }
+  }
+
+  .content-right {
+    .zx-ul {
+      .zx-li {
+        margin-bottom: 3% !important;
+      }
+    }
+  }
+
+  .area-con {
+    .area-left {
+      position: relative;
+
+      .zone-ul {
+        height: 69% !important;
+        position: absolute;
+        transform: translateY(12%);
+      }
+    }
+
+    .content-right {
+      position: relative;
+
+      .hotgl-up {
+        height: 23% !important;
+        position: absolute;
+        transform: translateY(36%);
+      }
+
+      .zx-ul {
+        height: 43% !important;
+        position: absolute;
+        transform: translateY(74%);
+      }
+    }
+  }
+
+  .resource-list {
+    height: calc(100% - 3.3rem) !important;
+    margin: 0.58rem auto 0 !important;
+
+    &::-webkit-scrollbar {
+      width: 0.04rem;
+      background: transparent !important;
+    }
+  }
+}
+/* 以下为ipad的各个机型适配 */
+@media only screen and (device-width: 834px) and (device-height: 1194px) and (orientation: landscape) {
+  // 去除ipad两边留白：margin值
+  #app.ios {
+    margin: 0;
+  }
+
+  .home-page {
+    .home-top {
+      height: 30% !important;
+    }
+
+    .home-bottom {
+      height: 65% !important;
+      margin-top: 0.26rem;
+
+      .zx-li {
+        height: 31.3% !important;
+      }
+    }
+  }
+
+  .bd-ul {
+    .bd-li {
+      background: url(https://gzhcos.qq.com/codm/home/bd-li.png) no-repeat right / cover !important;
+    }
+  }
+
+  .content-right {
+    .zx-ul {
+      .zx-li {
+        margin-bottom: 3% !important;
+      }
+    }
+  }
+
+  .area-con {
+    .area-left {
+      position: relative;
+
+      .zone-ul {
+        height: 69% !important;
+        position: absolute;
+        transform: translateY(12%);
+      }
+    }
+
+    .content-right {
+      position: relative;
+
+      .hotgl-up {
+        height: 23% !important;
+        position: absolute;
+        transform: translateY(36%);
+      }
+
+      .zx-ul {
+        height: 43% !important;
+        position: absolute;
+        transform: translateY(74%);
+      }
+    }
+  }
+
+  .resource-list {
+    height: calc(100% - 3.3rem) !important;
+    margin: 0.58rem auto 0 !important;
+
+    &::-webkit-scrollbar {
+      width: 0.04rem;
+      background: transparent !important;
+    }
+  }
+}
+/* 以下为ipad的各个机型适配 */
+@media only screen and (device-width: 810px) and (device-height: 1080px) and (orientation: landscape) {
+  // 去除ipad两边留白：margin值
+  #app.ios {
+    margin: 0;
+  }
+
+  .home-page {
+    .home-top {
+      height: 30% !important;
+    }
+
+    .home-bottom {
+      height: 65% !important;
+      margin-top: 0.26rem;
+
+      .zx-li {
+        height: 31.3% !important;
+      }
+    }
+  }
+
+  .bd-ul {
+    .bd-li {
+      background: url(https://gzhcos.qq.com/codm/home/bd-li.png) no-repeat right / cover !important;
+    }
+  }
+
+  .content-right {
+    .zx-ul {
+      .zx-li {
+        margin-bottom: 3% !important;
+      }
+    }
+  }
+
+  .area-con {
+    .area-left {
+      position: relative;
+
+      .zone-ul {
+        height: 69% !important;
+        position: absolute;
+        transform: translateY(12%);
+      }
+    }
+
+    .content-right {
+      position: relative;
+
+      .hotgl-up {
+        height: 23% !important;
+        position: absolute;
+        transform: translateY(36%);
+      }
+
+      .zx-ul {
+        height: 43% !important;
+        position: absolute;
+        transform: translateY(74%);
+      }
+    }
+  }
+
+  .resource-list {
+    height: calc(100% - 3.3rem) !important;
+    margin: 0.58rem auto 0 !important;
+
+    &::-webkit-scrollbar {
+      width: 0.04rem;
+      background: transparent !important;
+    }
+  }
+}
+/* 屏幕分辨率比大于2.20 */
+@media screen and (min-aspect-ratio: ~'220/100') {
+  #app {
+    margin: 0 0.7rem;
+  }
+
+  #app.ios {
+    margin: 0 0.7rem;
+  }
+  // 我的消息中心标题
+  .mesg-btn {
+    width: 20% !important;
+  }
+  // 战域
+  .war-area {
+    height: calc(100vh - 0.9rem) !important;
+  }
+  // 修改侧边栏距离
+  .content .nav-box {
+    right: 0.61rem !important;
+  }
+}

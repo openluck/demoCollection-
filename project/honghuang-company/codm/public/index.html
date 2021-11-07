@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html style="font-size:50px">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Tencent-TGideas" />
+    <meta name="Copyright" content="Tencent" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="preconnect" href="https://tiem-cdn.qq.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://game.gtimg.cn" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://gzhcos.qq.com" crossorigin="anonymous" />
+    <link rel="dns-prefetch" href="https://cdn-go.cn" crossorigin="anonymous" />
+    <link rel="dns-prefetch" href="https://tiem-cdn.qq.com" crossorigin="anonymous" />
+    <link rel="dns-prefetch" href="https://gzhcos.qq.com" crossorigin="anonymous" />
+    <link rel="dns-prefetch" href="https://ossweb-img.qq.com" crossorigin="anonymous" />
+    <link rel="dns-prefetch" href="https://game.gtimg.cn" crossorigin="anonymous" />
+    <title>腾讯游戏-使命召唤</title>
+    <script>
+      // 屏幕适配
+      (function (win, doc) {
+        if (!win.addEventListener) return;
+        var html = window.document.documentElement;
+
+        function setFont(cb) {
+          var w = html.clientWidth,
+            h = html.clientHeight;
+          html.style.fontSize = w > h ? (w / 1334) * 100 + 'px' : (w / 750) * 100 + 'px';
+          if (cb && typeof cb == 'function') {
+            cb();
+          }
+        }
+        setFont();
+        doc.addEventListener('DOMContentLoaded', setFont, false);
+        win.addEventListener('resize', setFont, false);
+        win.addEventListener('load', setFont, false);
+      })(window, document);
+
+      window.isBackEntry = false;
+      var setFullScreenKey = '{"MsdkMethod":"setFullScreen","isFullScreen":true}';
+      var reSetFullScreenKey = '{"MsdkMethod":"setFullScreen","isFullScreen":false}';
+      var image = new Image();
+      window.webp = false
+      image.onload = () => {
+        window.webp = true
+        document.documentElement.classList.add("webp-bg")
+      };
+      image.src = 'data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=';
+
+      function isSlugSDK() {
+        var ua = navigator.userAgent;
+        return /TIEM Ingame Browser/.test(ua)
+      }
+
+      function isIOS() {
+        return (
+          (/iPad|iPhone|iPod/.test(navigator.platform) ||
+            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) &&
+          !window.MSStream
+        );
+      }
+
+      window.msdkiOSHandler;
+
+      function setupWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) {
+          return callback(WebViewJavascriptBridge);
+        }
+        if (window.WVJBCallbacks) {
+          return window.WVJBCallbacks.push(callback);
+        }
+        window.WVJBCallbacks = [callback];
+        var WVJBIframe = document.createElement('iframe');
+        WVJBIframe.style.display = 'none';
+        WVJBIframe.src = 'https://__bridge_loaded__';
+        document.documentElement.appendChild(WVJBIframe);
+        setTimeout(function () {
+          document.documentElement.removeChild(WVJBIframe);
+        }, 0);
+      }
+
+      console.log(window.msdkiOSHandler, '获取到 ios msdk js bridge');
+      function initMSDK() {
+        if (typeof window.msdkiOSHandler === 'undefined') {
+          setupWebViewJavascriptBridge(function (bridge) {
+            window.msdkiOSHandler = bridge.callHandler;
+            bridge.registerHandler('MSDKJSHandler', function (data, responseCallback) {
+              console.log('ObjC called MSDKJSHandler with', data);
+            });
+          });
+        }
+      }
+
+      function fullScreen(data) {
+        console.log('msdkCall invoked : ' + data);
+        if (isIOS()) {
+          window.msdkiOSHandler && window.msdkiOSHandler('MSDKCall', data, null);
+        } else {
+          if (data.indexOf('nativeCallJS') > -1) {
+            console.log('msdkCall invoked nativeCallJS : ' + data);
+            alert(data);
+          } else {
+            console.log('msdkCall invoked : ' + data);
+            prompt(data);
+          }
+        }
+      }
+
+      function ensureFullScreen() {
+        fullScreen(setFullScreenKey);
+        setTimeout(function () {
+          fullScreen(setFullScreenKey);
+        }, 3000);
+      }
+      var mode = "<%=NODE_ENV%>"
+      // 非 slug sdk 环境， 则为 msdk 环境
+      if (!isSlugSDK() && mode !== 'development') {
+        initMSDK()
+        ensureFullScreen();
+        window.addEventListener('pageshow', function (event) {
+          if (window.isBackEntry) {
+            ensureFullScreen();
+          }
+        });
+      }
+      /* 适配无法使用 media query 匹配到的 iphone 手机： iPhone 12 and iPhone 12 Pro */
+      function isIphone12() {
+        var w = document.documentElement.clientWidth;
+        var ratio = window.devicePixelRatio;
+        if (w >= 844 && w < 926 && ratio === 3 && isIOS()) {
+          document.documentElement.classList.add("iphone-12")
+        }
+      }
+      isIphone12()
+      window.pageFirstPaint = performance.now();
+    </script>
+  </head>
+
+  <body
+    style="background: url(https://gzhcos.qq.com/codm/common/top-bg.jpg) 0 0/100vw .77rem no-repeat,url(https://gzhcos.qq.com/codm/common/body-bg.jpg) 0 .77rem/100vw calc(100vh - .77rem) no-repeat; background-color: #313a47;">
+    <div id="app"></div>
+    <script src="https://tiem-cdn.qq.com/slugteam/sdk/browser_adapt.js" crossorigin="anonymous"></script>
+    <script src="https://tiem-cdn.qq.com/sy/codm/ingame/scripts/config.js" crossorigin="anonymous"></script>
+    <% if (NODE_ENV !=='development' ) { %>
+      <% for(var css of htmlWebpackPlugin.options.cdn.css) { %>
+    <link rel="stylesheet" href="<%=css%>" as="style" />
+      <% } %>
+    <% for(var js of htmlWebpackPlugin.options.cdn.js) { %>
+    <script src="<%=js%>" crossorigin="anonymous"></script>
+    <% } %>
+    <% } %>
+                <!-- lodash template 语法 -->
+    <% if (NODE_ENV==='production' ) { %>
+    <script src="https://tiem-cdn.qq.com/slugteam/libraries/raven@3.min.js"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js?_bid=3977"
+      crossorigin="anonymous"></script>
+    <script>
+      window.aegis = new Aegis({
+        id: 'oSQfVIhMhScKcTFnMz', // 项目ID
+        uin: 'codm', // 用户唯一 ID（可选）
+        reportApiSpeed: true, // 接口测速
+        reportAssetSpeed: true, // 静态资源测速
+      });
+      Raven &&
+        Raven.config(
+          'https://90a636a9ef3b4fd7bf9c300f19ff59a3@report.url.cn/sentry/2962',
+        ).install();
+      Raven.captureBreadcrumb({
+        message: null,
+        category: '手动上报',
+      });
+      window.pageFirstContentPaint = performance.now();
+      // note: 牛年活动
+      setTimeout(function () {
+        var startTime = new Date('2021/02/11 00:00:00').getTime()
+        var endTime = new Date('2021/02/13 23:59:59').getTime()
+        var now = new Date()
+        var nowTime = now.getTime()
+        var oldDate = localStorage.getItem('springDate')
+        var newDate = now.getDate()
+        var script
+        // 判断是否是在有效期内
+        var isValidPeriod = nowTime >= startTime && nowTime <= endTime
+        // 如果是第一次进入或者不是同一天 并且是在有效时间段内
+        if ((!oldDate || oldDate !== newDate) && isValidPeriod) {
+            script = document.createElement('script');
+            script.src = "https://tiem-cdn.qq.com/slugteam/public/cow/ani2021.js"
+            document.body.appendChild(script);
+            localStorage.setItem('springDate', newDate)
+        }
+      })
+    </script>
+    <% } %>
+    <script src="https://films.qq.com/tpc-team/point-config/codm/report-data.js?v=4"></script>
+      <!-- built files will be auto injected -->
+  </body>
+
+</html>

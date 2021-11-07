@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25.844" height="22.219" viewBox="0 0 25.844 22.219">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="shouye1" class="cls-1" d="M112.269,79.142l-4.3-2.673V59.6l4.3-2.673,2.835,1.763V77.38ZM97.62,71.651v-11.5l4.63,2.489,4.63-2.489v11.5l-4.63,2.489Zm-8.378,5.574V58.843l3.044-1.918L96.529,59.6V76.469l-4.243,2.673Z" transform="translate(-89.25 -56.938)"/>
+</svg>

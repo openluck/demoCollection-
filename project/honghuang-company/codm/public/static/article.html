@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="robots" content="all" />
+    <meta name="author" content="Tencent-CP" />
+    <meta name="Copyright" content="Tencent" />
+    <title>腾讯游戏-使命召唤</title>
+
+    <script>
+      // 屏幕适应
+      (function (win, doc) {
+        if (!win.addEventListener) return;
+        var html = document.documentElement;
+        function setFont() {
+          var html = document.documentElement;
+          if (html.clientWidth < html.clientHeight) {
+            html.style.fontSize = (html.clientWidth / 750) * 100 + 'px';
+          } else {
+            html.style.fontSize = (html.clientWidth / 1334) * 100 + 'px';
+          }
+        }
+        setFont();
+        setTimeout(function () {
+          setFont();
+        }, 300);
+        doc.addEventListener('DOMContentLoaded', setFont, false);
+        win.addEventListener('resize', setFont, false);
+        win.addEventListener('load', setFont, false);
+      })(window, document);
+      // 双端互跳
+      // if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+      //     window.location.href = "/cp/a20200729carskin/index.html" + location.search;
+      // }
+    </script>
+    <script src="https://tiem-cdn.qq.com/sy/codm/ingame/scripts/config.js"></script>
+    <style>
+      /*Reset S*/
+      body,
+      div,
+      dl,
+      dt,
+      dd,
+      ul,
+      ol,
+      li,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      pre,
+      code,
+      form,
+      fieldset,
+      legend,
+      input,
+      textarea,
+      p,
+      blockquote,
+      th,
+      td,
+      hr,
+      button,
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section {
+        margin: 0;
+        padding: 0;
+        outline: none;
+      }
+
+      body {
+        font-family: 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1';
+        position: relative;
+      }
+
+      body,
+      html {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-text-size-adjust: none;
+        -webkit-user-select: none;
+        user-select: none;
+        width: 100%;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: 100%;
+      }
+
+      h2 {
+        margin: 0 auto;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      a:focus,
+      a:active,
+      a {
+        outline: none;
+      }
+
+      a,
+      button,
+      input {
+        -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+      }
+
+      a,
+      p,
+      span,
+      i,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a,
+      img,
+      input {
+        border: none;
+      }
+
+      a,
+      img {
+        -webkit-touch-callout: none;
+      }
+
+      img {
+        height: auto;
+      }
+
+      ul,
+      ol,
+      li {
+        list-style: none;
+      }
+
+      span {
+        outline: none;
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      input[type='text'],
+      input[type='password'],
+      select,
+      div,
+      a {
+        -webkit-appearance: none;
+        appearance: none;
+        outline: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        border-radius: 0;
+        box-sizing: border-box;
+      }
+
+      input,
+      textarea,
+      select {
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+      }
+
+      .text-hide {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      em,
+      i,
+      b {
+        font-style: normal;
+      }
+
+      fieldset,
+      img {
+        border: 0;
+        display: block;
+      }
+
+      input,
+      textarea,
+      select {
+        *font-size: 100%;
+      }
+
+      audio,
+      canvas,
+      video {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+      }
+
+      address,
+      caption,
+      cite,
+      code,
+      dfn,
+      em,
+      th,
+      var {
+        font-style: normal;
+        font-weight: normal;
+      }
+
+      abbr,
+      acronym {
+        border: 0;
+        font-variant: normal;
+      }
+
+      sup {
+        vertical-align: text-top;
+      }
+
+      sub {
+        vertical-align: text-bottom;
+      }
+
+      .clear:after {
+        content: '\20';
+        display: block;
+        height: 0;
+        line-height: 0;
+        visibility: hidden;
+        clear: both;
+      }
+
+      .fl {
+        float: left;
+      }
+
+      .fr {
+        float: right;
+      }
+
+      .hd {
+        display: block;
+        text-indent: -9999px;
+      }
+
+      /*Reset E*/
+
+      /* @font-face {
+        font-family: 'logocodm';
+        src: url(https://gzhcos.qq.com/codm/shared/font.TTF);
+      } */
+      .wrap {
+        background: url(https://gzhcos.qq.com/codm/shared/bg.jpg) no-repeat center/cover;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .logo {
+        width: 0.81rem;
+        height: 0.71rem;
+        margin: 0 auto;
+        /* padding-top: 0.08rem; */
+        margin: 0 auto 0;
+        position: relative;
+        /* margin: 0.08rem auto 0; */
+      }
+
+      .logo img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+      }
+
+      .title {
+        background: url(https://gzhcos.qq.com/codm/shared/head-bg.jpg) no-repeat center/cover;
+        width: 100vw;
+        height: 1rem;
+      }
+
+      .title h1 {
+        text-align: center;
+        font-size: 0.2rem;
+        color: #fff;
+        font-family: 'logocodm';
+        letter-spacing: 0.01rem;
+      }
+
+      .title-line {
+        display: block;
+        width: 100%;
+        height: 0.01rem;
+        background-color: #626d7c;
+      }
+
+      .container {
+        padding: 0 0.21rem 0 0.21rem;
+        width: 100vw;
+        height: calc(100vh - 2rem);
+      }
+
+      .content {
+        background: #394452;
+        overflow-y: auto;
+        padding: 0 0.19rem 0 0.21rem;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+      }
+
+      .content::-webkit-scrollbar {
+        width: 0.06rem;
+        background: #8a8d92;
+      }
+
+      .content::-webkit-scrollbar-thumb {
+        background: #fae655;
+      }
+
+      .container .video-title {
+        color: #fff;
+        font-size: 0.24rem;
+        text-align: center;
+        padding: 0 1.09rem 0 1.09rem;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        margin-bottom: 0.22rem;
+        margin-top: 0.2rem;
+      }
+
+      /* .multi-line(@num) {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: @num;
+        }
+
+
+        .single-line {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        } */
+      .video-info {
+        color: #c3c3c3;
+        font-size: 0.18rem;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.1rem;
+      }
+
+      .video-info>.left .time {
+        margin-left: 0.14rem;
+      }
+
+      .video-info>.right {
+        display: flex;
+        align-items: center;
+      }
+
+      .video-info>.right img {
+        width: 0.24rem;
+        height: 0.12rem;
+        margin-right: 0.03rem;
+      }
+
+      .video-img {
+        width: 100%;
+        height: 3.09rem;
+        border: 1px solid #464f5b;
+        position: relative;
+        margin-top: 0.24rem;
+      }
+
+      .video-img img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .play-frm {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        visibility: visible;
+        -webkit-backface-visibility: visible;
+        backface-visibility: visible;
+        opacity: 0.4;
+      }
+
+      .play-btnbox {
+        width: 0.43rem;
+        height: 0.49rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .play-btnbox img {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .horn {
+        position: absolute;
+        width: 0.1rem;
+        height: 0.1rem;
+        border: 1px solid #9fa2a8;
+      }
+
+      .horn1 {
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        right: 0;
+        top: 0;
+      }
+
+      .horn2 {
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        left: 0;
+        top: 0;
+      }
+
+      .horn3 {
+        border-top-color: transparent;
+        border-right-color: transparent;
+        left: 0;
+        bottom: 0;
+      }
+
+      .horn4 {
+        border-top-color: transparent;
+        border-left-color: transparent;
+        right: 0;
+        bottom: 0;
+      }
+
+      h3 {
+        margin-bottom: 0.2rem;
+        font-size: 0.26rem;
+        color: #fff;
+        padding-left: 0.12rem;
+        box-sizing: border-box;
+        position: relative;
+        text-align: left;
+        font-family: 'logocodm';
+        /* margin-top: 0.18rem; */
+      }
+
+      h3::before {
+        content: '';
+        width: 0.04rem;
+        height: 0.24rem;
+        background-color: #f9e655;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      }
+
+      .zx-ul {
+        /* height: 82%; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 0.2rem;
+        position: relative;
+      }
+
+      .zx-li {
+        width: 49.5%;
+        height: unset;
+        position: relative;
+        background-color: #2a313b;
+        border: 1px solid #464f5b;
+        padding: 0.05rem;
+        box-sizing: border-box;
+        margin-bottom: 0.07rem;
+      }
+
+      .zx-li a {
+        display: flex;
+        align-items: center;
+      }
+
+      .zx-cont {
+        color: #ddd;
+        width: 70%;
+        height: 100%;
+        font-size: 0.15rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-left: 0.05rem;
+        box-sizing: border-box;
+      }
+
+      .inner {
+        width: 1.24rem;
+        height: 100%;
+      }
+
+      .inner img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .zx-desc {
+        text-align: left;
+        margin-bottom: 0.15rem;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      .zx-info {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .zx-info div img {
+        display: inline-block;
+        width: 0.24rem;
+        height: 0.12rem;
+      }
+
+      .com-ul .com-li {
+        width: 100%;
+        height: 100%;
+        background-color: #2a313b;
+        border: 1px solid #464f5b;
+        padding: 0.08rem 0.14rem 0.2rem;
+        box-sizing: border-box;
+        position: relative;
+        margin-bottom: 0.08rem;
+      }
+
+      .com-ul .com-li .up-box {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .com-ul .com-li .up-box .com-icon {
+        color: #91959a;
+        font-size: 0.22rem;
+        display: flex;
+        align-items: center;
+        height: 0.25rem;
+      }
+
+      .com-ul .com-li .up-box .com-icon img {
+        margin-right: 0.05rem;
+      }
+
+      .com-ul .com-li .up-box .com-icon .zhan {
+        width: 0.25rem;
+        height: 0.23rem;
+      }
+
+      .com-ul .com-li .up-box .com-icon .cai {
+        width: 0.25rem;
+        height: 0.23rem;
+      }
+
+      .com-ul .com-li .up-box .com-icon .xiaoxi {
+        width: 0.26rem;
+        height: 0.22rem;
+      }
+
+      .com-ul .com-li .up-box .com-icon span {
+        margin-right: 0.2rem;
+      }
+
+      .com-ul .com-li p {
+        color: #fff;
+        font-size: 0.24rem;
+        text-align: left;
+        margin-top: 0.04rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .user-mesg {
+        font-size: 0.22rem;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-left: 0.15rem;
+      }
+
+      .user-info {
+        display: flex;
+      }
+
+      .user-tx {
+        width: 0.6rem;
+        height: 0.6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0.01rem solid #fff;
+        border-radius: 100%;
+        box-sizing: border-box;
+        padding: 0.02rem;
+      }
+
+      .user-tx img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .footer {
+        background: url(https://gzhcos.qq.com/codm/shared/foot-bg.jpg) no-repeat center/cover;
+        width: 100vw;
+        height: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .into-game {
+        display: block;
+        background: url(https://gzhcos.qq.com/codm/shared/into-game.png) no-repeat center/cover;
+        width: 3.45rem;
+        height: 0.74rem;
+        font-size: 0.34rem;
+        line-height: 0.74rem;
+        text-align: center;
+        color: #744a08;
+        margin: 0 auto;
+      }
+
+      .nav-box {
+        position: fixed;
+        color: #aeb1b3;
+        font-size: 0.22rem;
+        right: 0.4rem;
+        top: 30%;
+        z-index: 9;
+        box-sizing: border-box;
+        width: 0.99rem;
+        height: 4rem;
+      }
+
+      .nav-box .nav {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        /* background-color: rgba(0, 0, 0, 0.4); */
+        background-color: #2c343e;
+        border: 1px solid #464f5b;
+      }
+
+      .nav-box .nav li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        padding: 0.1rem 0;
+      }
+
+      .nav-box .nav li img {
+        width: 0.45rem;
+        height: 0.45rem;
+      }
+
+      .artical-con {
+        font-size: 0.2rem;
+        color: #fff;
+        line-height: 0.32rem;
+        margin-top: 0.14rem;
+        letter-spacing: 0.01rem;
+      }
+
+      .artical-con img {
+        width: 5.54rem;
+        height: auto;
+        margin: 0.16rem auto 0.22rem;
+      }
+
+      /* .articl-img {
+        width: 5.54rem;
+        height: 2.63rem;
+        margin: 0.16rem auto 0.22rem;
+      }
+
+      .articl-img img {
+        width: 100%;
+        height: 100%;
+      } */
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap" id="app">
+      <div class="title">
+        <div class="logo">
+          <img src="https://gzhcos.qq.com/codm/shared/logo.png" alt="logo" />
+        </div>
+        <h1>使命召唤手游微社区</h1>
+      </div>
+      <!-- <i class="title-line"></i> -->
+      <div class="container" id="article-page-wrapper">
+        <div class="content" v-if="detail">
+          <h2 class="video-title">{{ detail.sTitle }}</h2>
+          <div class="video-info">
+            <div class="left">
+              <span>作者：</span>
+              <span>{{ detail.sAuthor }}</span>
+              <span class="time">{{ detail.sIdxTime }}</span>
+            </div>
+            <div class="right">
+              <img src="https://gzhcos.qq.com/codm/shared/see-icon.png" />
+              <span>{{ detail.iTotalPlay }}</span>
+            </div>
+          </div>
+          <i class="title-line"></i>
+          <div class="artical-con" v-html="renderContent()" />
+          <h3>相关推荐</h3>
+          <ul class="zx-ul">
+            <li class="zx-li" v-for="item in detail.linkList">
+              <a :href="'https://sy.qq.com/codm/static/article.html?id=' + item.iNewsId">
+                <div class="inner">
+                  <img :src="item.sIMG" class="zx-img" />
+                </div>
+                <div class="zx-cont">
+                  <p class="zx-desc">{{ item.sTitle }}</p>
+                  <div class="zx-info">
+                    <div>
+                      <img src="https://gzhcos.qq.com/codm/shared/see-icon.png" class="see-num" />
+                      <span>{{ item.iTotalPlay }}</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <i class="horn1 horn"></i>
+              <i class="horn2 horn"></i>
+              <i class="horn3 horn"></i>
+              <i class="horn4 horn"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer">
+        <a href="javascript:;" class="into-game">进入游戏查看更多</a>
+      </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://tiem-cdn.qq.com/slugteam/libs/Vue/vue.2.6.12.min.js"></script>
+    <script src="https://ossweb-img.qq.com/images/js/PTT/ping_tcss_tgideas_https_min.js"></script>
+    <script>
+      var TENCENT_OSS_BUCKEY = {
+        DOUJIN: 'tongren-1259052908',
+        OSSWEB: 'sy-ossweb-1259052908',
+        TGL: 'tgl-images-1254960240',
+        V4ITEA: 'sy-v4-1259052908',
+        V4: 'sy-v4-shp-1259052908',
+        VOD: 'sy-vod-1259052908',
+      };
+      new Vue({
+        el: '#app',
+
+        data: {
+          detail: {},
+          downloadUrl: config.download_nav.download_url,
+          downloadSrc: config.download_nav.img_url,
+        },
+
+        methods: {
+          renderContent() {
+            let content = this.detail.sContent || '';
+            content = content.replace(/<script.*script>/gi, '').replace(/color: ?[^;"]*;?/gi, '');
+            return content;
+          },
+        },
+        filters: {
+          convertToHttps(url) {
+            if (!url) {
+              return url;
+            }
+            if (url.indexOf('http:') === 0) {
+              return url.replace(/^http:/, 'https:');
+            }
+            if (url.indexOf('//') === 0) {
+              return `https:${url}`;
+            }
+            return url;
+          },
+        },
+        created() {
+          var query = location.search.replace('?', '');
+          var id = query.split('=')[1];
+          $.ajax({
+            url:
+              'https://apps.game.qq.com/wmp/v3.1/public/searchNews.php?p0=159&source=ingame&p1=1&id=' +
+              id,
+            type: 'POST',
+            success: result => {
+              if (result.status === 0) {
+                this.detail = result.msg;
+              }
+            },
+          });
+        },
+      });
+    </script>
+  </body>
+
+</html>

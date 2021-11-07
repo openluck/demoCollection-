@@ -1,0 +1,265 @@
+.tab-li {
+  .mx-size(1.48rem, 0.5rem);
+  line-height: 0.46rem;
+  color: #fff;
+  font-size: 0.22rem;
+  font-weight: bold;
+  text-align: center;
+  background: url(~~@assets/img/common/tab.png) no-repeat center/cover;
+
+  &.on {
+    color: #454a53;
+    background: url(~~@assets/img/common/tab-on.png) no-repeat center/cover;
+  }
+}
+
+// 线
+.line {
+  background-color: #555c64;
+  width: 100%;
+  height: 1px;
+  display: block;
+  position: relative;
+
+  &::before {
+    content: '';
+    .mx-size(1.5%, 100%);
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    content: '';
+    .mx-size(1.5%, 100%);
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+// 标题
+h3 {
+  font-size: 0.26rem;
+  color: #fff;
+  padding-left: 0.12rem;
+  box-sizing: border-box;
+  position: relative;
+  text-align: left;
+
+  &::before {
+    content: '';
+    width: 0.04rem;
+    height: 0.24rem;
+    background-color: #f9e655;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+}
+
+// 多行隐藏(行数)
+.multi-line(@num) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @num;
+}
+
+// 单行隐藏(行数)
+.single-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// 侧边导航
+.nav-boxfun {
+  position: fixed;
+  color: #aeb1b3;
+  font-size: 0.22rem;
+  right: 0.2rem;
+  top: 20%;
+  z-index: 9;
+
+  .nav {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .mx-size(0.99rem, 3.67rem);
+    // background-color: rgba(0, 0, 0, 0.4);
+    background-color: #2c343e;
+    border: 1px solid #464f5b;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      padding: 0.1rem 0;
+      justify-content: center;
+
+      img {
+        .mx-size(0.45rem, 0.45rem);
+      }
+    }
+  }
+  .mx-horn(0.1rem, #9fa2a8);
+}
+
+// 头像
+.com-head {
+  width: 0.6rem;
+  height: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.01rem solid #fff;
+  border-radius: 100%;
+  box-sizing: border-box;
+  padding: 0.02rem;
+}
+
+// 攻略二级tab样式
+.comfirearms-ul {
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  .mx-size(100%, 0.55rem);
+  border-bottom: 1px solid #505761;
+  margin-top: 0.05rem;
+
+  .firearms-li {
+    .mx-size(auto, 0.5rem);
+    // min-width: 1.21rem;
+    color: #fff;
+    font-size: 0.22rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    // padding: 0 0.28rem;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+
+    .weapon {
+      margin: 0 0.28rem;
+      white-space: nowrap;
+    }
+
+    .weapon::before {
+      content: '';
+      .mx-size(1px, 60%);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #616a75;
+      left: 0;
+    }
+
+    &.on {
+      border: 1px solid #acafb3;
+      background-color: #686d75;
+      position: relative;
+
+      .weapon::before {
+        display: none;
+      }
+
+      &::before {
+        content: '';
+        border-top: 0.08rem solid #fae655;
+        border-left: 0.08rem solid #fae655;
+        border-right: 0.08rem solid transparent;
+        border-bottom: 0.08rem solid transparent;
+        position: absolute;
+        top: 0.02rem;
+        left: 0.02rem;
+        width: 0;
+        height: 0;
+      }
+
+      &::after {
+        content: '';
+        border-top: 0.08rem solid #fae655;
+        border-left: 0.08rem solid #fae655;
+        border-right: 0.08rem solid transparent;
+        border-bottom: 0.08rem solid transparent;
+        position: absolute;
+        bottom: 0.03rem;
+        right: 0.02rem;
+        width: 0;
+        height: 0;
+        transform: rotate(180deg);
+      }
+
+      & + li {
+        .weapon::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// 四个正方形的白点
+.icon-sf {
+  width: 0.05rem;
+  height: 0.05rem;
+  background: #fff;
+  position: absolute;
+
+  &.icon1 {
+    left: 0;
+    top: 0;
+  }
+
+  &.icon2 {
+    right: 0;
+    top: 0;
+  }
+
+  &.icon3 {
+    right: 0;
+    bottom: 0;
+  }
+
+  &.icon4 {
+    left: 0;
+    bottom: 0;
+  }
+}
+
+// 蒙层
+.com-mantle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  visibility: visible;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  opacity: 0.4;
+}
+
+// 标题蒙层
+.tit-mantle {
+  width: 100%;
+  height: auto;
+  font-size: 0.21rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  padding: 0 0.37rem 0 0.07rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}

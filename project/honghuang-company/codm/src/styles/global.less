@@ -1,0 +1,344 @@
+@import './mixin.less';
+
+img.disabled {
+  pointer-events: none !important; /* 禁止长按图片保存 */
+}
+
+.leaflet-marker-icon.leaflet-zoom-animated.leaflet-interactive {
+  height: unset !important;
+}
+
+// note: 腾讯视频播放icon
+.txp_btn.txp_btn_play_lg.txp_show {
+  .mx-size(42px) !important;
+}
+
+.vue-waterfall.half {
+  .vue-waterfall-column {
+    width: 50% !important;
+  }
+}
+
+.ig-sharemenu {
+  z-index: 1000 !important;
+}
+
+.sui-load {
+  padding: 0.5rem 0;
+}
+
+.message-page .ig--emoji {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  margin: 0 2px;
+}
+
+.no-more-data {
+  font-size: 0.2rem;
+  color: #91959a;
+  text-align: center;
+  padding: 0.3rem 0;
+}
+
+#red-dot {
+  .mx-size(0.1rem);
+  background-color: red;
+  position: absolute;
+  border-radius: 100%;
+  display: inline-block;
+}
+
+.nav-li {
+  position: relative;
+
+  #red-dot {
+    right: 0.14rem;
+    top: 0.27rem;
+    z-index: 10;
+  }
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  display: flex;
+}
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+}
+// 返回
+#back-btn {
+  .mx-size(0.77rem);
+  background: url(https://gzhcos.qq.com/codm/common/back.png) no-repeat center/0.77rem 0.77rem;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 20;
+}
+// 侧边栏
+.sidebar-main {
+  // flex: 1;
+  .mx-size(0.77rem, calc(100vh - 0.77rem));
+  color: #fff;
+  font-size: 0.24rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 0.77rem;
+
+  li {
+    height: 24.67%;
+    position: relative;
+
+    a {
+      position: absolute;
+      width: 100%;
+      left: 50%;
+      height: 100%;
+      margin-left: -50%;
+      background: url(https://gzhcos.qq.com/codm/common/nav-bg.png) no-repeat center/cover;
+
+      span {
+        position: absolute;
+        width: 0.73rem;
+        top: 41%;
+        left: 0;
+        // height: 0.75rem;
+        margin-top: -0.37rem;
+
+        em {
+          display: block;
+          margin: 0 auto;
+        }
+
+        i {
+          display: block;
+          width: 55%;
+          text-align: center;
+          font-style: normal;
+          color: #fff;
+          font-size: 0.26rem;
+          margin: 0.07rem auto 0;
+          line-height: 0.28rem;
+        }
+      }
+
+      &.on {
+        background: url(https://gzhcos.qq.com/codm/common/nav-bgon.png) no-repeat center/cover;
+
+        span {
+          i {
+            color: #1d2532;
+          }
+        }
+      }
+    }
+
+    &:nth-child(1) {
+      a {
+        span {
+          em {
+            width: 0.27rem;
+            height: 0.23rem;
+            background: url(../assets/img/common/nav1.svg) no-repeat center/cover;
+            // background: url(https://gzhcos.qq.com/codm/common/nav1.svg) no-repeat center/cover;
+          }
+        }
+
+        &.on {
+          span {
+            em {
+              background: url(../assets/img/common/nav1-on.svg) no-repeat center/cover;
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      a {
+        span {
+          em {
+            width: 0.35rem;
+            height: 0.27rem;
+            background: url(../assets/img/common/nav2.svg) no-repeat center/cover;
+          }
+        }
+
+        &.on {
+          span {
+            em {
+              background: url(../assets/img/common/nav2-on.svg) no-repeat center/cover;
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      a {
+        span {
+          em {
+            width: 0.3rem;
+            height: 0.29rem;
+            background: url(../assets/img/common/nav3.svg) no-repeat center/cover;
+          }
+        }
+
+        &.on {
+          span {
+            em {
+              background: url(../assets/img/common/nav3-on.svg) no-repeat center/cover;
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      a {
+        span {
+          em {
+            width: 0.33rem;
+            height: 0.31rem;
+            background: url(../assets/img/common/nav4.svg) no-repeat center/cover;
+          }
+        }
+
+        &.on {
+          span {
+            em {
+              background: url(../assets/img/common/nav4-on.svg) no-repeat center/cover;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// note: 评论组件的样式
+.comp-comment {
+  .comment-main--header {
+    color: #fff;
+    font-size: 0.19rem;
+
+    .comment-main--header-prompt {
+      color: #fff;
+      font-size: 0.16rem;
+    }
+  }
+
+  .comment-main--title {
+    color: #fff;
+    border-top: 10px solid rgba(0, 0, 0, 0);
+  }
+
+  .comment-main--tips {
+    color: #fff;
+  }
+
+  .comment-add-bar {
+    background: #434f5f;
+    color: #536275;
+    // width: 100%;
+    margin: 0 auto;
+    height: 0.8rem;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .comment-item--avatar {
+    width: 0.66rem;
+    height: 0.66rem;
+    box-sizing: border-box;
+  }
+
+  .comment-add-bar--input {
+    background-color: #ececec;
+    width: 90%;
+    margin: 0 auto;
+    flex: inherit;
+    border-radius: 0;
+  }
+
+  .comment-add-bar--input::before {
+    margin: 0;
+  }
+
+  .comment--ellipsis {
+    color: #fff;
+    font-size: 0.22rem;
+  }
+
+  .comment-item {
+    border: 1px solid #464f5b;
+    background-color: #2a313b;
+  }
+
+  .comment-item--time {
+    font-size: 0.18rem;
+  }
+
+  .comment-item--like {
+    color: #fff;
+    // font-size: 0.22rem;
+  }
+
+  // .comment-item--like-heart {
+  //   .mx-size(0.22rem);
+  // }
+
+  .comment-item--body {
+    color: #fff;
+    font-size: 0.2rem;
+  }
+
+  // .comment-item--like-heart-full {
+  //   .mx-size(0.22rem);
+  // }
+
+  .comment-item:nth-child(n + 2) {
+    margin-top: 0.1rem;
+  }
+}
+
+.comment-input {
+  .comment-input--header {
+    font-size: 0.2rem;
+  }
+
+  .sl-reply-submit {
+    font-size: 0.2rem;
+  }
+}
+
+.comment-add-bar {
+  height: 0.4rem;
+  display: flex;
+  align-items: center;
+}
+// 地图
+.leaflet-container {
+  background-color: transparent !important;
+}
+
+// 修改评论页面，左右两边留有安全距离
+.comment-input {
+  padding: 0 0.25rem;
+  box-sizing: border-box;
+}

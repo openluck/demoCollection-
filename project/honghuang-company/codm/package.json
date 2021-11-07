@@ -1,0 +1,122 @@
+{
+  "name": "codm-ingame",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "test:unit": "vue-cli-service test:unit",
+    "analyze": "cross-env USE_ANALYZE=analyze NODE_ENV=production vue-cli-service build --mode production",
+    "build:prod": "cross-env ENV=production vue-cli-service build --mode production",
+    "build:modern": "cross-env ENV=production vue-cli-service build --mode production --modern",
+    "build:test": "cross-env ENV=test vue-cli-service build --mode production",
+    "build:test_modern": "cross-env ENV=test vue-cli-service build --mode production --modern",
+    "dev": "cross-env ENV=development vue-cli-service serve --port 7001",
+    "start": "cross-env ENV=development vue-cli-service serve --port 80",
+    "report": "cross-env USE_ANALYZE=analyze NODE_ENV=production vue-cli-service build --report",
+    "tencent:unzip": "node ./scripts/tencent_pkg --unzip",
+    "tencent:zip": "node ./scripts/tencent_pkg --zip",
+    "convert:webp": "node ./scripts/convert.js"
+  },
+  "scripts-info": {
+    "test:unit": "运行单元测试",
+    "dev": "开发环境",
+    "analyze": "项目代码包分析",
+    "build:prod": "构建正式环境",
+    "build:test": "构建测试环境",
+    "report": "生成 report 代码包",
+    "tencent:zip": "将 node_modules/@tencent 第三方包打包成 @tencent.zip",
+    "tencent:unzip": "将  @tencent.zip 解压到 node_modules/@tencent 下"
+  },
+  "dependencies": {
+    "@tencent/comment": "^4.0.1",
+    "@tencent/multi-report": "^2.0.4",
+    "@tencent/slug-function-vue": "^1.2.3",
+    "@tencent/slug-login": "^1.0.5",
+    "@tencent/slug-report": "^0.9.11",
+    "@tencent/slug-request": "^1.0.4",
+    "@tencent/slug-share": "^0.13.1",
+    "@tencent/slug-skeleton": "^1.0.2",
+    "@tencent/slug-ui": "^0.20.1",
+    "axios": "^0.21.0",
+    "core-js": "3",
+    "cos-js-sdk-v5": "^1.0.1",
+    "echarts": "^4.9.0",
+    "echarts-modules": "^1.1.2",
+    "leaflet": "^1.7.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "vue-property-decorator": "^8.4.2",
+    "vue-router": "^3.2.0",
+    "vue-slider-component": "^3.2.11",
+    "vuex": "^3.4.0",
+    "vuex-module-decorators": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-angular": "^11.0.0",
+    "@tencent/eslint-config-tencent": "^0.12.2",
+    "@types/echarts": "^4.9.0",
+    "@types/jest": "^24.0.19",
+    "@types/leaflet": "^1.5.19",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vue/cli-plugin-babel": "~4.5.8",
+    "@vue/cli-plugin-eslint": "~4.5.8",
+    "@vue/cli-plugin-router": "~4.5.8",
+    "@vue/cli-plugin-typescript": "~4.5.8",
+    "@vue/cli-plugin-unit-jest": "~4.5.8",
+    "@vue/cli-plugin-vuex": "~4.5.8",
+    "@vue/cli-service": "~4.5.8",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "@vue/test-utils": "^1.0.3",
+    "archiver": "^5.0.2",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-vue": "^6.2.2",
+    "glob": "^7.1.6",
+    "graceful-fs": "^4.2.4",
+    "gulp": "^4.0.2",
+    "husky": "^4.3.0",
+    "less": "^3.0.4",
+    "less-loader": "^5.0.0",
+    "lint-staged": "^10.4.2",
+    "prettier": "^1.19.1",
+    "shelljs": "^0.8.4",
+    "simple-git": "^2.21.0",
+    "typescript": "~3.9.3",
+    "unzip": "^0.1.11",
+    "vue-template-compiler": "^2.6.11",
+    "webp-converter": "^2.3.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "jest": {
+    "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{vue}": "eslint --fix",
+    "**/*.{less}": "stylelint --fix",
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*": "git add"
+  }
+}

@@ -1,0 +1,72 @@
+@import './variables.less';
+
+.mx-size(@w, @h) {
+  width: @w;
+  height: @h;
+}
+
+.mx-size(@w) {
+  width: @w;
+  height: @w;
+}
+
+.assetPath($path) {
+  @return: url('../assets/#{@path}');
+}
+
+.mx-top-nav {
+  font-size: 0.26rem;
+  color: #fff;
+  .mx-size(100%, 0.77rem);
+  line-height: 0.77rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.mx-nav-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// 四角(宽高， 颜色)
+.mx-horn(@wh,@color) {
+  .horn {
+    position: absolute;
+    // .mx-size(0.05rem, 0.05rem);
+    .mx-size(@wh, @wh);
+    border: 1px solid @color;
+  }
+
+  .horn1 {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    right: 0;
+    top: 0;
+  }
+
+  .horn2 {
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    left: 0;
+    top: 0;
+  }
+
+  .horn3 {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    left: 0;
+    bottom: 0;
+  }
+
+  .horn4 {
+    border-top-color: transparent;
+    border-left-color: transparent;
+    right: 0;
+    bottom: 0;
+  }
+}
