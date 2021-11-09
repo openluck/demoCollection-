@@ -1,0 +1,65 @@
+
+
+.page {
+    min-height: calc(~"100vh - 80px");
+    width: 100%;
+    background-color: #f0f0f0;
+    .message {
+        :global {
+            .ant-list-item-meta-title {
+                margin-bottom: 0;
+            }
+            .ant-list-item-meta-description {
+                font-size: 12px;
+            }
+            .ant-space-align-center {
+                cursor: pointer;
+            }
+        }
+        width: 1050px;
+        margin: 0 auto;
+        &-BusinessCard {
+            float: left;
+            position: sticky;
+            top: 20px;
+        }
+        &-container {
+            width: 800px;
+            float: left;
+            background-color: #fff;
+            min-height: calc(~"100vh - 80px");
+            padding: 20px;
+            margin-right: 4px;
+            &-top {
+                width: 85%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                &-button {
+                    margin-top: 20px;
+                }
+            }
+            .line {
+                width: 100%;
+                height: 1px;
+                background-color: #f0f0f0;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            &-content {
+                width: 100%;
+                .list {
+                    height: 0;
+                    overflow: hidden;
+                    max-height: 0;
+                    transition: max-height 1s;
+                    &-active {
+                        height: auto;
+                        max-height: 1000px;
+                    }
+                }
+            }
+        }
+    }
+}

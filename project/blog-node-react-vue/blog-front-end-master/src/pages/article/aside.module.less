@@ -1,0 +1,46 @@
+
+
+.aside {
+    width: 196px;
+    background-color: #fff;
+    float: left;
+    position: sticky;
+    top: 0;
+    padding: 10px 0;
+    &-item {
+        display: flex;
+        width: 100%;
+        padding: 20px 25px;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        transition: all 0.3s;
+        &::after {
+            position: absolute;
+            left: 25px;
+            right: 25px;
+            bottom: 0;
+            background-color: #f0f0f0;
+            content: '';
+            height: 1px;
+        }
+        &-text {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        &:hover {
+            background-color: #3e9ff8;
+            color: #fff;
+            &::after {
+                height: 0;
+            }
+        }
+    }
+    &-item.active {
+        background-color: #3e9ff8;
+        color: #fff;
+        &::after {
+            height: 0;
+        }
+    }
+}

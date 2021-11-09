@@ -1,0 +1,35 @@
+.page {
+    width: 100%;
+    background-color: #f0f0f0;
+    .articledetail {
+        width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        min-height: 100vh;
+        :global {
+            .ant-page-header {
+                padding-bottom: 0 !important;
+                padding-top: 24px;
+            }
+        }
+        &-title {
+            text-align: center;
+        }
+        &-Paragraph {
+            text-align: center;
+           
+            &-item {
+                font-size: 13px !important;
+                color: #999 !important;
+                margin-right: 10px;
+                span {
+                    margin-left: 5px;
+                }
+            }
+        }
+        &-container {
+            padding: 24px;
+            padding-top: 0;
+        }
+    }
+}
