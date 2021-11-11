@@ -1,9 +1,7 @@
 <template>
   <div class="hongbao-page">
     <Header class="header-warp" @return="headerReturn">我的红包</Header>
-    <div class="page-content">
-
-    </div>
+    <div class="page-content"></div>
   </div>
 </template>
 <script lang="ts">

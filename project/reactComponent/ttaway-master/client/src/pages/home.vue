@@ -40,6 +40,7 @@
 </template>
 
 <script lang='ts'>
+
 import { Component, Vue, Watch } from "vue-property-decorator";
 import Star from "@/components/Star.vue";
 import HomeHeader from "@/components/Layout/HomeHeader.vue";

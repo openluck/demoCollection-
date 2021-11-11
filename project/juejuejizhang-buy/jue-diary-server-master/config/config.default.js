@@ -4,7 +4,7 @@
  * @Author: OpenLcuk
  * @Date: 2021-11-02 10:58:13
  * @LastEditors: OpenLcuk
- * @LastEditTime: 2021-11-02 15:42:57
+ * @LastEditTime: 2021-11-11 13:43:01
  */
 /* eslint valid-jsdoc: "off" */
 
@@ -59,7 +59,8 @@ module.exports = appInfo => {
     // 单数据库信息配置
     client: {
       // host
-      host: 'localhost',
+      // host: 'localhost',
+      host: '10.0.12.14', // 线上内网ip
       // 端口号
       port: '3306',
       // 用户名
@@ -67,7 +68,7 @@ module.exports = appInfo => {
       // 密码
       password: '123456',
       // 数据库名
-      database: 'juejue-cost',
+      database: 'juejue_cost',
     },
     // 是否加载到 app 上，默认开启
     app: true,

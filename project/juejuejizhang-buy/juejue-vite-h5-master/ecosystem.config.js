@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: OpenLcuk
+ * @Date: 2021-11-02 10:59:09
+ * @LastEditors: OpenLcuk
+ * @LastEditTime: 2021-11-11 13:53:39
+ */
 module.exports = {
   apps: [
     {
@@ -8,7 +16,7 @@ module.exports = {
   deploy: {
     production: {
       user: 'root',
-      host: '47.99.134.126',
+      host: '10.0.12.14',
       ref: 'origin/master',
       repo: 'git@git.zhlh6.cn:Nick930826/juejue-vite-h5.git',
       path: '/workspace/juejue-vite-h5',

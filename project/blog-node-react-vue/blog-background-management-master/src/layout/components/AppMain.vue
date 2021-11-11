@@ -1,7 +1,16 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: OpenLcuk
+ * @Date: 2021-11-09 14:42:08
+ * @LastEditors: OpenLcuk
+ * @LastEditTime: 2021-11-11 10:57:56
+-->
 <template>
   <section class="app-main">
     <transition name="fade-transform" mode="out-in">
-      < :key="key" />
+      <!-- < :key="key" /> -->
+      <router-view :key="key"></router-view>
     </transition>
   </section>
 </template>

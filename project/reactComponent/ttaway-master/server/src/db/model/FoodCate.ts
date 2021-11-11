@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: OpenLcuk
+ * @Date: 2021-11-09 13:25:43
+ * @LastEditors: OpenLcuk
+ * @LastEditTime: 2021-11-10 17:30:21
+ */
 /*!
  * Koa CMS Backstage management
  *
@@ -6,6 +14,7 @@
  * Email swh1057607246@qq.com
  *
  */
+// @ts-ignore
 import * as Mongoose from 'mongoose'
 
 const Schema = Mongoose.Schema

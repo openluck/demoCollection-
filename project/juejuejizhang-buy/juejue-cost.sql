@@ -4,7 +4,7 @@ Navicat MySQL Data Transfer
 Source Server         : test
 Source Server Version : 80021
 Source Host           : localhost:3306
-Source Database       : juejue-cost
+Source Database       : juejue_cost
 
 Target Server Type    : MYSQL
 Target Server Version : 80021

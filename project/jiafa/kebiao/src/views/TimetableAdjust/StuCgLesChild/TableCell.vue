@@ -1,0 +1,124 @@
+<!--
+ * @Description: 课表单个格子组件
+ * @Version: 
+ * @Autor: cb
+ * @Date: 2021-08-05 16:13:42
+ * @LastEditors: cb
+ * @LastEditTime: 2021-10-15 13:59:56
+-->
+<template>
+  <div class="cb-t-cell" @click="child">
+    <!-- 授课 -->
+    <div class="cb-t-sk" v-if="row.lesSortType === '1'">
+      <div class="cb-t-les" v-if="row[week].lesList.length>0">
+        <div class="cb-t-les-sub">
+          <span v-if="filterValue.sub" :title="row[week].lesList[0].subjectName">{{row[week].lesList[0].subjectName}}</span>
+        </div>
+        <div v-if="filterValue.tea" class="cb-t-les-info" :title="row[week].lesList[0].teacherName">{{row[week].lesList[0].teacherName}}</div>
+        <div v-if="filterValue.place" class="cb-t-les-info" :title="row[week].lesList[0].placeName">{{row[week].lesList[0].placeName}}</div>
+        <div v-if="filterValue.class" class="cb-t-les-info" 
+        :title="getClass(row[week].lesList[0].className,row[week].lesList[0].stuNum)"
+        >
+        {{ getClass(row[week].lesList[0].className,row[week].lesList[0].stuNum) }}
+        </div>
+        <div v-if="filterValue.time" class="cb-t-les-info" :title="row[week].lesList[0].lesTime">{{row[week].lesList[0].lesTime}}</div>
+        <div class="cb-t-les-check">
+          <a-checkbox v-if="row[week].lesList[0].isSelect" disabled v-model="row[week].lesList[0].isSelect"></a-checkbox>
+        </div>
+      </div>
+    </div>
+    <!-- 非授课 -->
+    <div v-else class="cb-cell-fsk">
+      <div v-if="row[week]">{{row[week].lesRemark}}</div>
+    </div>
+  </div>
+</template>
+ 
+<script>
+export default {
+  name: "",
+  props: {
+    row: {},
+    filterValue: {
+      type: Object
+    }, //过滤对象
+    week: {
+      type: String
+    },
+    slotDay: {
+      type: Array
+    },
+    i: {
+      type: Number
+    }
+  },
+  components: {},
+  watch: {},
+  data() {
+    return {};
+  },
+  computed: {},
+  mounted() {
+    // console.log(this.row);
+  },
+  methods: {
+    child() {
+      this.row.lesIdList = [];
+      // this.row.lesIdList.push(this.row[this.week].lesList[0].lesId)
+      this.row.lesIdList.push(this.week);
+    },
+    filertWeek(item) {
+      switch (item) {
+        case "lesMon":
+          return "周一";
+        case "lesTue":
+          return "周二";
+        case "lesWed":
+          return "周三";
+        case "lesThu":
+          return "周四";
+        case "lesFri":
+          return "周五";
+        case "lesSat":
+          return "周六";
+        case "lesSun":
+          return "周日";
+      }
+    },
+    /**
+     * @param {String} a 班级名称
+     * @param {String} b 班级人数
+     */
+    // 调整班级
+    getClass(a, b) {
+      let arr = []
+      let inArr = []
+      if (!b) {
+        b = 0
+      }
+      if (a.indexOf(";") !== -1) {
+        arr = a.split(";")
+      } else {
+        arr = [a]
+      }
+      if (b.indexOf(";") !== -1) {
+        inArr = b.split(";")
+      } else {
+        inArr = [b]
+      }
+      if (arr.length > 1) {
+        let str = ""
+        arr.map((item, index) => {
+          str += item + "/" + inArr[index] + "人;"
+        })
+        return str
+      } else {
+        return arr[0] + "/" + inArr[0] + "人"
+      }
+    }
+  }
+};
+</script>
+ 
+<style  lang = "less">
+</style>

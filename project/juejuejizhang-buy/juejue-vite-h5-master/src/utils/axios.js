@@ -4,6 +4,14 @@
  * @Author: OpenLcuk
  * @Date: 2021-11-02 10:59:09
  * @LastEditors: OpenLcuk
+ * @LastEditTime: 2021-11-11 13:57:57
+ */
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: OpenLcuk
+ * @Date: 2021-11-02 10:59:09
+ * @LastEditors: OpenLcuk
  * @LastEditTime: 2021-11-03 15:41:07
  */
 import axios from 'axios'
@@ -12,7 +20,7 @@ import { Toast } from 'zarm'
 const MODE = import.meta.env.MODE // 环境变量
 
 // axios.defaults.baseURL = MODE == 'development' ? 'http://47.99.134.126:7009' : 'http://47.99.134.126:7009'
-axios.defaults.baseURL = MODE == 'development' ? 'http://127.0.0.1:7009' : 'http://47.99.134.126:7009'
+axios.defaults.baseURL = MODE == 'development' ? 'http://127.0.0.1:7009' : 'http://10.0.12.14:7009'
 axios.defaults.withCredentials = true
 axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest'
 axios.defaults.headers['Authorization'] = `${localStorage.getItem('token') || null}`
