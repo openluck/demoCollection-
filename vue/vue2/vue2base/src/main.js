@@ -4,18 +4,20 @@
  * @Author: OpenLcuk
  * @Date: 2021-10-13 16:20:53
  * @LastEditors: OpenLcuk
- * @LastEditTime: 2021-10-20 13:16:41
+ * @LastEditTime: 2021-11-12 17:07:57
  */
 import Vue from "vue";
 import App from "./App.vue";
-// 导入接口文件
-// import api from "./http";
-import axios from 'axios'
-
+import router from './router'
+console.log('vue中的Vue-->', Vue);
 Vue.config.productionTip = false;
-// Vue.use(axios);
-Vue.prototype.$api = axios
 
+import { registerApp } from './register'
+
+
+
+registerApp(Vue)
 new Vue({
+  router,
   render: (h) => h(App),
 }).$mount("#app");

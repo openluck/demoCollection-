@@ -4,41 +4,26 @@
  * @Author: OpenLcuk
  * @Date: 2021-10-13 16:20:53
  * @LastEditors: OpenLcuk
- * @LastEditTime: 2021-10-19 16:58:00
+ * @LastEditTime: 2021-11-12 17:08:54
 -->
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <BaseInput v-model="something"></BaseInput>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import BaseInput from "./components/v-modelltest/baseInput.vue";
-
 export default {
   name: "App",
-  components: {
-    HelloWorld,
-    BaseInput,
-  },
+  components: {},
   data() {
-    return {
-      something: "something",
-    };
+    return {};
+  },
+  created() {
+    console.log("process", process);
   },
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
