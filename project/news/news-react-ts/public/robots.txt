@@ -1,3 +1,23 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Disallow:
+User-agent:  Baiduspider
+Disallow:  /
+
+User-Agent:  Googlebot
+Disallow:  /
+
+User-agent:  Bingbot
+Disallow:  /
+
+User-Agent:  360Spider
+Disallow:  /
+
+User-Agent:  Yisouspider
+Disallow:  /
+
+User-Agent:  Sogouspider
+Disallow:  /
+
+User-Agent:  Yahoo!  Slurp
+Disallow:  /
+
+User-Agent:  *
+Disallow:  /
