@@ -4,7 +4,7 @@
  * @Author: wentan
  * @Date: 2021-03-30 17:00:38
  * @LastEditors: OpenLcuk
- * @LastEditTime: 2021-08-17 14:57:55
+ * @LastEditTime: 2021-11-15 14:48:51
  */
 import Vue from "vue";
 // import { Modal } from "ant-design-vue"
@@ -91,7 +91,6 @@ router.beforeEach((to, from, next) => {
       let routerInfo = JSON.parse(sessionStorage.getItem("routerInfo"));
       //判断是否是刷新页面，如果是刷新vue会重新实例化，vuex数据消失（vuex数据保存在运行内存中）
       //因此将之前的路由保存在浏览器缓存，刷新时动态更新vuex数据
-
       if (routerInfo && store.state.addRoutes.rootRoute.length === 0) {
         if (sessionStorage.getItem("role") === "1") {
           //老师

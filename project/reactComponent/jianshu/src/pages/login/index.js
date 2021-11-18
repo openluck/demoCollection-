@@ -4,7 +4,7 @@
  * @Author: OpenLcuk
  * @Date: 2021-08-27 14:47:53
  * @LastEditors: OpenLcuk
- * @LastEditTime: 2021-11-09 15:32:48
+ * @LastEditTime: 2021-11-16 11:33:17
  */
 import React, { PureComponent } from 'react';
 import { Redirect } from 'react-router-dom';
@@ -14,6 +14,7 @@ import { actionCreators } from './store';
 
 class Login extends PureComponent {
 	render() {
+		console.log('this.props',this.props);
 		const { loginStatus } = this.props;
 		if (!loginStatus) {
 			return (
@@ -37,8 +38,11 @@ const mapState = (state) => ({
 
 const mapDispatch = (dispatch) => ({
 	login(accountElem, passwordElem) {
+		console.log('accountElem, passwordElem',accountElem, passwordElem);
 		dispatch(actionCreators.login(accountElem.value, passwordElem.value))
 	}
 })
+
+
 
 export default connect(mapState, mapDispatch)(Login);

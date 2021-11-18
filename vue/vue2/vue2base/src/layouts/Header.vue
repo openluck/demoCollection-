@@ -4,7 +4,7 @@
  * @Author: OpenLcuk
  * @Date: 2021-11-12 15:07:42
  * @LastEditors: OpenLcuk
- * @LastEditTime: 2021-11-12 15:13:19
+ * @LastEditTime: 2021-11-16 16:49:31
 -->
 <template>
   <div class="header">
@@ -19,7 +19,8 @@ export default {
     return {
 
     }
-  }
+  },
+  
  }
 </script>
 

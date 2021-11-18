@@ -1,5 +1,20 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: OpenLcuk
+ * @Date: 2021-11-08 10:19:12
+ * @LastEditors: OpenLcuk
+ * @LastEditTime: 2021-11-15 14:32:15
+ */
 import { createApp } from 'vue'
-import { ActionBar, ActionBarIcon, ActionBarButton, Divider, Popup, Overlay, Loading, Dialog, ContactCard, Form, AddressEdit, AddressList, Field, CellGroup, Cell, SwipeCell, Icon, Stepper, Card, Checkbox, CheckboxGroup, Button, Swipe, SwipeItem, PullRefresh, List, Tab, Tabs, SubmitBar, Toast, Skeleton } from 'vant'
+import {
+  ActionBar, ActionBarIcon, ActionBarButton,
+  Divider, Popup, Overlay, Loading, Dialog, ContactCard,
+  Form, AddressEdit, AddressList, Field, CellGroup, Cell,
+  SwipeCell, Icon, Stepper, Card, Checkbox, CheckboxGroup,
+  Button, Swipe, SwipeItem, PullRefresh, List, Tab, Tabs,
+  SubmitBar, Toast, Skeleton
+} from 'vant'
 import App from './App.vue'
 import store from './store'
 import router from './router'
