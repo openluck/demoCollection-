@@ -2,16 +2,20 @@
  * @Descripttion:
  * @version:
  * @Author: OpenLcuk
- * @Date: 2021-10-15 10:17:39
+ * @Date: 2021-10-21 13:37:01
  * @LastEditors: OpenLcuk
- * @LastEditTime: 2021-11-17 15:33:30
+ * @LastEditTime: 2021-11-18 17:13:49
  */
-import React from "react";
-import "./App.css";
-// 引入组件
+import React, { FC } from "react";
+import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
+import Login from "../src/pages/login";
 
-function App() {
-  return <div className="App"></div>;
-}
+const App: FC = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<Login />} />
+    </Routes>
+  </Router>
+);
 
 export default App;
